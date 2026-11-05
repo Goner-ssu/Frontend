@@ -14,11 +14,27 @@
       },
       "oauth_client": [
         {
+          "client_id": "1060141471388-matbf5q0liqlhg4j5605278uk2noq45q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.goner.app",
+            "certificate_hash": "2ccea726c077ca1381b3c19ea3db5f9a07dc0f2a"
+          }
+        },
+        {
           "client_id": "1060141471388-pail45i5k00j6rri4bpqd5q0pvp7ujeh.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.goner.app",
             "certificate_hash": "91786b9207df21ddc238f6862426f3c0bab4abca"
+          }
+        },
+        {
+          "client_id": "1060141471388-vgv2vmr8a0no5tu59grcdrv9mdgh618g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.goner.app",
+            "certificate_hash": "eedd34fb6cfb65a4882048e5fdc67f70897b8d9b"
           }
         },
         {
