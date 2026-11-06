@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AvatarView">
+        <!-- 24dp(small) / 48dp(large) -->
+        <attr name="avatarSize" format="enum">
+            <enum name="small" value="0" />
+            <enum name="large" value="1" />
+        </attr>
+    </declare-styleable>
+</resources>

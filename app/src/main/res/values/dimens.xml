@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 글자 크기 -->
+    <dimen name="text_12">12sp</dimen>
+    <dimen name="text_13">13sp</dimen>
+    <dimen name="text_14">14sp</dimen>
+    <dimen name="text_15">15sp</dimen>
+    <dimen name="text_16">16sp</dimen>
+    <dimen name="text_17">17sp</dimen>
+    <dimen name="text_20">20sp</dimen>
+    <dimen name="text_26">26sp</dimen>
+    <dimen name="text_28">28sp</dimen>
+    <dimen name="logo_home">33sp</dimen>
+    <dimen name="logo_login">48sp</dimen>
+    <dimen name="logo_splash">58sp</dimen>
+
+    <!-- 모서리 -->
+    <dimen name="radius_10">10dp</dimen>
+    <dimen name="radius_input">12dp</dimen>
+    <dimen name="radius_button">14dp</dimen>
+    <dimen name="radius_google">18dp</dimen>
+    <dimen name="radius_20">20dp</dimen>
+    <dimen name="radius_card">26dp</dimen>
+
+    <!-- 여백 -->
+    <dimen name="screen_padding">24dp</dimen>
+    <dimen name="home_padding">20dp</dimen>
+
+    <!-- 컴포넌트 -->
+    <dimen name="button_height">56dp</dimen>
+    <dimen name="google_button_height">65dp</dimen>
+    <dimen name="input_height">52dp</dimen>
+    <dimen name="bottom_nav_height">111dp</dimen>
+    <dimen name="nav_pill_width">61dp</dimen>
+    <dimen name="nav_pill_height">70dp</dimen>
+    <dimen name="card_height">135dp</dimen>
+    <dimen name="avatar_small">24dp</dimen>
+    <dimen name="avatar_large">48dp</dimen>
+    <dimen name="icon_bell">29dp</dimen>
+    <dimen name="icon_plus">39dp</dimen>
+
+    <!-- 공통: 상단바 -->
+    <dimen name="top_bar_height">56dp</dimen>
+    <dimen name="top_bar_padding_horizontal">12dp</dimen>
+    <dimen name="touch_target">48dp</dimen>
+    <dimen name="icon_24">24dp</dimen>
+
+    <!-- 공통: 팝업 -->
+    <dimen name="text_18">18sp</dimen>
+    <dimen name="dialog_padding">24dp</dimen>
+    <dimen name="dialog_message_margin_top">8dp</dimen>
+    <dimen name="dialog_buttons_margin_top">24dp</dimen>
+    <dimen name="dialog_button_gap">8dp</dimen>
+    <dimen name="dialog_button_height">48dp</dimen>
+</resources>

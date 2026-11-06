@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Goner</string>
+
+    <!-- 스플래시 -->
+    <string name="splash_logo">goner</string>
+    <string name="splash_tagline">약속, 늦지 않게</string>
+
+    <!-- 공통 -->
+    <string name="common_back">뒤로 가기</string>
+    <string name="common_cancel">취소</string>
+    <string name="common_confirm">확인</string>
 </resources>

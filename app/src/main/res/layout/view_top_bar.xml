@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 공통 상단바. <include layout="@layout/view_top_bar" /> 후 TopBar.bind(...)로 설정 -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/top_bar"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/top_bar_height"
+    android:paddingStart="@dimen/top_bar_padding_horizontal"
+    android:paddingEnd="@dimen/top_bar_padding_horizontal">
+
+    <ImageButton
+        android:id="@+id/top_bar_back"
+        android:layout_width="@dimen/touch_target"
+        android:layout_height="@dimen/touch_target"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/common_back"
+        android:src="@drawable/ic_back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/top_bar_title"
+        style="@style/Text.TopBarTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:maxLines="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/top_bar_action"
+        app:layout_constraintStart_toEndOf="@id/top_bar_back"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="제목" />
+
+    <!-- 오른쪽 텍스트 버튼(편집/완료 등). 기본은 숨김, 제목이 가운데 오도록 자리만 차지 -->
+    <TextView
+        android:id="@+id/top_bar_action"
+        style="@style/Text.TopBarAction"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/touch_target"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:minWidth="@dimen/touch_target"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="편집"
+        tools:visibility="visible" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,9 +1,110 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Goner" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 이름은 AndroidManifest의 android:theme 과 맞추세요 -->
+    <style name="Theme.Goner" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/orange_300</item>
+        <item name="android:colorBackground">@color/bg_screen</item>
+        <item name="android:windowBackground">@color/bg_screen</item>
+        <item name="android:statusBarColor">@color/bg_screen</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:fontFamily">@font/ibm_plex_sans_kr</item>
+        <item name="fontFamily">@font/ibm_plex_sans_kr</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.Goner.BottomSheetDialog</item>
     </style>
 
-    <style name="Theme.Goner" parent="Base.Theme.Goner" />
+    <!-- 글자 스타일 -->
+    <style name="Text" parent="">
+        <item name="android:fontFamily">@font/ibm_plex_sans_kr</item>
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="Text.Logo">
+        <item name="android:fontFamily">@font/anton_sc</item>
+        <item name="fontFamily">@font/anton_sc</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/logo_home</item>
+    </style>
+    <style name="Text.Title28">
+        <item name="android:textSize">@dimen/text_28</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.CardTitle">
+        <item name="android:textSize">@dimen/text_26</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.Body16">
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textColor">@color/text_body</item>
+    </style>
+    <style name="Text.Label13">
+        <item name="android:textSize">@dimen/text_13</item>
+        <item name="android:textColor">@color/text_sub</item>
+    </style>
+    <style name="Text.Caption12">
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:textColor">@color/text_sub</item>
+    </style>
+    <style name="Text.Place14">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textColor">@color/text_place</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Text.Tab">
+        <item name="android:textSize">@dimen/text_13</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/text_tab_off</item>
+    </style>
+    <style name="Text.TopBarTitle">
+        <item name="android:textSize">@dimen/text_17</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.TopBarAction">
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+    <style name="Text.DialogTitle">
+        <item name="android:textSize">@dimen/text_18</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.DialogMessage">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textColor">@color/text_sub</item>
+    </style>
+
+    <!-- 메인 버튼 -->
+    <style name="Button.Primary" parent="Widget.Material3.Button">
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/primary</item>
+        <item name="cornerRadius">@dimen/radius_button</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <!-- 보조 버튼 (취소 등) -->
+    <style name="Button.Secondary" parent="Button.Primary">
+        <item name="android:textColor">@color/text_body</item>
+        <item name="backgroundTint">@color/bg_soft</item>
+    </style>
+
+    <!-- 바텀시트: 위쪽 모서리 26dp, 흰 배경 -->
+    <style name="ThemeOverlay.Goner.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.Goner.BottomSheet</item>
+    </style>
+    <style name="Widget.Goner.BottomSheet" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">@color/white</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Goner.BottomSheet</item>
+    </style>
+    <style name="ShapeAppearance.Goner.BottomSheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/radius_card</item>
+        <item name="cornerSizeTopRight">@dimen/radius_card</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
 </resources>
