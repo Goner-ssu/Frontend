@@ -73,7 +73,6 @@ public class HomeFragment extends Fragment {
         recycler.setAdapter(adapter);
 
         view.findViewById(R.id.button_bell).setOnClickListener(v -> {
-            // TODO notification/NotificationActivity 만들면 연결
         });
         view.findViewById(R.id.button_add).setOnClickListener(v -> showAddMenu());
         view.findViewById(R.id.button_create).setOnClickListener(v -> openCreatePromise());
@@ -82,7 +81,7 @@ public class HomeFragment extends Fragment {
         getChildFragmentManager().setFragmentResultListener(REQUEST_DELETE, getViewLifecycleOwner(),
                 (key, result) -> deletePromise());
 
-        if (uid == null) return; // 로그인 안 된 상태로는 안 들어옴
+        if (uid == null) return;
         listenPromises();
         listenUnread();
     }
@@ -101,7 +100,6 @@ public class HomeFragment extends Fragment {
                             list.add(promise);
                         }
                     }
-                    // 시간순 (시간 없는 건 맨 뒤)
                     list.sort(Comparator.comparing(p -> p.time, Comparator.nullsLast(Comparator.naturalOrder())));
 
                     adapter.setItems(list);
@@ -110,7 +108,7 @@ public class HomeFragment extends Fragment {
                 });
     }
 
-    // 카드에 아바타 그리려고 참여자 닉네임/사진 불러옴
+    // 아바타용 사진 닉네임
     private void loadMembers(List<Promise> promises) {
         for (Promise promise : promises) {
             for (String memberUid : promise.members.keySet()) {
@@ -135,7 +133,7 @@ public class HomeFragment extends Fragment {
                 });
     }
 
-    // + 버튼 메뉴 (약속 추가 / 친구 추가)
+    // + 버튼
     private void showAddMenu() {
         BottomSheetDialog sheet = new BottomSheetDialog(requireContext());
         View view = getLayoutInflater().inflate(R.layout.sheet_add_menu, null);

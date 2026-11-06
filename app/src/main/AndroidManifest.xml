@@ -29,7 +29,8 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".promise.CreatePromiseActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".friend.AddFriendActivity"
             android:exported="false" />

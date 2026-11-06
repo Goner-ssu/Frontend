@@ -104,6 +104,14 @@
         <item name="android:textSize">@dimen/text_22</item>
         <item name="android:textFontWeight">600</item>
     </style>
+    <style name="Text.StepTitle">
+        <item name="android:textSize">@dimen/text_32</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+    <style name="Text.BigInput">
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:textColorHint">@color/text_sub</item>
+    </style>
 
     <!-- 하단 탭 한 칸 (선택되면 흰 알약 배경) -->
     <style name="BottomNavTab">
@@ -121,10 +129,18 @@
         <item name="android:textSize">@dimen/text_16</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/white</item>
-        <item name="backgroundTint">@color/primary</item>
+        <item name="backgroundTint">@color/button_primary_bg</item>
         <item name="cornerRadius">@dimen/radius_button</item>
         <item name="android:insetTop">0dp</item>
         <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <!-- 약속 만들기 단계 하단 버튼 (피그마: 55dp, 21sp, 보통 굵기) -->
+    <style name="Button.Step" parent="Button.Primary">
+        <item name="android:layout_height">@dimen/create_button_height</item>
+        <item name="android:textSize">@dimen/text_21</item>
+        <item name="android:textStyle">normal</item>
+        <item name="cornerRadius">@dimen/create_button_radius</item>
     </style>
 
     <!-- 보조 버튼 (취소 등) -->

@@ -133,4 +133,22 @@
     <dimen name="add_menu_text_gap">8dp</dimen>
     <dimen name="add_menu_first_margin_top">5dp</dimen>
     <dimen name="add_menu_second_margin_top">2dp</dimen>
+
+    <!-- 약속 만들기 -->
+    <dimen name="text_32">32sp</dimen>
+    <dimen name="text_21">21sp</dimen>
+    <dimen name="create_padding">35dp</dimen>
+    <dimen name="create_back_margin_start">17dp</dimen>
+    <dimen name="create_back_margin_top">27dp</dimen>
+    <dimen name="create_progress_margin_top">98dp</dimen>
+    <dimen name="create_progress_height">7dp</dimen>
+    <dimen name="create_progress_gap">8dp</dimen>
+    <dimen name="create_title_margin_top">52dp</dimen>
+    <dimen name="create_input_margin_top">50dp</dimen>
+    <dimen name="create_input_height">47dp</dimen>
+    <dimen name="create_input_padding">11dp</dimen>
+    <dimen name="create_button_margin_horizontal">46dp</dimen>
+    <dimen name="create_button_margin_bottom">30dp</dimen>
+    <dimen name="create_button_height">55dp</dimen>
+    <dimen name="create_button_radius">15dp</dimen>
 </resources>

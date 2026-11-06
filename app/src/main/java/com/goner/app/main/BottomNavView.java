@@ -92,7 +92,7 @@ public class BottomNavView extends LinearLayout {
         return selectedTab;
     }
 
-    // 3버튼 내비게이션처럼 시스템 바가 높을 때만 아래 여백 늘림
+    // 3버튼 -> 시스템 바가 높을 때만 아래 여백 늘림
     public void setBottomInset(int inset) {
         setPadding(getPaddingLeft(), 0, getPaddingRight(), Math.max(basePaddingBottom, inset));
     }
