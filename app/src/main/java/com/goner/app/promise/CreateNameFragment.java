@@ -55,7 +55,7 @@ public class CreateNameFragment extends Fragment {
 
         buttonNext.setOnClickListener(v -> {
             draft.title = editTitle.getText().toString().trim();
-            // TODO 2단계(시간) Fragment 만들면 ((CreatePromiseActivity) requireActivity()).showNext(...)
+            ((CreatePromiseActivity) requireActivity()).showNext(new PromiseTimeFragment());
         });
     }
 

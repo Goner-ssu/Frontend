@@ -151,4 +151,26 @@
     <dimen name="create_button_margin_bottom">30dp</dimen>
     <dimen name="create_button_height">55dp</dimen>
     <dimen name="create_button_radius">15dp</dimen>
+
+    <!-- 약속 시간 (달력 + 휠) -->
+    <dimen name="calendar_margin_top">50dp</dimen>
+    <dimen name="calendar_margin_horizontal">46dp</dimen>
+    <dimen name="calendar_header_height">39dp</dimen>
+    <dimen name="calendar_grid_margin_top">17dp</dimen>
+    <dimen name="calendar_weekday_height">22dp</dimen>
+    <dimen name="calendar_cell_height">43dp</dimen>
+    <dimen name="calendar_divider_margin_top">17dp</dimen>
+    <dimen name="calendar_arrow_size">22dp</dimen>
+    <dimen name="wheel_margin_top">20dp</dimen>
+    <dimen name="wheel_margin_horizontal">41dp</dimen>
+    <dimen name="wheel_height">120dp</dimen>
+    <dimen name="wheel_radius">25dp</dimen>
+    <dimen name="wheel_row_height">28dp</dimen>
+    <dimen name="wheel_padding_horizontal">11dp</dimen>
+    <dimen name="wheel_elevation">3dp</dimen>
+    <dimen name="time_content_padding_bottom">24dp</dimen>
+    <dimen name="dropdown_icon_gap">10dp</dimen>
+    <dimen name="dropdown_width">120dp</dimen>
+    <dimen name="dropdown_max_height">264dp</dimen>
+    <dimen name="dropdown_item_height">44dp</dimen>
 </resources>

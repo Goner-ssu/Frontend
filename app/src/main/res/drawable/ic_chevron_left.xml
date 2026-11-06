@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma 253:1950 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="@dimen/calendar_arrow_size"
+    android:height="@dimen/calendar_arrow_size"
+    android:viewportWidth="22"
+    android:viewportHeight="22">
+    <path
+        android:pathData="M13.7501,16.4999L8.25006,10.9999L13.7501,5.49988"
+        android:strokeWidth="2.20001"
+        android:strokeColor="@color/icon_bell"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

@@ -37,4 +37,8 @@
     <color name="icon_more">#FD8A15</color>
     <color name="divider">#F3DCCB</color>
     <color name="toast_bg">#3A2A20</color>
+
+    <!-- 약속 시간 휠 -->
+    <color name="wheel_bg">#CCFFFFFF</color>
+    <color name="wheel_far">#545454</color>
 </resources>
