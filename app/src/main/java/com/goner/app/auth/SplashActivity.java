@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.goner.app.R;
 import com.goner.app.main.MainActivity;
-import com.google.firebase.auth.FirebaseAuth;
 
 public class SplashActivity extends AppCompatActivity {
 
@@ -33,9 +32,8 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     private void navigateNext() {
-        boolean signedIn = FirebaseAuth.getInstance().getCurrentUser() != null;
-        Class<?> next = signedIn ? MainActivity.class : LoginActivity.class;
-        startActivity(new Intent(this, next));
+        // TODO 로그인 화면 만들면 로그인 여부 확인해서 LoginActivity / MainActivity 나눠야 함
+        startActivity(new Intent(this, MainActivity.class));
         finish();
     }
 }

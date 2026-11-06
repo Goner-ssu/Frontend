@@ -9,4 +9,27 @@
     <string name="common_back">뒤로 가기</string>
     <string name="common_cancel">취소</string>
     <string name="common_confirm">확인</string>
+
+    <!-- 하단 탭 -->
+    <string name="tab_record">기록 보기</string>
+    <string name="tab_home">홈</string>
+    <string name="tab_mypage">마이페이지</string>
+
+    <!-- 홈 -->
+    <string name="home_notification">알림</string>
+    <string name="home_add">추가</string>
+    <string name="home_more">더보기</string>
+    <string name="home_promise_info">%1$s · %2$s</string>
+    <string name="home_pending">수락 대기 %1$d/%2$d</string>
+    <string name="home_empty_title">아직 약속이 없어요</string>
+    <string name="home_empty_desc">친구와 첫 약속을 만들어 보세요\n가장 늦게 온 사람이 벌칙을 받아요</string>
+    <string name="home_empty_create">약속 만들기</string>
+    <string name="home_empty_add_friend">친구 먼저 추가하기</string>
+    <string name="home_toast_created">약속을 만들었어요 · 친구가 수락하면 알려드릴게요</string>
+    <string name="menu_edit">수정하기</string>
+    <string name="menu_delete">삭제하기</string>
+    <string name="delete_promise_title">약속을 삭제할까요?</string>
+    <string name="delete_promise_message">삭제하면 친구들에게서도 사라져요</string>
+    <string name="delete">삭제</string>
+    <string name="delete_failed">삭제하지 못했어요</string>
 </resources>

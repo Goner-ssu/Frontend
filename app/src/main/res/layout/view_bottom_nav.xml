@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- BottomNavView 안에 들어가는 탭 3개 -->
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/tab_record"
+        style="@style/BottomNavTab">
+
+        <ImageView
+            android:id="@+id/tab_record_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_tab_record" />
+
+        <TextView
+            android:id="@+id/tab_record_label"
+            style="@style/Text.Tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/nav_label_margin_top"
+            android:text="@string/tab_record" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/tab_home"
+        style="@style/BottomNavTab">
+
+        <ImageView
+            android:id="@+id/tab_home_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_tab_home" />
+
+        <TextView
+            android:id="@+id/tab_home_label"
+            style="@style/Text.Tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/nav_label_margin_top"
+            android:text="@string/tab_home" />
+    </LinearLayout>
+
+    <Space
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <LinearLayout
+        android:id="@+id/tab_mypage"
+        style="@style/BottomNavTab">
+
+        <ImageView
+            android:id="@+id/tab_mypage_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_tab_mypage" />
+
+        <TextView
+            android:id="@+id/tab_mypage_label"
+            style="@style/Text.Tab"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/nav_label_margin_top"
+            android:text="@string/tab_mypage" />
+    </LinearLayout>
+</merge>

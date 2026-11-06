@@ -52,4 +52,77 @@
     <dimen name="dialog_buttons_margin_top">24dp</dimen>
     <dimen name="dialog_button_gap">8dp</dimen>
     <dimen name="dialog_button_height">48dp</dimen>
+
+    <!-- 하단 탭 -->
+    <dimen name="radius_nav">24dp</dimen>
+    <dimen name="nav_padding_horizontal">44dp</dimen>
+    <dimen name="nav_padding_bottom">35dp</dimen>
+    <dimen name="nav_pill_padding_top">8dp</dimen>
+    <dimen name="nav_label_margin_top">6dp</dimen>
+    <dimen name="nav_elevation">8dp</dimen>
+    <dimen name="nav_pill_elevation">4dp</dimen>
+
+    <!-- 홈 상단 -->
+    <dimen name="home_header_margin_top">26dp</dimen>
+    <dimen name="home_header_height">50dp</dimen>
+    <dimen name="logo_mark_width">33dp</dimen>
+    <dimen name="logo_mark_height">39dp</dimen>
+    <dimen name="logo_mark_gap">7dp</dimen>
+    <dimen name="home_plus_size">42dp</dimen>
+    <dimen name="home_plus_margin_end">30dp</dimen>
+    <dimen name="home_bell_width">33dp</dimen>
+    <dimen name="home_bell_height">36dp</dimen>
+    <dimen name="home_bell_margin_end">28dp</dimen>
+    <dimen name="unread_dot">8dp</dimen>
+
+    <!-- 홈 약속 카드 -->
+    <dimen name="text_22">22sp</dimen>
+    <dimen name="text_14_line_height">21sp</dimen>
+    <dimen name="home_list_padding_top">49dp</dimen>
+    <dimen name="home_list_padding_bottom">24dp</dimen>
+    <dimen name="promise_card_gap">40dp</dimen>
+    <dimen name="promise_card_min_height">155dp</dimen>
+    <dimen name="promise_card_radius">28dp</dimen>
+    <dimen name="promise_card_padding_start">20dp</dimen>
+    <dimen name="promise_card_padding_top">22dp</dimen>
+    <dimen name="promise_card_padding_bottom">14dp</dimen>
+    <dimen name="promise_card_info_margin_top">16dp</dimen>
+    <dimen name="promise_card_avatars_margin_top">28dp</dimen>
+    <dimen name="promise_card_elevation">6dp</dimen>
+    <dimen name="promise_avatar_gap">6dp</dimen>
+    <dimen name="promise_more_margin_end">8dp</dimen>
+    <dimen name="chip_padding_horizontal">10dp</dimen>
+    <dimen name="chip_padding_vertical">4dp</dimen>
+    <dimen name="chip_margin_top">18dp</dimen>
+    <dimen name="chip_margin_end">6dp</dimen>
+
+    <!-- 홈 빈 상태 -->
+    <dimen name="empty_margin_top">120dp</dimen>
+    <dimen name="empty_icon_bg_size">120dp</dimen>
+    <dimen name="empty_icon_size">48dp</dimen>
+    <dimen name="empty_title_margin_top">28dp</dimen>
+    <dimen name="empty_desc_margin_top">12dp</dimen>
+    <dimen name="empty_button_margin_top">28dp</dimen>
+    <dimen name="empty_button_width">220dp</dimen>
+    <dimen name="empty_button_height">52dp</dimen>
+    <dimen name="empty_link_margin_top">12dp</dimen>
+
+    <!-- 토스트 -->
+    <dimen name="toast_height">48dp</dimen>
+    <dimen name="toast_margin_bottom">25dp</dimen>
+    <dimen name="radius_toast">12dp</dimen>
+
+    <!-- 약속 메뉴 시트 -->
+    <dimen name="sheet_height">169dp</dimen>
+    <dimen name="sheet_handle_width">48dp</dimen>
+    <dimen name="sheet_handle_height">6dp</dimen>
+    <dimen name="sheet_handle_margin_top">15dp</dimen>
+    <dimen name="sheet_menu_icon">26dp</dimen>
+    <dimen name="sheet_menu_padding_start">29dp</dimen>
+    <dimen name="sheet_menu_text_gap">17dp</dimen>
+    <dimen name="sheet_menu_first_margin_top">11dp</dimen>
+    <dimen name="sheet_menu_row_height">44dp</dimen>
+    <dimen name="sheet_divider_margin_start">45dp</dimen>
+    <dimen name="sheet_divider_margin_end">51dp</dimen>
+    <dimen name="sheet_divider_height">1dp</dimen>
 </resources>

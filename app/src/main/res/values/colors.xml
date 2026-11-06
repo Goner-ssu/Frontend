@@ -31,4 +31,10 @@
 
     <!-- 그림자 색 (API 28+) -->
     <color name="shadow_orange">#33E65100</color>
+
+    <!-- 홈 -->
+    <color name="icon_bell">#3A3A3A</color>
+    <color name="icon_more">#FD8A15</color>
+    <color name="divider">#F3DCCB</color>
+    <color name="toast_bg">#3A2A20</color>
 </resources>

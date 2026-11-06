@@ -8,7 +8,7 @@ import androidx.annotation.Nullable;
 
 import com.goner.app.R;
 
-/** layout/view_top_bar.xml 을 include 한 뷰를 설정한다. */
+// layout/view_top_bar.xml 을 include 한 뷰를 설정한다.
 public final class TopBar {
 
     private TopBar() {
@@ -20,7 +20,7 @@ public final class TopBar {
         ((TextView) topBar.findViewById(R.id.top_bar_title)).setText(title);
     }
 
-    /** 오른쪽 텍스트 버튼(편집/완료 등). text가 null이면 숨긴다. */
+    // 오른쪽 텍스트 버튼(편집/완료 등). text가 null이면 숨긴다.
     public static void setAction(@NonNull View topBar, @Nullable CharSequence text,
                                  @Nullable View.OnClickListener onClick) {
         TextView action = topBar.findViewById(R.id.top_bar_action);
