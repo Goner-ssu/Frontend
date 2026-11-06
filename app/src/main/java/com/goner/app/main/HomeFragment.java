@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.goner.app.R;
 import com.goner.app.common.ConfirmDialog;
-import com.goner.app.common.Nav;
 import com.goner.app.common.Promise;
 import com.goner.app.common.User;
 import com.goner.app.friend.AddFriendActivity;
@@ -59,17 +58,7 @@ public class HomeFragment extends Fragment {
         unreadDot = view.findViewById(R.id.unread_dot);
         RecyclerView recycler = view.findViewById(R.id.recycler_promises);
 
-        adapter = new PromiseAdapter(uid, new PromiseAdapter.OnPromiseClickListener() {
-            @Override
-            public void onClick(Promise promise) {
-                Nav.openRadar(requireContext(), promise.id); // TODO 레이더 화면 연결되면 확인
-            }
-
-            @Override
-            public void onMenu(Promise promise) {
-                showMenu(promise);
-            }
-        });
+        adapter = new PromiseAdapter(uid, this::showMenu);
         recycler.setAdapter(adapter);
 
         view.findViewById(R.id.button_bell).setOnClickListener(v -> {

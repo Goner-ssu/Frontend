@@ -25,19 +25,18 @@ import java.util.Map;
 // 홈 약속 카드 목록
 public class PromiseAdapter extends RecyclerView.Adapter<PromiseAdapter.ViewHolder> {
 
-    public interface OnPromiseClickListener {
-        void onClick(Promise promise);
-
-        void onMenu(Promise promise); // 방장만 (길게 누르기, ⋮)
+    // 방장만 (길게 누르기, ⋮)
+    public interface OnPromiseMenuListener {
+        void onMenu(Promise promise);
     }
 
     private final SimpleDateFormat dateFormat = new SimpleDateFormat("M월 d일 (E) HH:mm", Locale.KOREA);
     private final List<Promise> items = new ArrayList<>();
     private final Map<String, User> users = new HashMap<>(); // 참여자 이름/사진
     private final String myUid;
-    private final OnPromiseClickListener listener;
+    private final OnPromiseMenuListener listener;
 
-    public PromiseAdapter(String myUid, OnPromiseClickListener listener) {
+    public PromiseAdapter(String myUid, OnPromiseMenuListener listener) {
         this.myUid = myUid;
         this.listener = listener;
     }
@@ -105,7 +104,6 @@ public class PromiseAdapter extends RecyclerView.Adapter<PromiseAdapter.ViewHold
         boolean isHost = myUid.equals(promise.hostUid);
         holder.more.setVisibility(isHost ? View.VISIBLE : View.INVISIBLE);
         holder.more.setOnClickListener(v -> listener.onMenu(promise));
-        holder.itemView.setOnClickListener(v -> listener.onClick(promise));
         holder.itemView.setOnLongClickListener(v -> {
             if (!isHost) return false;
             listener.onMenu(promise);

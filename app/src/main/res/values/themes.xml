@@ -118,6 +118,9 @@
     <style name="Text.CalendarDay">
         <item name="android:textSize">@dimen/text_17</item>
     </style>
+    <style name="Text.Body16Main">
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
 
     <!-- 하단 탭 한 칸 (선택되면 흰 알약 배경) -->
     <style name="BottomNavTab">

@@ -111,7 +111,7 @@ public class PromiseTimeFragment extends Fragment {
                 return;
             }
             draft.appointmentTime = new Timestamp(picked.getTime());
-            // TODO 3단계(장소) Fragment 만들면 ((CreatePromiseActivity) requireActivity()).showNext(...)
+            ((CreatePromiseActivity) requireActivity()).showNext(new PromisePlaceFragment());
         });
 
         updateHeader();
