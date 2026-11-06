@@ -50,6 +50,13 @@
     <string name="create_place_info">%1$s · %2$s</string>
     <string name="create_place_no_result">검색 결과가 없어요</string>
     <string name="create_place_radar_placeholder">한성이형 여기다 레이더 넣어줘요~</string>
+    <string name="create_place_test_fill">[테스트] 강남역으로 채우기</string>
+    <string name="create_friends_title">친구 추가</string>
+    <string name="create_friends_search_hint">친구 이름이나 코드로 찾기</string>
+    <string name="create_friends_notice">선택한 친구에게 초대가 가요</string>
+    <string name="create_friends_code">\@%1$s</string>
+    <string name="create_friends_empty">아직 친구가 없어요</string>
+    <string name="create_friends_remove">%1$s 선택 취소</string>
     <string-array name="calendar_weekdays">
         <item>Su</item>
         <item>Mo</item>

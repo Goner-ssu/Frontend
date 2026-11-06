@@ -97,6 +97,19 @@
             android:text="@string/create_place_radar_placeholder"
             android:textColor="@color/text_sub" />
 
+        <!-- debug 빌드에서만 보임 (카카오 키 없을 때 테스트용) -->
+        <TextView
+            android:id="@+id/button_test_place"
+            style="@style/Text.Link14"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/touch_target"
+            android:layout_gravity="bottom|center_horizontal"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/create_place_test_fill"
+            android:visibility="gone"
+            tools:visibility="visible" />
+
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycler_results"
             android:layout_width="match_parent"

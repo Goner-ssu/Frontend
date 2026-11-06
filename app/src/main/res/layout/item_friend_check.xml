@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 친구 목록 한 줄 (누르면 선택/해제) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/friend_row_padding_start"
+    android:paddingTop="@dimen/friend_row_padding_vertical"
+    android:paddingEnd="@dimen/friend_row_padding_end"
+    android:paddingBottom="@dimen/friend_row_padding_vertical">
+
+    <com.goner.app.common.AvatarView
+        android:id="@+id/avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:avatarSize="large" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/friend_row_text_gap"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_name"
+            style="@style/Text.FriendName15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="이가희" />
+
+        <TextView
+            android:id="@+id/text_code"
+            style="@style/Text.FriendCode11"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="\@gahee" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_check"
+        android:layout_width="@dimen/friend_check_size"
+        android:layout_height="@dimen/friend_check_size"
+        android:background="@drawable/bg_check_off" />
+</LinearLayout>

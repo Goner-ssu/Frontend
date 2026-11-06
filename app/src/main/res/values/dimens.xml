@@ -186,4 +186,27 @@
     <dimen name="place_map_elevation">6dp</dimen>
     <dimen name="place_item_padding_vertical">12dp</dimen>
     <dimen name="place_item_gap">2dp</dimen>
+
+    <!-- 약속 친구 선택 -->
+    <dimen name="text_10">10sp</dimen>
+    <dimen name="text_11">11sp</dimen>
+    <dimen name="friends_chips_margin_top">37dp</dimen>
+    <dimen name="friends_chips_padding_start">44dp</dimen>
+    <dimen name="friends_chip_gap">29dp</dimen>
+    <dimen name="friends_chip_name_margin_top">4dp</dimen>
+    <dimen name="friends_chips_height">72dp</dimen>
+    <dimen name="friends_search_margin_top">19dp</dimen>
+    <dimen name="friends_search_height">32dp</dimen>
+    <dimen name="friends_search_padding_start">11dp</dimen>
+    <dimen name="friends_search_icon_gap">8dp</dimen>
+    <dimen name="friends_notice_margin_top">10dp</dimen>
+    <dimen name="friends_divider_margin_top">9dp</dimen>
+    <dimen name="friends_divider_margin_horizontal">41dp</dimen>
+    <dimen name="friends_list_margin_bottom">16dp</dimen>
+    <dimen name="friend_row_padding_vertical">16dp</dimen>
+    <dimen name="friend_row_padding_start">41dp</dimen>
+    <dimen name="friend_row_padding_end">47dp</dimen>
+    <dimen name="friend_row_text_gap">10dp</dimen>
+    <dimen name="friend_check_size">20dp</dimen>
+    <dimen name="friends_empty_margin_top">40dp</dimen>
 </resources>

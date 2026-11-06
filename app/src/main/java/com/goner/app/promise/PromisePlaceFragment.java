@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.goner.app.BuildConfig;
 import com.goner.app.R;
 import com.goner.app.data.kakao.KakaoClient;
 import com.goner.app.data.kakao.PlaceResponse;
@@ -60,11 +61,25 @@ public class PromisePlaceFragment extends Fragment {
         });
 
         buttonNext.setOnClickListener(v -> {
-            // TODO 4단계(친구) Fragment 만들면 ((CreatePromiseActivity) requireActivity()).showNext(...)
+            ((CreatePromiseActivity) requireActivity()).showNext(new PromiseFriendsFragment());
         });
 
         if (hasPlace()) showPlace(); // 뒤로 왔을 때 고른 장소 다시 보여줌
         updateButton();
+
+        // 테스트용: debug 빌드에서만 버튼 보이고, 누르면 강남역으로 채움 (카카오 키 생기면 지워도 됨)
+        if (BuildConfig.DEBUG) {
+            View testButton = view.findViewById(R.id.button_test_place);
+            testButton.setVisibility(View.VISIBLE);
+            testButton.setOnClickListener(v -> {
+                PlaceResponse.Place test = new PlaceResponse.Place();
+                test.place_name = "강남역 2호선";
+                test.road_address_name = "서울 강남구 강남대로 396";
+                test.x = "127.027619";
+                test.y = "37.497952";
+                selectPlace(test);
+            });
+        }
     }
 
     // 검색창에서 엔터 → 카카오 키워드 검색

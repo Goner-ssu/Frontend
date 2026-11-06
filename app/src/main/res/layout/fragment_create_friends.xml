@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/bg_screen"
+    tools:context=".promise.PromiseFriendsFragment">
+
+    <TextView
+        android:id="@+id/text_title"
+        style="@style/Text.StepTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/create_padding"
+        android:layout_marginTop="@dimen/create_title_margin_top"
+        android:text="@string/create_friends_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 선택한 친구 (가로) -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_selected"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/friends_chips_height"
+        android:layout_marginTop="@dimen/friends_chips_margin_top"
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/friends_chips_padding_start"
+        android:paddingEnd="@dimen/create_padding"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_title"
+        tools:listitem="@layout/item_selected_friend" />
+
+    <!-- 친구 검색 -->
+    <LinearLayout
+        android:id="@+id/box_search"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/friends_search_height"
+        android:layout_marginStart="@dimen/create_padding"
+        android:layout_marginTop="@dimen/friends_search_margin_top"
+        android:layout_marginEnd="@dimen/create_padding"
+        android:background="@drawable/bg_big_input"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/friends_search_padding_start"
+        android:paddingEnd="@dimen/friends_search_padding_start"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/recycler_selected">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_search" />
+
+        <EditText
+            android:id="@+id/edit_search"
+            style="@style/Text.Label13"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/friends_search_icon_gap"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="@string/create_friends_search_hint"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:maxLines="1"
+            android:textColor="@color/text_main"
+            android:textColorHint="@color/text_hint" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/text_notice"
+        style="@style/Text.Caption12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/friends_notice_margin_top"
+        android:text="@string/create_friends_notice"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/box_search" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/sheet_divider_height"
+        android:layout_marginStart="@dimen/friends_divider_margin_horizontal"
+        android:layout_marginTop="@dimen/friends_divider_margin_top"
+        android:layout_marginEnd="@dimen/friends_divider_margin_horizontal"
+        android:background="@color/divider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_notice" />
+
+    <!-- 내 친구 목록 -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_friends"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="@dimen/friends_list_margin_bottom"
+        android:clipToPadding="false"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toTopOf="@id/button_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        tools:listitem="@layout/item_friend_check" />
+
+    <!-- 친구가 한 명도 없을 때 -->
+    <LinearLayout
+        android:id="@+id/layout_empty"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/friends_empty_margin_top"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/divider"
+        tools:visibility="visible">
+
+        <TextView
+            style="@style/Text.Title20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/create_friends_empty" />
+
+        <TextView
+            android:id="@+id/button_add_friend"
+            style="@style/Text.Link14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/empty_link_margin_top"
+            android:background="?attr/selectableItemBackground"
+            android:text="@string/home_empty_add_friend" />
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_next"
+        style="@style/Button.Step"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/create_button_margin_horizontal"
+        android:layout_marginEnd="@dimen/create_button_margin_horizontal"
+        android:layout_marginBottom="@dimen/create_button_margin_bottom"
+        android:enabled="false"
+        android:text="@string/common_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

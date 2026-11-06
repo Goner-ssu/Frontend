@@ -75,7 +75,7 @@ public class HomeFragment extends Fragment {
         listenUnread();
     }
 
-    // 내가 초대됐거나 참여한 약속 실시간으로 받아옴
+    // 내가 초대됐거나 참여한 약속 실시간으로 받아옴 알겠니???
     private void listenPromises() {
         promiseListener = db.collection("promises")
                 .whereIn("members." + uid, Arrays.asList(Promise.MEMBER_INVITED, Promise.MEMBER_JOINED))
