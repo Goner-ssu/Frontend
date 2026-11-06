@@ -1,5 +1,6 @@
 package com.goner.app.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
@@ -14,6 +15,8 @@ import com.goner.app.common.ConfirmDialog;
 import com.goner.app.common.Nav;
 import com.goner.app.common.Promise;
 import com.goner.app.common.User;
+import com.goner.app.friend.AddFriendActivity;
+import com.goner.app.promise.CreatePromiseActivity;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentSnapshot;
@@ -72,15 +75,9 @@ public class HomeFragment extends Fragment {
         view.findViewById(R.id.button_bell).setOnClickListener(v -> {
             // TODO notification/NotificationActivity 만들면 연결
         });
-        view.findViewById(R.id.button_add).setOnClickListener(v -> {
-            // TODO 7번 + 메뉴 만들면 연결
-        });
-        view.findViewById(R.id.button_create).setOnClickListener(v -> {
-            // TODO 약속 만들기 화면 만들면 연결
-        });
-        view.findViewById(R.id.button_add_friend).setOnClickListener(v -> {
-            // TODO 친구 추가 화면 만들면 연결
-        });
+        view.findViewById(R.id.button_add).setOnClickListener(v -> showAddMenu());
+        view.findViewById(R.id.button_create).setOnClickListener(v -> openCreatePromise());
+        view.findViewById(R.id.button_add_friend).setOnClickListener(v -> openAddFriend());
 
         getChildFragmentManager().setFragmentResultListener(REQUEST_DELETE, getViewLifecycleOwner(),
                 (key, result) -> deletePromise());
@@ -136,6 +133,30 @@ public class HomeFragment extends Fragment {
                     if (error != null || value == null) return;
                     unreadDot.setVisibility(value.isEmpty() ? View.GONE : View.VISIBLE);
                 });
+    }
+
+    // + 버튼 메뉴 (약속 추가 / 친구 추가)
+    private void showAddMenu() {
+        BottomSheetDialog sheet = new BottomSheetDialog(requireContext());
+        View view = getLayoutInflater().inflate(R.layout.sheet_add_menu, null);
+        view.findViewById(R.id.menu_add_promise).setOnClickListener(v -> {
+            sheet.dismiss();
+            openCreatePromise();
+        });
+        view.findViewById(R.id.menu_add_friend).setOnClickListener(v -> {
+            sheet.dismiss();
+            openAddFriend();
+        });
+        sheet.setContentView(view);
+        sheet.show();
+    }
+
+    private void openCreatePromise() {
+        startActivity(new Intent(requireContext(), CreatePromiseActivity.class));
+    }
+
+    private void openAddFriend() {
+        startActivity(new Intent(requireContext(), AddFriendActivity.class));
     }
 
     private void showMenu(Promise promise) {

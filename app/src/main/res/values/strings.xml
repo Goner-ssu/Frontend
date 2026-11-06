@@ -32,4 +32,6 @@
     <string name="delete_promise_message">삭제하면 친구들에게서도 사라져요</string>
     <string name="delete">삭제</string>
     <string name="delete_failed">삭제하지 못했어요</string>
+    <string name="menu_add_promise">약속 추가</string>
+    <string name="menu_add_friend">친구 추가</string>
 </resources>

@@ -27,6 +27,12 @@
             android:name=".main.MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".promise.CreatePromiseActivity"
+            android:exported="false" />
+        <activity
+            android:name=".friend.AddFriendActivity"
+            android:exported="false" />
     </application>
 
 </manifest>

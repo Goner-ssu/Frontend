@@ -125,4 +125,12 @@
     <dimen name="sheet_divider_margin_start">45dp</dimen>
     <dimen name="sheet_divider_margin_end">51dp</dimen>
     <dimen name="sheet_divider_height">1dp</dimen>
+
+    <!-- 홈 + 메뉴 시트 -->
+    <dimen name="add_menu_padding_start">28dp</dimen>
+    <dimen name="add_menu_icon_width">34dp</dimen>
+    <dimen name="add_menu_icon_height">28dp</dimen>
+    <dimen name="add_menu_text_gap">8dp</dimen>
+    <dimen name="add_menu_first_margin_top">5dp</dimen>
+    <dimen name="add_menu_second_margin_top">2dp</dimen>
 </resources>
