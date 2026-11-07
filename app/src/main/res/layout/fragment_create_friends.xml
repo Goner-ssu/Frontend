@@ -138,6 +138,19 @@
             android:layout_marginTop="@dimen/empty_link_margin_top"
             android:background="?attr/selectableItemBackground"
             android:text="@string/home_empty_add_friend" />
+
+        <!-- debug 빌드에서만 보임 (친구 데이터 없을 때 테스트용) -->
+        <TextView
+            android:id="@+id/button_test_friends"
+            style="@style/Text.Link14"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/touch_target"
+            android:layout_marginTop="@dimen/empty_link_margin_top"
+            android:background="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:text="@string/create_friends_test_fill"
+            android:visibility="gone"
+            tools:visibility="visible" />
     </LinearLayout>
 
     <com.google.android.material.button.MaterialButton

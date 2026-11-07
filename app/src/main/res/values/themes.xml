@@ -129,6 +129,24 @@
         <item name="android:textSize">@dimen/text_11</item>
         <item name="android:textColor">@color/text_sub</item>
     </style>
+    <style name="Text.PenaltyCard28">
+        <item name="android:textSize">@dimen/text_28</item>
+    </style>
+    <!-- 벌칙 선택 카드 한 장 (TextView, LinearLayout 둘 다 씀) -->
+    <style name="PenaltyCard" parent="Text.PenaltyCard28">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/penalty_card_gap</item>
+        <item name="android:minHeight">@dimen/penalty_card_min_height</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">@dimen/penalty_card_padding_start</item>
+        <item name="android:paddingEnd">@dimen/penalty_card_padding_end</item>
+        <item name="android:paddingTop">@dimen/penalty_card_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/penalty_card_padding_vertical</item>
+        <item name="android:background">@drawable/bg_penalty_card</item>
+        <item name="android:elevation">@dimen/penalty_card_elevation</item>
+        <item name="android:outlineSpotShadowColor">@color/shadow_orange</item>
+    </style>
     <style name="Text.ChipName10">
         <item name="android:textSize">@dimen/text_10</item>
         <item name="android:textFontWeight">500</item>

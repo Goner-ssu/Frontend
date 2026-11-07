@@ -3,6 +3,7 @@ package com.goner.app.promise;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -50,7 +51,9 @@ public class FriendCheckAdapter extends RecyclerView.Adapter<FriendCheckAdapter.
         holder.avatar.setUser(friend.getFriendUid(), friend.getNickname(), friend.getPhotoUrl());
         holder.name.setText(friend.getNickname());
         holder.code.setText(holder.itemView.getContext().getString(R.string.create_friends_code, friend.getFriendCode()));
-        holder.check.setBackgroundResource(isSelected(friend) ? R.drawable.bg_check_on : R.drawable.bg_check_off);
+        boolean selected = isSelected(friend);
+        holder.check.setBackgroundResource(selected ? R.drawable.bg_check_on : R.drawable.bg_check_off);
+        holder.check.setImageResource(selected ? R.drawable.ic_check_white : 0);
         holder.itemView.setOnClickListener(v -> listener.onFriendClick(friend));
     }
 
@@ -69,7 +72,7 @@ public class FriendCheckAdapter extends RecyclerView.Adapter<FriendCheckAdapter.
     static class ViewHolder extends RecyclerView.ViewHolder {
         AvatarView avatar;
         TextView name, code;
-        View check;
+        ImageView check;
 
         ViewHolder(View itemView) {
             super(itemView);

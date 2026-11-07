@@ -14,6 +14,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.goner.app.BuildConfig;
 import com.goner.app.R;
 import com.goner.app.data.model.Friend;
 import com.goner.app.data.repo.FriendRepo;
@@ -28,6 +29,7 @@ public class PromiseFriendsFragment extends Fragment {
     private final FriendRepo friendRepo = new FriendRepo();
     private final List<Friend> allFriends = new ArrayList<>();
 
+    private CreatePromiseViewModel viewModel;
     private AppointmentDraft draft;
     private FriendCheckAdapter friendAdapter;
     private SelectedFriendAdapter selectedAdapter;
@@ -41,7 +43,8 @@ public class PromiseFriendsFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        draft = new ViewModelProvider(requireActivity()).get(CreatePromiseViewModel.class).getDraft();
+        viewModel = new ViewModelProvider(requireActivity()).get(CreatePromiseViewModel.class);
+        draft = viewModel.getDraft();
 
         editSearch = view.findViewById(R.id.edit_search);
         layoutEmpty = view.findViewById(R.id.layout_empty);
@@ -70,8 +73,18 @@ public class PromiseFriendsFragment extends Fragment {
         view.findViewById(R.id.button_add_friend).setOnClickListener(v ->
                 startActivity(new Intent(requireContext(), AddFriendActivity.class)));
 
+        // 테스트용: debug 빌드에서만 버튼 보이고, 누르면 가짜 친구 4명으로 목록 채움 (친구 기능 생기면 지워도 됨)
+        if (BuildConfig.DEBUG) {
+            View testButton = view.findViewById(R.id.button_test_friends);
+            testButton.setVisibility(View.VISIBLE);
+            testButton.setOnClickListener(v -> {
+                viewModel.useTestFriends = true;
+                showTestFriends();
+            });
+        }
+
         buttonNext.setOnClickListener(v -> {
-            // TODO 5단계(벌칙) Fragment 만들면 ((CreatePromiseActivity) requireActivity()).showNext(...)
+            ((CreatePromiseActivity) requireActivity()).showNext(new PromisePenaltyFragment());
         });
 
         updateButton();
@@ -81,6 +94,10 @@ public class PromiseFriendsFragment extends Fragment {
     @Override
     public void onResume() {
         super.onResume();
+        if (viewModel.useTestFriends) { // 테스트 친구 쓰는 중이면 다시 불러오지 않음
+            showTestFriends();
+            return;
+        }
         friendRepo.listFriends()
                 .addOnSuccessListener(list -> {
                     if (!isAdded()) return;
@@ -92,6 +109,22 @@ public class PromiseFriendsFragment extends Fragment {
                 .addOnFailureListener(e -> {
                     if (isAdded()) layoutEmpty.setVisibility(View.VISIBLE);
                 });
+    }
+
+    // 테스트용 가짜 친구 (DB에 저장 안 함)
+    private void showTestFriends() {
+        String[][] data = {{"test1", "이가희", "gahee"}, {"test2", "이현준", "hyunjun"},
+                {"test3", "김종민", "jongmin"}, {"test4", "어나경", "nakyung"}};
+        allFriends.clear();
+        for (String[] d : data) {
+            Friend f = new Friend();
+            f.setFriendUid(d[0]);
+            f.setNickname(d[1]);
+            f.setFriendCode(d[2]);
+            allFriends.add(f);
+        }
+        showFiltered();
+        layoutEmpty.setVisibility(View.GONE);
     }
 
     // 검색어가 이름이나 친구 코드에 들어간 친구만 보여줌

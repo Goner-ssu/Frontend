@@ -209,4 +209,17 @@
     <dimen name="friend_row_text_gap">10dp</dimen>
     <dimen name="friend_check_size">20dp</dimen>
     <dimen name="friends_empty_margin_top">40dp</dimen>
+
+    <!-- 약속 벌칙 -->
+    <dimen name="penalty_list_margin_top">55dp</dimen>
+    <dimen name="penalty_card_min_height">100dp</dimen>
+    <dimen name="penalty_card_gap">10dp</dimen>
+    <dimen name="penalty_card_padding_start">40dp</dimen>
+    <dimen name="penalty_card_padding_end">24dp</dimen>
+    <dimen name="penalty_card_padding_vertical">24dp</dimen>
+    <dimen name="penalty_card_radius">20dp</dimen>
+    <dimen name="penalty_card_stroke">1dp</dimen>
+    <dimen name="penalty_card_stroke_selected">2dp</dimen>
+    <dimen name="penalty_card_elevation">2dp</dimen>
+    <dimen name="penalty_input_margin_top">8dp</dimen>
 </resources>

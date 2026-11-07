@@ -41,9 +41,12 @@
             tools:text="\@gahee" />
     </LinearLayout>
 
-    <View
+    <!-- 선택하면 주황 동그라미 + 흰 체크 -->
+    <ImageView
         android:id="@+id/view_check"
         android:layout_width="@dimen/friend_check_size"
         android:layout_height="@dimen/friend_check_size"
-        android:background="@drawable/bg_check_off" />
+        android:background="@drawable/bg_check_off"
+        android:importantForAccessibility="no"
+        android:scaleType="center" />
 </LinearLayout>

@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/bg_screen"
+    tools:context=".promise.PromisePenaltyFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        app:layout_constraintBottom_toTopOf="@id/button_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/create_padding"
+            android:paddingEnd="@dimen/create_padding"
+            android:paddingBottom="@dimen/time_content_padding_bottom">
+
+            <TextView
+                style="@style/Text.StepTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/create_title_margin_top"
+                android:text="@string/create_penalty_title" />
+
+            <!-- 밥 사기 -->
+            <TextView
+                android:id="@+id/card_meal"
+                style="@style/PenaltyCard"
+                android:layout_marginTop="@dimen/penalty_list_margin_top"
+                android:text="@string/penalty_meal" />
+
+            <!-- 커피 사기 -->
+            <TextView
+                android:id="@+id/card_coffee"
+                style="@style/PenaltyCard"
+                android:text="@string/penalty_coffee" />
+
+            <!-- 직접 입력 (선택하면 입력창 펼침) -->
+            <LinearLayout
+                android:id="@+id/card_custom"
+                style="@style/PenaltyCard"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/Text.PenaltyCard28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/penalty_custom" />
+
+                <EditText
+                    android:id="@+id/edit_custom"
+                    style="@style/Text.BigInput"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/create_input_height"
+                    android:layout_marginTop="@dimen/penalty_input_margin_top"
+                    android:background="@drawable/bg_penalty_input"
+                    android:hint="@string/penalty_custom_hint"
+                    android:importantForAutofill="no"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:paddingStart="@dimen/create_input_padding"
+                    android:paddingEnd="@dimen/create_input_padding"
+                    android:visibility="gone"
+                    tools:visibility="visible" />
+            </LinearLayout>
+
+            <!-- 벌칙 없음 -->
+            <TextView
+                android:id="@+id/card_none"
+                style="@style/PenaltyCard"
+                android:text="@string/penalty_none" />
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_next"
+        style="@style/Button.Step"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/create_button_margin_horizontal"
+        android:layout_marginEnd="@dimen/create_button_margin_horizontal"
+        android:layout_marginBottom="@dimen/create_button_margin_bottom"
+        android:enabled="false"
+        android:text="@string/common_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
