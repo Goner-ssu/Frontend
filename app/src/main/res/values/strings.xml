@@ -1,3 +1,102 @@
 <resources>
     <string name="app_name">Goner</string>
+
+    <!-- 스플래시 -->
+    <string name="splash_logo">goner</string>
+    <string name="splash_tagline">약속, 늦지 않게</string>
+
+    <!-- 공통 -->
+    <string name="common_back">뒤로 가기</string>
+    <string name="common_cancel">취소</string>
+    <string name="common_confirm">확인</string>
+    <string name="common_next">다음</string>
+
+    <!-- 하단 탭 -->
+    <string name="tab_record">기록 보기</string>
+    <string name="tab_home">홈</string>
+    <string name="tab_mypage">마이페이지</string>
+
+    <!-- 홈 -->
+    <string name="home_notification">알림</string>
+    <string name="home_add">추가</string>
+    <string name="home_more">더보기</string>
+    <string name="home_promise_info">%1$s · %2$s</string>
+    <string name="home_pending">수락 대기 %1$d/%2$d</string>
+    <string name="home_empty_title">아직 약속이 없어요</string>
+    <string name="home_empty_desc">친구와 첫 약속을 만들어 보세요\n가장 늦게 온 사람이 벌칙을 받아요</string>
+    <string name="home_empty_create">약속 만들기</string>
+    <string name="home_empty_add_friend">친구 먼저 추가하기</string>
+    <string name="home_toast_created">약속을 만들었어요 · 친구가 수락하면 알려드릴게요</string>
+    <string name="menu_edit">수정하기</string>
+    <string name="menu_delete">삭제하기</string>
+    <string name="delete_promise_title">약속을 삭제할까요?</string>
+    <string name="delete_promise_message">삭제하면 친구들에게서도 사라져요</string>
+    <string name="delete">삭제</string>
+    <string name="delete_failed">삭제하지 못했어요</string>
+    <string name="menu_add_promise">약속 추가</string>
+    <string name="menu_add_friend">친구 추가</string>
+
+    <!-- 약속 만들기 -->
+    <string name="create_name_title">약속 이름</string>
+    <string name="create_name_hint">약속 이름을 입력하세요</string>
+    <string name="create_time_title">약속 시간</string>
+    <string name="calendar_month">%1$d월</string>
+    <string name="calendar_prev">이전 달</string>
+    <string name="calendar_next">다음 달</string>
+    <string name="calendar_year">%1$d년</string>
+    <string name="create_place_title">약속 장소</string>
+    <string name="create_place_desc">아래 지도를 움직여 약속 장소를 입력해주세요</string>
+    <string name="create_place_search_hint">장소 이름으로 검색</string>
+    <string name="create_place_info">%1$s · %2$s</string>
+    <string name="create_place_no_result">검색 결과가 없어요</string>
+    <string name="create_place_radar_placeholder">한성이형 여기다 레이더 넣어줘요~</string>
+    <string name="create_place_test_fill">[테스트] 강남역으로 채우기</string>
+    <string name="create_friends_test_fill">[테스트] 친구 4명 넣기</string>
+
+    <!-- 약속 요약 / 저장 -->
+    <string name="create_summary_title">이대로 만들까요?</string>
+    <string name="summary_label_title">약속 이름</string>
+    <string name="summary_label_time">시간</string>
+    <string name="summary_label_place">장소</string>
+    <string name="summary_label_friends">친구</string>
+    <string name="summary_label_penalty">벌칙</string>
+    <string name="summary_edit">수정</string>
+    <string name="summary_friends_count">%1$d명 초대 · 나 포함 %2$d명</string>
+    <string name="summary_penalty_target">지각한 사람 모두</string>
+    <string name="summary_notice">친구들이 모두 수락하면 약속이 확정돼요</string>
+    <string name="summary_create">약속 만들기</string>
+    <string name="create_loading">로딩중..</string>
+    <string name="create_failed">약속을 만들지 못했어요. 다시 시도해 주세요</string>
+    <string name="create_need_login">로그인 후에 약속을 만들 수 있어요</string>
+
+    <!-- 약속 생성 완료 (Figma 372:203) -->
+    <string name="created_title">약속을 만들었어요!</string>
+    <string name="created_desc">%1$s님에게 초대를 보냈어요\n모두 수락하면 약속이 확정돼요</string>
+    <string name="created_me">나</string>
+    <string name="created_host">방장</string>
+    <string name="created_waiting">대기</string>
+    <string name="created_share">초대 링크 공유</string>
+    <string name="created_home">홈으로</string>
+    <string name="created_share_soon">초대 링크 공유는 준비 중이에요</string>
+    <string name="create_friends_title">친구 추가</string>
+    <string name="create_friends_search_hint">친구 이름이나 코드로 찾기</string>
+    <string name="create_friends_notice">선택한 친구에게 초대가 가요</string>
+    <string name="create_friends_code">\@%1$s</string>
+    <string name="create_friends_empty">아직 친구가 없어요</string>
+    <string name="create_friends_remove">%1$s 선택 취소</string>
+    <string name="create_penalty_title">벌칙 추가</string>
+    <string name="penalty_meal">밥 사기</string>
+    <string name="penalty_coffee">커피 사기</string>
+    <string name="penalty_custom">직접 입력</string>
+    <string name="penalty_none">벌칙 없음</string>
+    <string name="penalty_custom_hint">벌칙을 입력하세요 (20자까지)</string>
+    <string-array name="calendar_weekdays">
+        <item>Su</item>
+        <item>Mo</item>
+        <item>Tu</item>
+        <item>We</item>
+        <item>Th</item>
+        <item>Fr</item>
+        <item>Sa</item>
+    </string-array>
 </resources>

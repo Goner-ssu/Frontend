@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/promise_card_gap"
+    android:background="@drawable/bg_card_promise"
+    android:elevation="@dimen/promise_card_elevation"
+    android:foreground="?attr/selectableItemBackground"
+    android:minHeight="@dimen/promise_card_min_height"
+    android:outlineSpotShadowColor="@color/shadow_orange"
+    android:paddingStart="@dimen/promise_card_padding_start"
+    android:paddingTop="@dimen/promise_card_padding_top"
+    android:paddingBottom="@dimen/promise_card_padding_bottom">
+
+    <TextView
+        android:id="@+id/text_title"
+        style="@style/Text.PromiseTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toStartOf="@id/chip_pending"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="성수 카페 투어" />
+
+    <!-- 수락 안 한 사람 있으면 보임 -->
+    <TextView
+        android:id="@+id/chip_pending"
+        style="@style/Text.Chip12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/chip_margin_end"
+        android:background="@drawable/bg_chip"
+        android:paddingStart="@dimen/chip_padding_horizontal"
+        android:paddingTop="@dimen/chip_padding_vertical"
+        android:paddingEnd="@dimen/chip_padding_horizontal"
+        android:paddingBottom="@dimen/chip_padding_vertical"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@id/button_more"
+        app:layout_constraintEnd_toStartOf="@id/button_more"
+        app:layout_constraintTop_toTopOf="@id/button_more"
+        tools:text="수락 대기 1/3"
+        tools:visibility="visible" />
+
+    <!-- 방장만 보임 -->
+    <ImageView
+        android:id="@+id/button_more"
+        android:layout_width="@dimen/touch_target"
+        android:layout_height="@dimen/touch_target"
+        android:layout_marginEnd="@dimen/promise_more_margin_end"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/home_more"
+        android:scaleType="center"
+        android:src="@drawable/ic_more"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@id/text_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/text_title"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/text_info"
+        style="@style/Text.Body14"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/promise_card_info_margin_top"
+        android:layout_marginEnd="@dimen/promise_card_padding_start"
+        android:ellipsize="end"
+        android:maxLines="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_title"
+        tools:text="10월 31일 (토) 14:00 · 성수역 3번 출구" />
+
+    <!-- 참여자 아바타는 코드에서 넣음 -->
+    <LinearLayout
+        android:id="@+id/layout_avatars"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/promise_card_avatars_margin_top"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_info" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

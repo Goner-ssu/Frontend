@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 장소 검색 결과 한 줄 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/place_box_padding_horizontal"
+    android:paddingTop="@dimen/place_item_padding_vertical"
+    android:paddingEnd="@dimen/place_box_padding_horizontal"
+    android:paddingBottom="@dimen/place_item_padding_vertical">
+
+    <TextView
+        android:id="@+id/text_name"
+        style="@style/Text.Body16Main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:text="강남역 2호선" />
+
+    <TextView
+        android:id="@+id/text_address"
+        style="@style/Text.Label13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/place_item_gap"
+        tools:text="서울 강남구 강남대로 396" />
+</LinearLayout>

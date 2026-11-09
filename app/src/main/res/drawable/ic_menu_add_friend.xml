@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma 327:3764 친구 추가 아이콘 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="34dp"
+    android:height="28dp"
+    android:viewportWidth="34"
+    android:viewportHeight="28">
+    <group
+        android:translateX="-48"
+        android:translateY="-107">
+        <path
+            android:pathData="M70.8182,134V131.111C70.8182,129.579 70.2052,128.109 69.1141,127.026C68.023,125.942 66.5431,125.333 65,125.333H54.8182C53.2751,125.333 51.7952,125.942 50.7041,127.026C49.613,128.109 49,129.579 49,131.111V134M76.6364,115.222V123.889M81,119.556H72.2727M65.7273,113.778C65.7273,116.969 63.1224,119.556 59.9091,119.556C56.6958,119.556 54.0909,116.969 54.0909,113.778C54.0909,110.587 56.6958,108 59.9091,108C63.1224,108 65.7273,110.587 65.7273,113.778Z"
+            android:strokeWidth="2.25756"
+            android:strokeColor="@color/primary"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+    </group>
+</vector>

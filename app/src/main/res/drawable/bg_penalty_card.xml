@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 벌칙 카드: 선택되면 주황 테두리 + 연주황 배경 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_selected="true">
+        <shape>
+            <solid android:color="@color/orange_50" />
+            <stroke android:width="@dimen/penalty_card_stroke_selected" android:color="@color/primary" />
+            <corners android:radius="@dimen/penalty_card_radius" />
+        </shape>
+    </item>
+    <item>
+        <shape>
+            <solid android:color="@color/white" />
+            <stroke android:width="@dimen/penalty_card_stroke" android:color="@color/penalty_card_stroke" />
+            <corners android:radius="@dimen/penalty_card_radius" />
+        </shape>
+    </item>
+</selector>

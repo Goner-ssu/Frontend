@@ -1,9 +1,270 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Goner" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 이름은 AndroidManifest의 android:theme 과 맞추세요 -->
+    <style name="Theme.Goner" parent="Theme.Material3.Light.NoActionBar">
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorSecondary">@color/orange_300</item>
+        <item name="android:colorBackground">@color/bg_screen</item>
+        <item name="android:windowBackground">@color/bg_screen</item>
+        <item name="android:statusBarColor">@color/bg_screen</item>
+        <item name="android:windowLightStatusBar">true</item>
+        <item name="android:fontFamily">@font/ibm_plex_sans_kr</item>
+        <item name="fontFamily">@font/ibm_plex_sans_kr</item>
+        <item name="bottomSheetDialogTheme">@style/ThemeOverlay.Goner.BottomSheetDialog</item>
     </style>
 
-    <style name="Theme.Goner" parent="Base.Theme.Goner" />
+    <!-- 글자 스타일 -->
+    <style name="Text" parent="">
+        <item name="android:fontFamily">@font/ibm_plex_sans_kr</item>
+        <item name="android:textColor">@color/text_main</item>
+        <item name="android:includeFontPadding">false</item>
+    </style>
+    <style name="Text.Logo">
+        <item name="android:fontFamily">@font/anton_sc</item>
+        <item name="fontFamily">@font/anton_sc</item>
+        <item name="android:textColor">@color/primary</item>
+        <item name="android:textSize">@dimen/logo_home</item>
+    </style>
+    <style name="Text.Title28">
+        <item name="android:textSize">@dimen/text_28</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.CardTitle">
+        <item name="android:textSize">@dimen/text_26</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.Body16">
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textColor">@color/text_body</item>
+    </style>
+    <style name="Text.Label13">
+        <item name="android:textSize">@dimen/text_13</item>
+        <item name="android:textColor">@color/text_sub</item>
+    </style>
+    <style name="Text.Caption12">
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:textColor">@color/text_sub</item>
+    </style>
+    <style name="Text.Place14">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textColor">@color/text_place</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Text.Tab">
+        <item name="android:textSize">@dimen/text_13</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/text_tab_off</item>
+    </style>
+    <style name="Text.TopBarTitle">
+        <item name="android:textSize">@dimen/text_17</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.TopBarAction">
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+    <style name="Text.DialogTitle">
+        <item name="android:textSize">@dimen/text_18</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.DialogMessage">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textColor">@color/text_sub</item>
+    </style>
+    <style name="Text.PromiseTitle">
+        <item name="android:textSize">@dimen/text_22</item>
+        <item name="android:textFontWeight">700</item>
+    </style>
+    <style name="Text.Body14">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textColor">@color/text_body</item>
+    </style>
+    <style name="Text.Chip12">
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/text_body</item>
+    </style>
+    <style name="Text.Title20">
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.Link14">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+    <style name="Text.Toast14">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Text.MenuItem22">
+        <item name="android:textSize">@dimen/text_22</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.StepTitle">
+        <item name="android:textSize">@dimen/text_32</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+    <style name="Text.BigInput">
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:textColorHint">@color/text_sub</item>
+    </style>
+    <style name="Text.CalendarHeader">
+        <item name="android:textSize">@dimen/text_17</item>
+    </style>
+    <style name="Text.CalendarDay">
+        <item name="android:textSize">@dimen/text_17</item>
+    </style>
+    <style name="Text.Body16Main">
+        <item name="android:textSize">@dimen/text_16</item>
+    </style>
+    <style name="Text.FriendName15">
+        <item name="android:textSize">@dimen/text_15</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.FriendCode11">
+        <item name="android:textSize">@dimen/text_11</item>
+        <item name="android:textColor">@color/text_sub</item>
+    </style>
+    <style name="Text.PenaltyCard28">
+        <item name="android:textSize">@dimen/text_28</item>
+    </style>
+    <style name="Text.SummaryLabel12">
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:textColor">@color/text_sub</item>
+    </style>
+    <style name="Text.SummaryValue16">
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.SummarySub12">
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:textColor">@color/text_body</item>
+    </style>
+    <style name="Text.SummaryEdit13">
+        <item name="android:textSize">@dimen/text_13</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+    <style name="Text.Loading48">
+        <item name="android:textSize">@dimen/text_48</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/loading_text</item>
+    </style>
+    <!-- 요약 화면 "약속 만들기" 버튼 (피그마: 18sp 굵게) -->
+    <style name="Button.StepBold" parent="Button.Step">
+        <item name="android:textSize">@dimen/text_18</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <!-- 벌칙 선택 카드 한 장 (TextView, LinearLayout 둘 다 씀) -->
+    <style name="PenaltyCard" parent="Text.PenaltyCard28">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">@dimen/penalty_card_gap</item>
+        <item name="android:minHeight">@dimen/penalty_card_min_height</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingStart">@dimen/penalty_card_padding_start</item>
+        <item name="android:paddingEnd">@dimen/penalty_card_padding_end</item>
+        <item name="android:paddingTop">@dimen/penalty_card_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/penalty_card_padding_vertical</item>
+        <item name="android:background">@drawable/bg_penalty_card</item>
+        <item name="android:elevation">@dimen/penalty_card_elevation</item>
+        <item name="android:outlineSpotShadowColor">@color/shadow_orange</item>
+    </style>
+    <style name="Text.ChipName10">
+        <item name="android:textSize">@dimen/text_10</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:textColor">@color/text_body</item>
+    </style>
+    <!-- 약속 생성 완료 -->
+    <style name="Text.CreatedTitle26">
+        <item name="android:textSize">@dimen/text_26</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+    <style name="Text.CreatedDesc15">
+        <item name="android:textSize">@dimen/text_15</item>
+        <item name="android:textColor">@color/text_body</item>
+        <item name="lineHeight">@dimen/text_15_line_height</item>
+    </style>
+    <style name="Text.CreatedInfo14">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+    <style name="Text.CreatedName11">
+        <item name="android:textSize">@dimen/text_11</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:textColor">@color/text_body</item>
+    </style>
+    <style name="Text.CreatedChip10">
+        <item name="android:textSize">@dimen/text_10</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:paddingStart">@dimen/created_chip_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/created_chip_padding_horizontal</item>
+        <item name="android:paddingTop">@dimen/created_chip_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/created_chip_padding_vertical</item>
+    </style>
+
+    <!-- 하단 탭 한 칸 (선택되면 흰 알약 배경) -->
+    <style name="BottomNavTab">
+        <item name="android:layout_width">@dimen/nav_pill_width</item>
+        <item name="android:layout_height">@dimen/nav_pill_height</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:paddingTop">@dimen/nav_pill_padding_top</item>
+        <item name="android:outlineSpotShadowColor">@color/shadow_orange</item>
+    </style>
+
+    <!-- 메인 버튼 -->
+    <style name="Button.Primary" parent="Widget.Material3.Button">
+        <item name="android:layout_height">@dimen/button_height</item>
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="backgroundTint">@color/button_primary_bg</item>
+        <item name="cornerRadius">@dimen/radius_button</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+    </style>
+
+    <!-- 약속 만들기 단계 하단 버튼 (피그마: 55dp, 21sp, 보통 굵기) -->
+    <style name="Button.Step" parent="Button.Primary">
+        <item name="android:layout_height">@dimen/create_button_height</item>
+        <item name="android:textSize">@dimen/text_21</item>
+        <item name="android:textStyle">normal</item>
+        <item name="cornerRadius">@dimen/create_button_radius</item>
+    </style>
+
+    <!-- 보조 버튼 (취소 등) -->
+    <style name="Button.Secondary" parent="Button.Primary">
+        <item name="android:textColor">@color/text_body</item>
+        <item name="backgroundTint">@color/bg_soft</item>
+    </style>
+
+    <!-- 테두리 버튼 (흰 배경 + 주황 테두리) -->
+    <style name="Button.Outline" parent="Button.Primary">
+        <item name="android:textColor">@color/primary</item>
+        <item name="backgroundTint">@color/white</item>
+        <item name="strokeColor">@color/primary</item>
+        <item name="strokeWidth">@dimen/outline_stroke</item>
+    </style>
+
+    <!-- 바텀시트: 위쪽 모서리 26dp, 흰 배경 -->
+    <style name="ThemeOverlay.Goner.BottomSheetDialog" parent="ThemeOverlay.Material3.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Widget.Goner.BottomSheet</item>
+    </style>
+    <style name="Widget.Goner.BottomSheet" parent="Widget.Material3.BottomSheet.Modal">
+        <item name="backgroundTint">@color/white</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.Goner.BottomSheet</item>
+    </style>
+    <style name="ShapeAppearance.Goner.BottomSheet" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">@dimen/radius_card</item>
+        <item name="cornerSizeTopRight">@dimen/radius_card</item>
+        <item name="cornerSizeBottomLeft">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
 </resources>

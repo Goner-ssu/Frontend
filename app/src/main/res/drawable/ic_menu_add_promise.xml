@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma 327:3764 약속 추가 아이콘 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="28"
+    android:viewportHeight="28">
+    <group
+        android:translateX="-48"
+        android:translateY="-59">
+        <path
+            android:pathData="M62,67.8V78.2M56.8,73H67.2M75,73C75,80.1797 69.1797,86 62,86C54.8203,86 49,80.1797 49,73C49,65.8203 54.8203,60 62,60C69.1797,60 75,65.8203 75,73Z"
+            android:strokeWidth="1.93506"
+            android:strokeColor="@color/primary"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+    </group>
+</vector>

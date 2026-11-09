@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma 253:1958 (화살표 부분만 22x22로 자름) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="@dimen/calendar_arrow_size"
+    android:height="@dimen/calendar_arrow_size"
+    android:viewportWidth="22"
+    android:viewportHeight="22">
+    <group
+        android:translateX="-8.5"
+        android:translateY="-8.5">
+        <path
+            android:pathData="M16.8008,24.93L22.2204,19.5104L16.8008,14.0908"
+            android:strokeWidth="2.16783"
+            android:strokeColor="@color/icon_bell"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+    </group>
+</vector>
