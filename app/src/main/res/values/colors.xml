@@ -44,4 +44,12 @@
 
     <!-- 벌칙 카드 테두리 (orange_100 70%) -->
     <color name="penalty_card_stroke">#B3FDC591</color>
+
+    <!-- 로딩 화면 (Figma 253:2140) -->
+    <color name="loading_active">#FF8A5B</color>
+    <color name="loading_track">#66FFFFFF</color>
+    <color name="loading_glow_1">#59FFD8B8</color>
+    <color name="loading_glow_2">#40FFE7D6</color>
+    <color name="loading_text">#1D1B20</color>
+    <color name="transparent">#00000000</color>
 </resources>

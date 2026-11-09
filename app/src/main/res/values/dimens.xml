@@ -36,6 +36,7 @@
     <dimen name="card_height">135dp</dimen>
     <dimen name="avatar_small">24dp</dimen>
     <dimen name="avatar_large">48dp</dimen>
+    <dimen name="avatar_medium">36dp</dimen>
     <dimen name="icon_bell">29dp</dimen>
     <dimen name="icon_plus">39dp</dimen>
 
@@ -78,6 +79,7 @@
     <!-- 홈 약속 카드 -->
     <dimen name="text_22">22sp</dimen>
     <dimen name="text_14_line_height">21sp</dimen>
+    <dimen name="text_15_line_height">22.5sp</dimen>
     <dimen name="home_list_padding_top">49dp</dimen>
     <dimen name="home_list_padding_bottom">24dp</dimen>
     <dimen name="promise_card_gap">40dp</dimen>
@@ -222,4 +224,51 @@
     <dimen name="penalty_card_stroke_selected">2dp</dimen>
     <dimen name="penalty_card_elevation">2dp</dimen>
     <dimen name="penalty_input_margin_top">8dp</dimen>
+
+    <!-- 약속 요약 -->
+    <dimen name="summary_title_margin_start">13dp</dimen>
+    <dimen name="summary_list_margin_top">19dp</dimen>
+    <dimen name="summary_card_gap">10dp</dimen>
+    <dimen name="summary_card_padding_horizontal">16dp</dimen>
+    <dimen name="summary_card_padding_vertical">12dp</dimen>
+    <dimen name="summary_card_radius">14dp</dimen>
+    <dimen name="summary_card_elevation">3dp</dimen>
+    <dimen name="summary_text_gap">2dp</dimen>
+    <dimen name="summary_edit_gap">12dp</dimen>
+    <dimen name="summary_notice_margin_top">10dp</dimen>
+
+    <!-- 로딩 -->
+    <dimen name="text_48">48sp</dimen>
+    <dimen name="loading_elevation">10dp</dimen>
+    <dimen name="loading_indicator_size">50dp</dimen>
+    <dimen name="loading_indicator_thickness">5dp</dimen>
+    <dimen name="loading_text_margin_top">20dp</dimen>
+    <dimen name="loading_glow_1">320dp</dimen>
+    <dimen name="loading_glow_1_offset_start">-120dp</dimen>
+    <dimen name="loading_glow_1_offset_top">-80dp</dimen>
+    <dimen name="loading_glow_2">260dp</dimen>
+    <dimen name="loading_glow_2_offset_end">-80dp</dimen>
+    <dimen name="loading_glow_2_offset_bottom">-6dp</dimen>
+
+    <!-- 약속 생성 완료 -->
+    <dimen name="created_message_margin_top">86dp</dimen>
+    <dimen name="created_check_bg">112dp</dimen>
+    <dimen name="created_check_icon">52dp</dimen>
+    <dimen name="created_title_margin_top">26dp</dimen>
+    <dimen name="created_desc_margin_top">10dp</dimen>
+    <dimen name="created_card_margin_top">80dp</dimen>
+    <dimen name="created_card_padding">20dp</dimen>
+    <dimen name="created_card_gap">12dp</dimen>
+    <dimen name="created_card_elevation">6dp</dimen>
+    <dimen name="created_info_icon">18dp</dimen>
+    <dimen name="created_info_icon_gap">10dp</dimen>
+    <dimen name="created_divider">1dp</dimen>
+    <dimen name="created_member_gap">18dp</dimen>
+    <dimen name="created_member_text_gap">4dp</dimen>
+    <dimen name="created_chip_padding_horizontal">8dp</dimen>
+    <dimen name="created_chip_padding_vertical">2dp</dimen>
+    <dimen name="created_chip_radius">999dp</dimen>
+    <dimen name="created_button_gap">10dp</dimen>
+    <dimen name="created_share_width">150dp</dimen>
+    <dimen name="outline_stroke">1.5dp</dimen>
 </resources>

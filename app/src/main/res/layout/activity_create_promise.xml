@@ -78,4 +78,73 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/layout_steps" />
 
+    <!-- 저장 중 로딩 화면 (Figma 253:2140) -->
+    <FrameLayout
+        android:id="@+id/layout_loading"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/bg_screen"
+        android:clickable="true"
+        android:elevation="@dimen/loading_elevation"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:visibility="visible">
+
+        <View
+            android:layout_width="@dimen/loading_glow_1"
+            android:layout_height="@dimen/loading_glow_1"
+            android:layout_marginStart="@dimen/loading_glow_1_offset_start"
+            android:layout_marginTop="@dimen/loading_glow_1_offset_top"
+            android:background="@drawable/bg_loading_glow_1" />
+
+        <View
+            android:layout_width="@dimen/loading_glow_2"
+            android:layout_height="@dimen/loading_glow_2"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/loading_glow_2_offset_end"
+            android:layout_marginBottom="@dimen/loading_glow_2_offset_bottom"
+            android:background="@drawable/bg_loading_glow_2" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="vertical">
+
+            <com.google.android.material.progressindicator.CircularProgressIndicator
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminate="true"
+                app:indicatorColor="@color/loading_active"
+                app:indicatorSize="@dimen/loading_indicator_size"
+                app:trackColor="@color/loading_track"
+                app:trackThickness="@dimen/loading_indicator_thickness" />
+
+            <TextView
+                style="@style/Text.Loading48"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/loading_text_margin_top"
+                android:text="@string/create_loading" />
+        </LinearLayout>
+    </FrameLayout>
+
+    <!-- 생성 완료 화면 (뒤로가기·진행 바 위를 덮음) -->
+    <FrameLayout
+        android:id="@+id/created_container"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

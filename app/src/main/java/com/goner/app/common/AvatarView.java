@@ -19,7 +19,7 @@ import com.goner.app.R;
 
 /**
  * 원형 아바타. photoUrl이 있으면 사진, 없으면 이름 첫 글자를 uid 해시 색 원 위에 그린다.
- * 크기는 app:avatarSize="small|large"(24/48dp).
+ * 크기는 app:avatarSize="small|large|medium"(24/48/36dp).
  */
 public class AvatarView extends AppCompatImageView {
 
@@ -40,9 +40,10 @@ public class AvatarView extends AppCompatImageView {
     public AvatarView(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
         TypedArray a = context.obtainStyledAttributes(attrs, R.styleable.AvatarView);
-        boolean large = a.getInt(R.styleable.AvatarView_avatarSize, 0) == 1;
+        int size = a.getInt(R.styleable.AvatarView_avatarSize, 0);
         a.recycle();
-        sizePx = getResources().getDimensionPixelSize(large ? R.dimen.avatar_large : R.dimen.avatar_small);
+        int sizeRes = size == 1 ? R.dimen.avatar_large : size == 2 ? R.dimen.avatar_medium : R.dimen.avatar_small;
+        sizePx = getResources().getDimensionPixelSize(sizeRes);
 
         setScaleType(ScaleType.CENTER_CROP);
         circlePaint.setColor(ContextCompat.getColor(context, BACKGROUND_COLORS[0]));

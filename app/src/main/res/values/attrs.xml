@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <declare-styleable name="AvatarView">
-        <!-- 24dp(small) / 48dp(large) -->
+        <!-- 24dp(small) / 48dp(large) / 36dp(medium) -->
         <attr name="avatarSize" format="enum">
             <enum name="small" value="0" />
             <enum name="large" value="1" />
+            <enum name="medium" value="2" />
         </attr>
     </declare-styleable>
 </resources>

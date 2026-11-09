@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <com.goner.app.common.AvatarView
+        android:id="@+id/avatar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:avatarSize="medium" />
+
+    <TextView
+        android:id="@+id/text_name"
+        style="@style/Text.CreatedName11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/created_member_text_gap"
+        tools:text="민수" />
+
+    <!-- 방장 / 대기 -->
+    <TextView
+        android:id="@+id/text_chip"
+        style="@style/Text.CreatedChip10"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/created_member_text_gap"
+        tools:background="@drawable/bg_chip_waiting"
+        tools:text="대기" />
+</LinearLayout>

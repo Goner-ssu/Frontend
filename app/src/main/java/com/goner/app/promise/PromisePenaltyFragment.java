@@ -69,7 +69,7 @@ public class PromisePenaltyFragment extends Fragment {
         });
 
         buttonNext.setOnClickListener(v -> {
-            // TODO 13번 요약 Fragment 만들면 ((CreatePromiseActivity) requireActivity()).showNext(...)
+            ((CreatePromiseActivity) requireActivity()).showNext(new PromiseSummaryFragment());
         });
 
         showSelected();

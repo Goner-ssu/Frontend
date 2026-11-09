@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 요약 카드 한 줄: 라벨 / 값 / 보조 문구 + 오른쪽 "수정" -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/summary_card_gap"
+    android:background="@drawable/bg_summary_card"
+    android:elevation="@dimen/summary_card_elevation"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:outlineSpotShadowColor="@color/shadow_orange"
+    android:paddingStart="@dimen/summary_card_padding_horizontal"
+    android:paddingTop="@dimen/summary_card_padding_vertical"
+    android:paddingEnd="@dimen/summary_card_padding_horizontal"
+    android:paddingBottom="@dimen/summary_card_padding_vertical">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_label"
+            style="@style/Text.SummaryLabel12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="장소" />
+
+        <TextView
+            android:id="@+id/text_value"
+            style="@style/Text.SummaryValue16"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/summary_text_gap"
+            tools:text="강남역 11번 출구" />
+
+        <TextView
+            android:id="@+id/text_sub"
+            style="@style/Text.SummarySub12"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/summary_text_gap"
+            android:visibility="gone"
+            tools:text="서울 강남구 강남대로 396"
+            tools:visibility="visible" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/button_edit"
+        style="@style/Text.SummaryEdit13"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/touch_target"
+        android:layout_marginStart="@dimen/summary_edit_gap"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:text="@string/summary_edit" />
+</LinearLayout>

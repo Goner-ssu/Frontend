@@ -52,6 +52,32 @@
     <string name="create_place_radar_placeholder">한성이형 여기다 레이더 넣어줘요~</string>
     <string name="create_place_test_fill">[테스트] 강남역으로 채우기</string>
     <string name="create_friends_test_fill">[테스트] 친구 4명 넣기</string>
+
+    <!-- 약속 요약 / 저장 -->
+    <string name="create_summary_title">이대로 만들까요?</string>
+    <string name="summary_label_title">약속 이름</string>
+    <string name="summary_label_time">시간</string>
+    <string name="summary_label_place">장소</string>
+    <string name="summary_label_friends">친구</string>
+    <string name="summary_label_penalty">벌칙</string>
+    <string name="summary_edit">수정</string>
+    <string name="summary_friends_count">%1$d명 초대 · 나 포함 %2$d명</string>
+    <string name="summary_penalty_target">지각한 사람 모두</string>
+    <string name="summary_notice">친구들이 모두 수락하면 약속이 확정돼요</string>
+    <string name="summary_create">약속 만들기</string>
+    <string name="create_loading">로딩중..</string>
+    <string name="create_failed">약속을 만들지 못했어요. 다시 시도해 주세요</string>
+    <string name="create_need_login">로그인 후에 약속을 만들 수 있어요</string>
+
+    <!-- 약속 생성 완료 (Figma 372:203) -->
+    <string name="created_title">약속을 만들었어요!</string>
+    <string name="created_desc">%1$s님에게 초대를 보냈어요\n모두 수락하면 약속이 확정돼요</string>
+    <string name="created_me">나</string>
+    <string name="created_host">방장</string>
+    <string name="created_waiting">대기</string>
+    <string name="created_share">초대 링크 공유</string>
+    <string name="created_home">홈으로</string>
+    <string name="created_share_soon">초대 링크 공유는 준비 중이에요</string>
     <string name="create_friends_title">친구 추가</string>
     <string name="create_friends_search_hint">친구 이름이나 코드로 찾기</string>
     <string name="create_friends_notice">선택한 친구에게 초대가 가요</string>
