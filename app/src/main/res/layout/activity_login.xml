@@ -23,6 +23,16 @@
 
     </LinearLayout>
 
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="16dp"
+        android:indeterminateTint="@color/orange5"
+        android:visibility="invisible" />
+
+
     <com.google.android.material.button.MaterialButton
         android:id="@+id/login_button"
         android:layout_width="320dp"
@@ -33,14 +43,13 @@
         android:insetTop="0dp"
         android:insetBottom="0dp"
         android:text="Google로 시작하기"
-        android:textColor="@color/black"
+        android:textColor="@color/text_color"
         app:cornerRadius="18dp"
         app:strokeColor="@color/orange2"
         app:strokeWidth="1.5dp"
-        android:textSize="17dp"
+        android:textSize="17sp"
         android:textStyle="bold"
-        android:letterSpacing="0"
-        android:textColorHint="@color/text_color">
+        android:letterSpacing="0">
     </com.google.android.material.button.MaterialButton>
 
 </LinearLayout>
