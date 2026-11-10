@@ -80,6 +80,8 @@ public class LoginActivity extends AppCompatActivity {
                             } catch (ApiException e) {
                                 e.printStackTrace();
                             }
+                        } else {
+                            setLoading(false);
                         }
                     }
                 });
@@ -87,6 +89,7 @@ public class LoginActivity extends AppCompatActivity {
         binding.loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                setLoading(true);
                 launcher.launch(googleSignInClient.getSignInIntent());
             }
         });
@@ -126,6 +129,12 @@ public class LoginActivity extends AppCompatActivity {
                 goToMainActivity();
             }
         });
+    }
+
+
+    private void setLoading(boolean loading) {
+        binding.loginButton.setEnabled(!loading);
+        binding.progressBar.setVisibility(loading ? View.VISIBLE : View.GONE);
     }
 
     private void goToMainActivity() {
