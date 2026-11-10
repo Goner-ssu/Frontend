@@ -54,7 +54,8 @@
 
     <LinearLayout
         android:id="@+id/tab_mypage"
-        style="@style/BottomNavTab">
+        style="@style/BottomNavTab"
+        android:layout_width="@dimen/nav_pill_width_mypage">
 
         <ImageView
             android:id="@+id/tab_mypage_icon"

@@ -62,4 +62,7 @@
     <color name="qr_hint">#D9CFC9</color>
     <color name="qr_corner">#FC8914</color>
     <color name="qr_scan_button">#FFE0DD</color>
+
+    <!-- 마이페이지 프로필 수정 칩 (Figma 253:3278) -->
+    <color name="mypage_edit_chip">#FFD9D5</color>
 </resources>

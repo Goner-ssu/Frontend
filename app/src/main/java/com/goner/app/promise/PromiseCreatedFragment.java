@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.activity.OnBackPressedCallback;
 import androidx.annotation.NonNull;
@@ -16,6 +15,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.goner.app.R;
 import com.goner.app.common.AvatarView;
+import com.goner.app.common.InviteLink;
 import com.goner.app.data.model.Friend;
 import com.goner.app.main.MainActivity;
 import com.google.firebase.auth.FirebaseAuth;
@@ -66,8 +66,7 @@ public class PromiseCreatedFragment extends Fragment {
         }
 
         view.findViewById(R.id.button_share).setOnClickListener(v ->
-                // TODO 21번 초대 링크 만들면 InviteLink.appointment(id) 공유로 바꿔야 함
-                Toast.makeText(requireContext(), R.string.created_share_soon, Toast.LENGTH_SHORT).show());
+                InviteLink.shareAppointment(requireContext(), requireArguments().getString(ARG_ID)));
         view.findViewById(R.id.button_home).setOnClickListener(v -> goHome());
 
         // 여기서 뒤로가기 하면 요약으로 안 돌아가고 홈으로 감

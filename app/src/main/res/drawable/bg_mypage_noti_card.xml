@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 마이페이지 알람 카드 (Figma 253:3313) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/bg_soft" />
+    <corners android:radius="@dimen/radius_20" />
+</shape>

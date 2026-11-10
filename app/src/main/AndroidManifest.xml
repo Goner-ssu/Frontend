@@ -56,6 +56,22 @@
         <activity
             android:name=".friend.QrScanActivity"
             android:exported="false" />
+        <!-- 초대 링크 (App Links). assetlinks.json 은 docs/APP_LINKS.md 참고 -->
+        <activity
+            android:name=".friend.InviteLandingActivity"
+            android:exported="true">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="https" />
+                <data android:host="goner-ssu.web.app" />
+                <data android:pathPrefix="/i/" />
+                <data android:pathPrefix="/p/" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

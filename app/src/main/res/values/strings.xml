@@ -78,7 +78,6 @@
     <string name="created_waiting">대기</string>
     <string name="created_share">초대 링크 공유</string>
     <string name="created_home">홈으로</string>
-    <string name="created_share_soon">초대 링크 공유는 준비 중이에요</string>
     <string name="create_friends_title">친구 추가</string>
     <string name="create_friends_search_hint">친구 이름이나 코드로 찾기</string>
     <string name="create_friends_notice">선택한 친구에게 초대가 가요</string>
@@ -213,6 +212,54 @@
     <string name="qr_found">친구 코드를 찾았어요</string>
     <string name="qr_rescan">다시 스캔</string>
     <string name="qr_send_request">친구 요청 보내기</string>
+
+    <!-- 마이페이지 (Figma 253:3272) -->
+    <string name="mypage_title">마이페이지</string>
+    <string name="mypage_stat_empty">0</string>
+    <string name="mypage_no_mail_app">메일 앱이 없어요</string>
+    <string name="mypage_edit_profile">프로필 수정</string>
+    <string name="mypage_stat_appointments">참여한 약속</string>
+    <string name="mypage_stat_friends">친구</string>
+    <string name="mypage_stat_requests">받은 요청</string>
+    <string name="mypage_section_friend">친구</string>
+    <string name="mypage_friend_manage">친구 관리</string>
+    <string name="mypage_friend_count">%1$d명</string>
+    <string name="mypage_share_link">내 친구 링크 공유</string>
+    <string name="mypage_section_noti">알람 설정</string>
+    <string name="mypage_noti_toggle">알람 ON OFF</string>
+    <string name="mypage_noti_failed">알람 설정을 바꾸지 못했어요</string>
+    <string name="mypage_section_account">계정</string>
+    <string name="mypage_login_account">로그인 계정</string>
+    <string name="mypage_login_google">Google</string>
+    <string name="mypage_logout">로그아웃</string>
+    <string name="mypage_section_terms">약관 및 정보</string>
+    <string name="mypage_terms_service">이용약관</string>
+    <string name="mypage_terms_privacy">개인정보처리방침</string>
+    <string name="mypage_terms_location">위치기반서비스 이용약관</string>
+    <string name="mypage_oss">오픈소스 라이선스</string>
+    <string name="mypage_section_support">지원</string>
+    <string name="mypage_contact">문의하기</string>
+    <string name="mypage_app_version">앱 버전</string>
+    <string name="mypage_version_latest">%1$s · 최신 버전</string>
+    <string name="mypage_withdraw">회원탈퇴</string>
+    <!-- TODO 문의 받을 메일 주소 정해지면 넣기 -->
+    <string name="support_email" translatable="false"></string>
+
+    <!-- 초대 링크 진입 (Figma 253:2256 / 376:391 / 376:404) -->
+    <string name="landing_title">%1$s님이 초대했어요</string>
+    <string name="landing_desc">수락하면 바로 친구가 돼요</string>
+    <string name="landing_accept">친구 되기</string>
+    <string name="landing_later">나중에 할게요</string>
+    <string name="landing_guest_title">%1$s님이 goner에 초대했어요</string>
+    <string name="landing_guest_desc">로그인하면 바로 친구가 돼요</string>
+    <string name="landing_google">Google로 시작하기</string>
+    <string name="landing_guest_hint">처음이라면 프로필을 만든 뒤 초대 화면으로 돌아와요</string>
+    <string name="landing_already_title">이미 %1$s님과 친구예요</string>
+    <string name="landing_already_desc">친구 목록에서 바로 약속에 초대할 수 있어요</string>
+    <string name="landing_friend_list">친구 목록 보기</string>
+    <string name="landing_home">홈으로</string>
+    <string name="landing_chip_friend">친구</string>
+    <string name="invite_not_invited">초대받은 사람만 볼 수 있어요</string>
 
     <string-array name="calendar_weekdays">
         <item>Su</item>

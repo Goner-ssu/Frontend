@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
+import androidx.activity.OnBackPressedCallback;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
@@ -15,8 +16,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.goner.app.R;
+import com.goner.app.common.InviteLink;
+import com.goner.app.friend.InviteLandingActivity;
 import com.goner.app.mypage.MyPageFragment;
 import com.goner.app.record.RecordFragment;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -70,7 +74,33 @@ public class MainActivity extends AppCompatActivity {
         bottomNav.setSelectedTab(tab);
         bottomNav.setOnTabSelectedListener(this::showTab);
 
+        // 뒤로가기: 홈 말고 다른 탭이면 홈으로, 홈이면 원래대로(앱 종료)
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (bottomNav.getSelectedTab() != BottomNavView.TAB_HOME) {
+                    bottomNav.setSelectedTab(BottomNavView.TAB_HOME);
+                    showTab(BottomNavView.TAB_HOME);
+                    return;
+                }
+                setEnabled(false);
+                getOnBackPressedDispatcher().onBackPressed();
+                setEnabled(true);
+            }
+        });
+
         checkToast(getIntent());
+        if (savedInstanceState == null) openPendingInvite();
+    }
+
+    // 로그인 전에 친구 초대 링크로 들어왔던 경우: 로그인·온보딩 끝나고 홈 오면 그 초대 화면 다시 열기
+    private void openPendingInvite() {
+        if (FirebaseAuth.getInstance().getUid() == null) return;
+        String code = InviteLink.takePendingFriendCode(this);
+        if (code == null) return;
+        Intent intent = new Intent(this, InviteLandingActivity.class);
+        intent.putExtra(InviteLandingActivity.EXTRA_FRIEND_CODE, code);
+        startActivity(intent);
     }
 
     @Override

@@ -9,6 +9,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.android.gms.tasks.Tasks;
 import com.google.firebase.Timestamp;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.AggregateSource;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -52,6 +53,13 @@ public class FriendRepo {
                 .continueWith(task -> task.getResult().toObjects(Friend.class));
     }
 
+    // 친구 수 (count() 집계 쿼리라 문서를 다 안 받아옴)
+    public Task<Long> countFriends(String uid) {
+        return db.collection(DbPaths.USERS).document(uid).collection(DbPaths.FRIENDS)
+                .count().get(AggregateSource.SERVER)
+                .continueWith(task -> task.getResult().getCount());
+    }
+
     // 친구 삭제: 양쪽 friends 문서 둘 다 지움
     public Task<Void> removeFriend(String myUid, String friendUid) {
         WriteBatch batch = db.batch();
@@ -89,31 +97,43 @@ public class FriendRepo {
     // 친구 요청 수락: 서로의 friends 에 상대 정보 복사해서 넣고 요청 문서는 지움 (WriteBatch 로 한 번에)
     // TODO 보안 규칙에서 상대 friends 쓰기가 막히면 서버 함수 acceptFriendRequest 로 교체
     public Task<Void> accept(FriendRequest request) {
-        Timestamp now = Timestamp.now();
-
-        Friend sender = new Friend(); // 내 목록에 들어갈 보낸 사람
-        sender.setOwnerUid(request.getToUid());
-        sender.setFriendUid(request.getFromUid());
-        sender.setFriendCode(request.getFromFriendCode());
-        sender.setNickname(request.getFromNickname());
-        sender.setPhotoUrl(request.getFromPhotoUrl());
-        sender.setCreatedAt(now);
-
-        Friend me = new Friend(); // 보낸 사람 목록에 들어갈 나
-        me.setOwnerUid(request.getFromUid());
-        me.setFriendUid(request.getToUid());
-        me.setFriendCode(request.getToFriendCode());
-        me.setNickname(request.getToNickname());
-        me.setPhotoUrl(request.getToPhotoUrl());
-        me.setCreatedAt(now);
-
         WriteBatch batch = db.batch();
-        batch.set(db.collection(DbPaths.USERS).document(request.getToUid())
-                .collection(DbPaths.FRIENDS).document(request.getFromUid()), sender);
-        batch.set(db.collection(DbPaths.USERS).document(request.getFromUid())
-                .collection(DbPaths.FRIENDS).document(request.getToUid()), me);
+        putFriendPair(batch,
+                request.getToUid(), request.getToFriendCode(), request.getToNickname(), request.getToPhotoUrl(),
+                request.getFromUid(), request.getFromFriendCode(), request.getFromNickname(), request.getFromPhotoUrl());
         batch.delete(db.collection(DbPaths.FRIEND_REQUESTS).document(request.getId()));
         return batch.commit();
+    }
+
+    // 초대 링크로 바로 친구 되기: accept 와 같은데 지울 요청 문서가 없음
+    public Task<Void> addFriend(User me, User other) {
+        WriteBatch batch = db.batch();
+        putFriendPair(batch,
+                me.getUid(), me.getFriendCode(), me.getNickname(), me.getPhotoUrl(),
+                other.getUid(), other.getFriendCode(), other.getNickname(), other.getPhotoUrl());
+        return batch.commit();
+    }
+
+    // users/{a}/friends/{b} 에 b 정보, users/{b}/friends/{a} 에 a 정보 (서로 복사)
+    private void putFriendPair(WriteBatch batch,
+                               String aUid, String aCode, String aName, String aPhoto,
+                               String bUid, String bCode, String bName, String bPhoto) {
+        Timestamp now = Timestamp.now();
+        batch.set(db.collection(DbPaths.USERS).document(aUid).collection(DbPaths.FRIENDS).document(bUid),
+                friendOf(aUid, bUid, bCode, bName, bPhoto, now));
+        batch.set(db.collection(DbPaths.USERS).document(bUid).collection(DbPaths.FRIENDS).document(aUid),
+                friendOf(bUid, aUid, aCode, aName, aPhoto, now));
+    }
+
+    private Friend friendOf(String ownerUid, String friendUid, String code, String name, String photo, Timestamp now) {
+        Friend f = new Friend();
+        f.setOwnerUid(ownerUid);
+        f.setFriendUid(friendUid);
+        f.setFriendCode(code);
+        f.setNickname(name);
+        f.setPhotoUrl(photo);
+        f.setCreatedAt(now);
+        return f;
     }
 
     // 요청 지우기 = 거절(받은 쪽) / 취소(보낸 쪽) 둘 다 문서 삭제
@@ -143,15 +163,20 @@ public class FriendRepo {
         });
     }
 
-    // 친구 코드로 찾기 (정확히 일치만): friendCodes/{code} → uid → users/{uid}, 그다음 나와의 관계까지
-    public Task<SearchResult> search(String code, String myUid) {
+    // 친구 코드로 사람만 찾기 (정확히 일치만): friendCodes/{code} → uid → users/{uid}. 없으면 null
+    public Task<User> findByCode(String code) {
         return db.collection(DbPaths.FRIEND_CODES).document(code).get()
                 .continueWithTask(task -> {
                     FriendCode fc = task.getResult().toObject(FriendCode.class);
                     if (fc == null || fc.getUid() == null) return Tasks.forResult((User) null);
                     return db.collection(DbPaths.USERS).document(fc.getUid()).get()
                             .continueWith(t -> t.getResult().toObject(User.class));
-                })
+                });
+    }
+
+    // 코드로 찾고 나와의 관계까지 (친구 추가 검색, QR, 초대 링크)
+    public Task<SearchResult> search(String code, String myUid) {
+        return findByCode(code)
                 .continueWithTask(task -> {
                     SearchResult result = new SearchResult();
                     result.user = task.getResult();

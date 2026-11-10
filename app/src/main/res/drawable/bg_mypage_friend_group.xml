@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 마이페이지 친구 묶음 (흰 바탕, 줄 사이 2dp 가 흰색으로 보임) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/white" />
+    <corners android:radius="@dimen/radius_20" />
+</shape>

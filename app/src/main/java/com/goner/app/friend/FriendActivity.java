@@ -21,12 +21,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.util.List;
 
 // 친구 탭: 홈(내 코드 + 친구 목록) / 받은 요청 / 보낸 요청
-// 들어오는 곳: 홈 "친구 먼저 추가하기" (TODO 마이페이지 "친구 관리" 만들면 거기서도)
+// 들어오는 곳: 홈 "친구 먼저 추가하기", 마이페이지 "친구 관리" / "받은 요청"(EXTRA_TAB = TAB_RECEIVED)
 public class FriendActivity extends AppCompatActivity {
 
-    private static final int TAB_HOME = 0;
-    private static final int TAB_RECEIVED = 1;
-    private static final int TAB_SENT = 2;
+    // 처음 열 탭
+    public static final String EXTRA_TAB = "tab";
+    public static final int TAB_HOME = 0;
+    public static final int TAB_RECEIVED = 1;
+    public static final int TAB_SENT = 2;
 
     private static final String REQUEST_DELETE_FRIEND = "delete_friend";
     private static final String REQUEST_CANCEL = "cancel_request";
@@ -54,6 +56,8 @@ public class FriendActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             tab = savedInstanceState.getInt(KEY_TAB, TAB_HOME);
             pendingId = savedInstanceState.getString(KEY_PENDING_ID);
+        } else {
+            tab = getIntent().getIntExtra(EXTRA_TAB, TAB_HOME);
         }
 
         textTitle = findViewById(R.id.text_title);

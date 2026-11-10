@@ -75,19 +75,23 @@ public class InviteDetailActivity extends AppCompatActivity {
         load(savedInstanceState == null);
     }
 
-    // 약속 + 참여자 둘 다 받아서 화면 채움
+    // 약속 먼저 읽고, 내가 참여자면 참여자 목록까지 받아서 화면 채움
+    // (링크로 들어온 사람이 참여자가 아니면 참여자 목록은 안 읽고 안내만)
     private void load(boolean firstOpen) {
-        Tasks.whenAllSuccess(appointmentRepo.get(appointmentId), appointmentRepo.listParticipants(appointmentId))
-                .addOnSuccessListener(results -> {
-                    Appointment a = (Appointment) results.get(0);
-                    if (a == null) {
-                        loadFailed();
+        appointmentRepo.get(appointmentId)
+                .continueWithTask(task -> {
+                    Appointment a = task.getResult();
+                    if (a == null) throw new IllegalStateException("약속 없음");
+                    appointment = a;
+                    if (!a.getParticipantUids().contains(uid)) return Tasks.forResult((List<Participant>) null);
+                    return appointmentRepo.listParticipants(appointmentId);
+                })
+                .addOnSuccessListener(participants -> {
+                    if (participants == null) {
+                        showNotInvited();
                         return;
                     }
-                    @SuppressWarnings("unchecked")
-                    List<Participant> participants = (List<Participant>) results.get(1);
-                    appointment = a;
-                    bind(a, participants);
+                    bind(appointment, participants);
 
                     String action = getIntent().getStringExtra(EXTRA_ACTION);
                     if (!firstOpen || action == null) return;
@@ -95,6 +99,14 @@ public class InviteDetailActivity extends AppCompatActivity {
                     else if (action.equals(ACTION_REJECT)) showRejectDialog();
                 })
                 .addOnFailureListener(e -> loadFailed());
+    }
+
+    // "초대받은 사람만 볼 수 있어요" 만 보이고 안내·버튼 숨김
+    private void showNotInvited() {
+        progress.setVisibility(View.GONE);
+        findViewById(R.id.text_not_invited).setVisibility(View.VISIBLE);
+        findViewById(R.id.layout_location_notice).setVisibility(View.GONE);
+        findViewById(R.id.layout_cta).setVisibility(View.GONE);
     }
 
     private void loadFailed() {

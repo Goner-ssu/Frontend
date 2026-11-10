@@ -224,10 +224,21 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center" />
+
+        <!-- 링크로 들어왔는데 내가 참여자가 아닐 때 -->
+        <TextView
+            android:id="@+id/text_not_invited"
+            style="@style/Text.DialogMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/invite_not_invited"
+            android:visibility="gone" />
     </FrameLayout>
 
     <!-- 위치 공유 안내 -->
     <LinearLayout
+        android:id="@+id/layout_location_notice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/screen_padding"
@@ -258,6 +269,7 @@
 
     <!-- 거절 / 참여하기 -->
     <LinearLayout
+        android:id="@+id/layout_cta"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/screen_padding"

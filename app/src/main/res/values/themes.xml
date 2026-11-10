@@ -371,6 +371,77 @@
         <item name="android:paddingBottom">@dimen/qr_chip_padding_vertical</item>
     </style>
 
+    <!-- 마이페이지 -->
+    <style name="Text.MyPageName18">
+        <item name="android:textSize">@dimen/text_18</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.MyPageEdit12">
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.MyPageRow15">
+        <item name="android:textSize">@dimen/text_15</item>
+    </style>
+    <style name="Text.MyPageBadge11">
+        <item name="android:textSize">@dimen/text_11</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <!-- 친구 묶음 한 줄 (52dp, Figma 253:3291) -->
+    <style name="MyPageFriendRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/mypage_friend_row_height</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/bg_soft</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:paddingStart">@dimen/mypage_friend_row_padding_start</item>
+        <item name="android:paddingEnd">@dimen/mypage_row_padding_end</item>
+    </style>
+    <!-- 계정/약관/지원 메뉴 한 줄 (Figma 380:353). 두 번째 줄부터 위 1dp 띄워서 선처럼 보이게 -->
+    <style name="MyPageMenuRow">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@color/bg_input</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:paddingStart">@dimen/mypage_menu_row_padding_start</item>
+        <item name="android:paddingEnd">@dimen/mypage_menu_row_padding_end</item>
+        <item name="android:paddingTop">@dimen/mypage_menu_row_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/mypage_menu_row_padding_vertical</item>
+    </style>
+    <style name="MyPageMenuRow.Next">
+        <item name="android:layout_marginTop">@dimen/mypage_menu_divider</item>
+    </style>
+    <style name="MyPageRowText" parent="Text.MyPageRow15">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+    </style>
+    <style name="MyPageChevron">
+        <item name="android:layout_width">@dimen/mypage_chevron</item>
+        <item name="android:layout_height">@dimen/mypage_chevron</item>
+        <item name="android:src">@drawable/ic_chevron_small</item>
+        <item name="android:importantForAccessibility">no</item>
+    </style>
+    <style name="MyPageSection" parent="Text.SummaryLabel12">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginBottom">@dimen/mypage_section_label_gap</item>
+    </style>
+
+    <!-- 초대 링크 진입 -->
+    <style name="Text.LandingTitle22">
+        <item name="android:textSize">@dimen/text_22</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.LandingGoogle17">
+        <item name="android:textSize">@dimen/text_17</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+
     <!-- 하단 탭 한 칸 (선택되면 흰 알약 배경) -->
     <style name="BottomNavTab">
         <item name="android:layout_width">@dimen/nav_pill_width</item>

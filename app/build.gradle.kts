@@ -3,6 +3,7 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.services)
+    alias(libs.plugins.oss.licenses)
 }
 
 android {
@@ -67,4 +68,6 @@ dependencies {
     implementation(libs.camera.lifecycle)
     implementation(libs.camera.view)
     implementation(libs.mlkit.barcode)
+    // 마이페이지 오픈소스 라이선스 화면
+    implementation(libs.oss.licenses)
 }
