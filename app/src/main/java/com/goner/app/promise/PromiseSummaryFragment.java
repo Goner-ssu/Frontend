@@ -119,7 +119,7 @@ public class PromiseSummaryFragment extends Fragment {
                     // 수정이면 홈으로 가서 토스트
                     Intent intent = new Intent(requireContext(), MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    intent.putExtra(MainActivity.EXTRA_PROMISE_CREATED, true);
+                    intent.putExtra(MainActivity.EXTRA_TOAST, getString(R.string.home_toast_created));
                     startActivity(intent);
                     requireActivity().finish();
                 })

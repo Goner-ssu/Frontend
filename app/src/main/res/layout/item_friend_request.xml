@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 친구 요청 한 줄 (Figma 376:172). 보낸 요청은 요청 취소, 받은 요청은 수락/거절 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/request_row_gap"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/request_row_padding_vertical"
+    android:paddingBottom="@dimen/request_row_padding_vertical">
+
+    <com.goner.app.common.AvatarView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/invite_avatar"
+        android:layout_height="@dimen/invite_avatar" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/friend_item_text_gap"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/text_name"
+            style="@style/Text.FriendName15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="박효철" />
+
+        <TextView
+            android:id="@+id/text_info"
+            style="@style/Text.SummaryLabel12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/invite_text_gap"
+            tools:text="\@hyo1234 · 방금 전 보냄" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/button_cancel"
+        style="@style/Text.FriendPill13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_pill_outline"
+        android:text="@string/request_cancel"
+        android:textColor="@color/primary" />
+
+    <TextView
+        android:id="@+id/button_accept"
+        style="@style/Text.FriendPill13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_chip_host"
+        android:text="@string/noti_accept"
+        android:textColor="@color/white"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/button_reject"
+        style="@style/Text.FriendPill13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/request_button_gap"
+        android:background="@drawable/bg_pill_outline"
+        android:text="@string/noti_reject"
+        android:textColor="@color/primary"
+        android:visibility="gone" />
+</LinearLayout>

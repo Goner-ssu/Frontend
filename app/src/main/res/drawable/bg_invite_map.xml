@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 지도 미리보기 자리 (레이더 담당) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/bg_input" />
+    <stroke android:width="@dimen/invite_card_stroke" android:color="@color/orange_100" />
+    <corners android:radius="@dimen/radius_input" />
+</shape>

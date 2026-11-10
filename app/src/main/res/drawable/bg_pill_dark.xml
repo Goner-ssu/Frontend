@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- QR 화면 하단 칩 (플래시 / 코드로 검색) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/text_body" />
+    <corners android:radius="@dimen/created_chip_radius" />
+</shape>

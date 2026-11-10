@@ -20,8 +20,8 @@ import com.goner.app.record.RecordFragment;
 
 public class MainActivity extends AppCompatActivity {
 
-    // 약속 만들기 화면에서 돌아올 때 이 값 true로 넣어주면 토스트 뜸
-    public static final String EXTRA_PROMISE_CREATED = "promise_created";
+    // 다른 화면에서 홈으로 돌아올 때 이 값에 문구 넣어주면 토스트 뜸 (약속 수정, 초대 참여)
+    public static final String EXTRA_TOAST = "toast";
 
     private static final String[] TAGS = {"record", "home", "mypage"};
     private static final String KEY_TAB = "tab";
@@ -70,13 +70,13 @@ public class MainActivity extends AppCompatActivity {
         bottomNav.setSelectedTab(tab);
         bottomNav.setOnTabSelectedListener(this::showTab);
 
-        checkCreatedToast(getIntent());
+        checkToast(getIntent());
     }
 
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        checkCreatedToast(intent);
+        checkToast(intent);
     }
 
     @Override
@@ -94,12 +94,14 @@ public class MainActivity extends AppCompatActivity {
         ft.commit();
     }
 
-    private void checkCreatedToast(Intent intent) {
-        if (!intent.getBooleanExtra(EXTRA_PROMISE_CREATED, false)) return;
-        intent.removeExtra(EXTRA_PROMISE_CREATED); // 화면 돌려도 다시 안 뜨게
+    private void checkToast(Intent intent) {
+        String text = intent.getStringExtra(EXTRA_TOAST);
+        if (text == null) return;
+        intent.removeExtra(EXTRA_TOAST); // 화면 돌려도 다시 안 뜨게
 
         bottomNav.setSelectedTab(BottomNavView.TAB_HOME);
         showTab(BottomNavView.TAB_HOME);
+        toast.setText(text);
         toast.setVisibility(View.VISIBLE);
         toast.removeCallbacks(hideToast);
         toast.postDelayed(hideToast, TOAST_DURATION);

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 전체 선택 안 됐을 때 (Figma엔 없어서 테두리만) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/white" />
+    <stroke
+        android:width="@dimen/outline_stroke"
+        android:color="@color/text_hint" />
+    <corners android:radius="@dimen/noti_select_all_radius" />
+</shape>

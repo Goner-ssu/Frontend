@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 알림 한 줄 (Figma 253:2410). 그룹 제목(오늘/이번 주)은 그룹 첫 줄에서만 보임 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_group"
+        style="@style/Text.NotiGroup13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingTop="@dimen/noti_group_padding_top"
+        android:paddingBottom="@dimen/noti_group_padding_bottom"
+        tools:text="오늘" />
+
+    <!-- 배경색은 코드에서 (안 읽음 bg_soft / 읽음 white) -->
+    <FrameLayout
+        android:id="@+id/layout_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:foreground="?attr/selectableItemBackground"
+        tools:background="@color/bg_soft">
+
+        <LinearLayout
+            android:id="@+id/layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/screen_padding"
+            android:paddingTop="@dimen/noti_row_padding_vertical"
+            android:paddingEnd="@dimen/screen_padding"
+            android:paddingBottom="@dimen/noti_row_padding_vertical">
+
+            <!-- 편집 모드에서만 보이는 체크박스 -->
+            <ImageView
+                android:id="@+id/image_check"
+                android:layout_width="@dimen/noti_check_box"
+                android:layout_height="@dimen/noti_check_box"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/noti_row_gap"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_check_box_off"
+                android:visibility="gone"
+                tools:visibility="visible" />
+
+            <!-- 아바타 + 오른쪽 아래 종류 뱃지 -->
+            <FrameLayout
+                android:layout_width="@dimen/noti_profile_size"
+                android:layout_height="@dimen/noti_profile_size">
+
+                <com.goner.app.common.AvatarView
+                    android:id="@+id/avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:avatarSize="large" />
+
+                <ImageView
+                    android:id="@+id/image_badge"
+                    android:layout_width="@dimen/noti_badge_size"
+                    android:layout_height="@dimen/noti_badge_size"
+                    android:layout_gravity="bottom|end"
+                    android:background="@drawable/bg_noti_badge"
+                    android:importantForAccessibility="no"
+                    android:scaleType="center"
+                    tools:src="@drawable/ic_noti_friend" />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/noti_row_gap"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingEnd="@dimen/noti_content_padding_end">
+
+                <TextView
+                    android:id="@+id/text_title"
+                    style="@style/Text.NotiRowTitle15"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="정하늘님이 친구 요청을 보냈어요" />
+
+                <TextView
+                    android:id="@+id/text_sub"
+                    style="@style/Text.Label13"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/noti_text_gap"
+                    tools:text="\@haneul" />
+
+                <TextView
+                    android:id="@+id/text_time"
+                    style="@style/Text.NotiTime12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/noti_text_gap"
+                    tools:text="2시간 전" />
+
+                <!-- 친구 요청만 수락/거절 -->
+                <LinearLayout
+                    android:id="@+id/layout_buttons"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/noti_buttons_margin_top"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/button_accept"
+                        style="@style/Text.NotiButton14"
+                        android:layout_width="@dimen/noti_button_width"
+                        android:layout_height="@dimen/noti_button_height"
+                        android:background="@drawable/bg_noti_accept"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="@string/noti_accept"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/button_reject"
+                        style="@style/Text.NotiButton14"
+                        android:layout_width="@dimen/noti_button_width"
+                        android:layout_height="@dimen/noti_button_height"
+                        android:layout_marginStart="@dimen/noti_button_gap"
+                        android:background="@drawable/bg_noti_reject"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:text="@string/noti_reject"
+                        android:textColor="@color/primary" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 안 읽음 점 -->
+        <View
+            android:id="@+id/view_unread"
+            android:layout_width="@dimen/unread_dot"
+            android:layout_height="@dimen/unread_dot"
+            android:layout_gravity="top|end"
+            android:layout_marginTop="@dimen/noti_dot_margin"
+            android:layout_marginEnd="@dimen/noti_dot_margin"
+            android:background="@drawable/bg_unread_dot" />
+    </FrameLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/noti_divider"
+        android:background="@color/bg_soft" />
+</LinearLayout>

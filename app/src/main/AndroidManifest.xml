@@ -3,6 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <!-- QR 스캔 (카메라 없는 기기도 설치는 되게) -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -26,6 +31,9 @@
             android:name=".auth.LoginActivity"
             android:exported="false" />
         <activity
+            android:name=".auth.OnboardingActivity"
+            android:exported="false" />
+        <activity
             android:name=".main.MainActivity"
             android:exported="false"
             android:windowSoftInputMode="adjustResize" />
@@ -35,6 +43,18 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".friend.AddFriendActivity"
+            android:exported="false" />
+        <activity
+            android:name=".notification.NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".promise.InviteDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".friend.FriendActivity"
+            android:exported="false" />
+        <activity
+            android:name=".friend.QrScanActivity"
             android:exported="false" />
     </application>
 

@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 알림 목록의 약속 초대 (크게, Figma 370:98). id 는 item_notification 과 같게 맞춤 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text_group"
+        style="@style/Text.NotiGroup13"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingTop="@dimen/noti_group_padding_top"
+        android:paddingBottom="@dimen/noti_group_padding_bottom"
+        tools:text="오늘" />
+
+    <LinearLayout
+        android:id="@+id/layout_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/screen_padding"
+        android:layout_marginTop="@dimen/invite_card_margin_vertical"
+        android:layout_marginEnd="@dimen/screen_padding"
+        android:layout_marginBottom="@dimen/invite_card_margin_vertical"
+        android:background="@drawable/bg_invite_card"
+        android:foreground="?attr/selectableItemBackground"
+        android:orientation="vertical"
+        android:padding="@dimen/invite_card_padding">
+
+        <LinearLayout
+            android:id="@+id/layout_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <!-- 편집 모드에서만 -->
+            <ImageView
+                android:id="@+id/image_check"
+                android:layout_width="@dimen/noti_check_box"
+                android:layout_height="@dimen/noti_check_box"
+                android:layout_gravity="center_vertical"
+                android:layout_marginEnd="@dimen/invite_card_gap"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_check_box_off"
+                android:visibility="gone" />
+
+            <com.goner.app.common.AvatarView
+                android:id="@+id/avatar"
+                android:layout_width="@dimen/invite_avatar"
+                android:layout_height="@dimen/invite_avatar" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/invite_card_gap"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_title"
+                    style="@style/Text.InviteCardTitle14"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:text="김한성님이 약속에 초대했어요" />
+
+                <TextView
+                    android:id="@+id/text_sub"
+                    style="@style/Text.SummarySub12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/invite_text_gap"
+                    tools:text="홍대 저녁 모임 · 10월 24일 (토) 19:00" />
+
+                <TextView
+                    android:id="@+id/text_time"
+                    style="@style/Text.SummaryLabel12"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/invite_text_gap"
+                    tools:text="강남역 11번 출구 · 방금 전" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_unread"
+                android:layout_width="@dimen/unread_dot"
+                android:layout_height="@dimen/unread_dot"
+                android:layout_marginStart="@dimen/invite_card_gap"
+                android:background="@drawable/bg_unread_dot" />
+        </LinearLayout>
+
+        <!-- 참여하기 / 거절 / 자세히 보기 -->
+        <LinearLayout
+            android:id="@+id/layout_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/invite_card_gap"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/invite_buttons_padding_start">
+
+            <TextView
+                android:id="@+id/button_accept"
+                style="@style/Text.InvitePill13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_chip_host"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="@string/invite_join"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/button_reject"
+                style="@style/Text.InvitePill13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/invite_pill_gap"
+                android:background="@drawable/bg_pill_outline"
+                android:foreground="?attr/selectableItemBackground"
+                android:text="@string/invite_reject"
+                android:textColor="@color/primary" />
+
+            <TextView
+                android:id="@+id/button_detail"
+                style="@style/Text.InvitePill13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/invite_pill_gap"
+                android:background="@drawable/bg_pill_soft"
+                android:foreground="?attr/selectableItemBackground"
+                android:paddingStart="@dimen/invite_detail_pill_padding_horizontal"
+                android:paddingEnd="@dimen/invite_detail_pill_padding_horizontal"
+                android:text="@string/invite_detail"
+                android:textColor="@color/text_body" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/text_notice"
+            style="@style/Text.InviteNotice11"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/invite_card_gap"
+            android:text="@string/invite_notice_short" />
+    </LinearLayout>
+</LinearLayout>

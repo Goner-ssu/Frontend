@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 초대 상세 위치 공유 안내 (Figma 370:219) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="18dp"
+    android:height="18dp"
+    android:viewportWidth="18"
+    android:viewportHeight="18">
+    <path
+        android:pathData="M15,9.7501C15,13.5001 12.375,15.3751 9.255,16.4626C9.0916,16.518 8.9142,16.5153 8.7525,16.4551C5.625,15.3751 3,13.5001 3,9.7501V4.5001C3,4.3012 3.079,4.1104 3.2197,3.9698C3.3603,3.8291 3.5511,3.7501 3.75,3.7501C5.25,3.7501 7.125,2.8501 8.43,1.7101C8.5889,1.5743 8.791,1.4998 9,1.4998C9.209,1.4998 9.4111,1.5743 9.57,1.7101C10.8825,2.8576 12.75,3.7501 14.25,3.7501C14.4489,3.7501 14.6397,3.8291 14.7803,3.9698C14.921,4.1104 15,4.3012 15,4.5001V9.7501Z"
+        android:strokeWidth="1.5"
+        android:strokeColor="@color/text_body"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

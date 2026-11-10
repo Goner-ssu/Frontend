@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 친구 목록 한 줄 (Figma 253:2172) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/friend_item_height"
+    android:layout_marginBottom="@dimen/friend_item_gap"
+    android:background="@drawable/bg_friend_row"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="@dimen/friend_item_padding_horizontal"
+    android:paddingEnd="@dimen/friend_item_padding_horizontal">
+
+    <com.goner.app.common.AvatarView
+        android:id="@+id/avatar"
+        android:layout_width="@dimen/friend_item_avatar"
+        android:layout_height="@dimen/friend_item_avatar" />
+
+    <TextView
+        android:id="@+id/text_name"
+        style="@style/Text.FriendCount16"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/friend_item_text_gap"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:maxLines="1"
+        tools:text="이가희" />
+
+    <!-- ··· 누르면 친구 삭제 -->
+    <TextView
+        android:id="@+id/button_more"
+        style="@style/Text.FriendMore22"
+        android:layout_width="@dimen/touch_target"
+        android:layout_height="@dimen/touch_target"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/home_more"
+        android:gravity="center"
+        android:text="@string/friend_more" />
+</LinearLayout>

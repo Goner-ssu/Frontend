@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 연한 알약 (자세히 보기, 참여 칩, 참여 확정 칩) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/orange_50" />
+    <corners android:radius="@dimen/created_chip_radius" />
+</shape>

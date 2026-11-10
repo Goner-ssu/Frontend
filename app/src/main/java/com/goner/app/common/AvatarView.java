@@ -19,7 +19,7 @@ import com.goner.app.R;
 
 /**
  * 원형 아바타. photoUrl이 있으면 사진, 없으면 이름 첫 글자를 uid 해시 색 원 위에 그린다.
- * 크기는 app:avatarSize="small|large|medium"(24/48/36dp).
+ * 크기는 app:avatarSize="small|large|medium"(24/48/36dp). layout_width 를 dp 로 정해 주면 그 크기로 그림.
  */
 public class AvatarView extends AppCompatImageView {
 
@@ -70,7 +70,10 @@ public class AvatarView extends AppCompatImageView {
 
     @Override
     protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
-        setMeasuredDimension(sizePx, sizePx);
+        // 폭을 직접 정했으면(예: 40dp) 그 크기, 아니면 avatarSize
+        int size = MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.EXACTLY
+                ? MeasureSpec.getSize(widthMeasureSpec) : sizePx;
+        setMeasuredDimension(size, size);
     }
 
     @Override

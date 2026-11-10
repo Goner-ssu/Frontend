@@ -61,4 +61,10 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson)
+    // QR: 내 코드 QR 만들기(ZXing) + 카메라로 읽기(CameraX + ML Kit)
+    implementation(libs.zxing.core)
+    implementation(libs.camera.camera2)
+    implementation(libs.camera.lifecycle)
+    implementation(libs.camera.view)
+    implementation(libs.mlkit.barcode)
 }

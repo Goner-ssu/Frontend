@@ -52,4 +52,14 @@
     <color name="loading_glow_2">#40FFE7D6</color>
     <color name="loading_text">#1D1B20</color>
     <color name="transparent">#00000000</color>
+
+    <!-- 알림 편집 체크박스 (Figma 377:418) -->
+    <color name="icon_check_dark">#1D1B20</color>
+
+    <!-- QR 스캔 (Figma 376:300) -->
+    <color name="qr_bg">#2A211C</color>
+    <color name="qr_dim">#66000000</color>
+    <color name="qr_hint">#D9CFC9</color>
+    <color name="qr_corner">#FC8914</color>
+    <color name="qr_scan_button">#FFE0DD</color>
 </resources>

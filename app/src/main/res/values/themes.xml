@@ -57,7 +57,7 @@
         <item name="android:textColor">@color/text_tab_off</item>
     </style>
     <style name="Text.TopBarTitle">
-        <item name="android:textSize">@dimen/text_17</item>
+        <item name="android:textSize">@dimen/text_22</item>
         <item name="android:textFontWeight">600</item>
     </style>
     <style name="Text.TopBarAction">
@@ -206,6 +206,169 @@
         <item name="android:paddingEnd">@dimen/created_chip_padding_horizontal</item>
         <item name="android:paddingTop">@dimen/created_chip_padding_vertical</item>
         <item name="android:paddingBottom">@dimen/created_chip_padding_vertical</item>
+    </style>
+
+    <!-- 알림 -->
+    <style name="Text.NotiTitle22">
+        <item name="android:textSize">@dimen/text_22</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+    <style name="Text.NotiAction16">
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Text.NotiGroup13">
+        <item name="android:textSize">@dimen/text_13</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/text_sub</item>
+    </style>
+    <style name="Text.NotiRowTitle15">
+        <item name="android:textSize">@dimen/text_15</item>
+    </style>
+    <style name="Text.NotiTime12">
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:textColor">@color/text_hint</item>
+    </style>
+    <style name="Text.NotiButton14">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.NotiSelectAll14">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+    <style name="Text.NotiCount14">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/primary</item>
+    </style>
+
+    <!-- 약속 초대 받기 -->
+    <style name="Text.InviteCardTitle14">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.InvitePill13">
+        <item name="android:textSize">@dimen/text_13</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:paddingStart">@dimen/invite_pill_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/invite_pill_padding_horizontal</item>
+        <item name="android:paddingTop">@dimen/invite_pill_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/invite_pill_padding_vertical</item>
+    </style>
+    <style name="Text.InviteNotice11">
+        <item name="android:textSize">@dimen/text_11</item>
+        <item name="android:textColor">@color/text_sub</item>
+        <item name="lineHeight">@dimen/text_11_line_height</item>
+    </style>
+    <style name="Text.InviteHost15">
+        <item name="android:textSize">@dimen/text_15</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:textColor">@color/text_body</item>
+    </style>
+    <style name="Text.InviteTitle24">
+        <item name="android:textSize">@dimen/text_24</item>
+        <item name="android:textFontWeight">700</item>
+    </style>
+    <style name="Text.InviteInfo15">
+        <item name="android:textSize">@dimen/text_15</item>
+        <item name="android:textFontWeight">500</item>
+    </style>
+    <style name="Text.InviteMembers14">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.InviteNotice12">
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:textColor">@color/text_body</item>
+        <item name="lineHeight">@dimen/text_12_line_height</item>
+    </style>
+    <style name="Text.ConsentTitle20">
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:textFontWeight">700</item>
+    </style>
+    <style name="Text.ConsentDesc13">
+        <item name="android:textSize">@dimen/text_13</item>
+        <item name="android:textColor">@color/text_body</item>
+    </style>
+    <style name="Text.ConsentItem15">
+        <item name="android:textSize">@dimen/text_15</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+
+    <!-- 친구 탭 / 친구 추가 / QR -->
+    <style name="FriendTab">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:background">?attr/selectableItemBackground</item>
+    </style>
+    <style name="FriendTabLine">
+        <item name="android:layout_width">@dimen/friend_tab_line_width</item>
+        <item name="android:layout_height">@dimen/friend_tab_line_height</item>
+        <item name="android:layout_marginTop">@dimen/friend_tab_line_height</item>
+        <item name="android:background">@color/primary</item>
+    </style>
+    <style name="Text.FriendTab20">
+        <item name="android:textSize">@dimen/text_20</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+    <style name="Text.FriendCode22">
+        <item name="android:textSize">@dimen/text_22</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.FriendCodeButton14">
+        <item name="android:textSize">@dimen/text_14</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:gravity">center</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+    <style name="Text.FriendCount16">
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textFontWeight">600</item>
+    </style>
+    <style name="Text.FriendMore22">
+        <item name="android:textSize">@dimen/text_22</item>
+        <item name="android:textColor">@color/text_sub</item>
+    </style>
+    <style name="Text.FriendPill13">
+        <item name="android:textSize">@dimen/text_13</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:paddingStart">@dimen/request_pill_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/request_pill_padding_horizontal</item>
+        <item name="android:paddingTop">@dimen/request_pill_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/request_pill_padding_vertical</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+    </style>
+    <style name="Text.QrGuide16">
+        <item name="android:textSize">@dimen/text_16</item>
+        <item name="android:textFontWeight">500</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="Text.QrHint12">
+        <item name="android:textSize">@dimen/text_12</item>
+        <item name="android:textColor">@color/qr_hint</item>
+    </style>
+    <style name="Text.QrChip13">
+        <item name="android:textSize">@dimen/text_13</item>
+        <item name="android:textFontWeight">600</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+    <style name="QrChip">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:background">@drawable/bg_pill_dark</item>
+        <item name="android:foreground">?attr/selectableItemBackground</item>
+        <item name="android:paddingStart">@dimen/qr_chip_padding_horizontal</item>
+        <item name="android:paddingEnd">@dimen/qr_chip_padding_horizontal</item>
+        <item name="android:paddingTop">@dimen/qr_chip_padding_vertical</item>
+        <item name="android:paddingBottom">@dimen/qr_chip_padding_vertical</item>
     </style>
 
     <!-- 하단 탭 한 칸 (선택되면 흰 알약 배경) -->

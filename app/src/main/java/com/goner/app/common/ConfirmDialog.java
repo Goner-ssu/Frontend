@@ -30,15 +30,24 @@ public class ConfirmDialog extends DialogFragment {
     private static final String ARG_TITLE = "title";
     private static final String ARG_MESSAGE = "message";
     private static final String ARG_CONFIRM_TEXT = "confirmText";
+    private static final String ARG_CANCEL_TEXT = "cancelText";
 
     public static void show(@NonNull FragmentManager fm, @NonNull String requestKey,
                             @NonNull String title, @Nullable String message,
                             @Nullable String confirmText) {
+        show(fm, requestKey, title, message, confirmText, null);
+    }
+
+    // 취소 버튼 글자도 바꿀 때 (예: "유지하기")
+    public static void show(@NonNull FragmentManager fm, @NonNull String requestKey,
+                            @NonNull String title, @Nullable String message,
+                            @Nullable String confirmText, @Nullable String cancelText) {
         Bundle args = new Bundle();
         args.putString(ARG_REQUEST_KEY, requestKey);
         args.putString(ARG_TITLE, title);
         args.putString(ARG_MESSAGE, message);
         args.putString(ARG_CONFIRM_TEXT, confirmText);
+        args.putString(ARG_CANCEL_TEXT, cancelText);
         ConfirmDialog dialog = new ConfirmDialog();
         dialog.setArguments(args);
         dialog.show(fm, requestKey);
@@ -70,7 +79,12 @@ public class ConfirmDialog extends DialogFragment {
             getParentFragmentManager().setFragmentResult(args.getString(ARG_REQUEST_KEY), Bundle.EMPTY);
             dismiss();
         });
-        view.findViewById(R.id.dialog_cancel).setOnClickListener(v -> dismiss());
+        Button cancel = view.findViewById(R.id.dialog_cancel);
+        String cancelText = args.getString(ARG_CANCEL_TEXT);
+        if (cancelText != null) {
+            cancel.setText(cancelText);
+        }
+        cancel.setOnClickListener(v -> dismiss());
     }
 
     @Override
