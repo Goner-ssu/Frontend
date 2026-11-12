@@ -11,4 +11,6 @@
     <color name="orange7">#BF360C</color>
     <color name="background">#FFF9F5</color>
     <color name="text_color">#222222</color>
+    <color name="text_color_1">#8A6E60</color>
+    <color name="text_color_2">#5A4639</color>
 </resources>

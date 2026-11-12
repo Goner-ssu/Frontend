@@ -2,4 +2,16 @@
     <string name="app_name">Goner</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+    <string name="onboarding1_next">다음</string>
+    <string name="onboarding1_title">반가워요!</string>
+    <string name="onboarding1_subtitle">친구들이 나를 알아볼 수 있게 프로필을 만들어 주세요</string>
+    <string name="onboarding1_nick">닉네임</string>
+    <string name="onboarding1_nickname">닉네임을 입력해 주세요</string>
+    <string name="onboarding1_nickcount">%1$d/10</string>
+    <string name="onboarding1_friend">친구 코드</string>
+    <string name="onboarding1_friendcode">친구 코드를 입력해 주세요</string>"
+    <string name="onboarding1_limit">영문·소문자·숫자 4~16자 · 친구가 이 코드로 나를 찾아요</string>
+    <string name="onboarding1_friendcodechk">중복 확인</string>
 </resources>
