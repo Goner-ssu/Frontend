@@ -27,14 +27,14 @@
     <string name="locbutton">위치 권한 허용하기</string>
 
     <string name="onboarding3_title">콕 찌르기와 미루기 요청을\n놓치지 마세요</string>
-    <stirng name="onboarding3_subtitle">약속이 다가오거나 친구가 나를 찾을 때만 알려드려요</stirng>
+    <string name="onboarding3_subtitle">약속이 다가오거나 친구가 나를 찾을 때만 알려드려요</string>
     <string name="onboarding3_goner_now">goner · 지금</string>
     <string name="onboarding3_kkok">준호님이 콕 찔렀어요</string>
     <string name="onboarding3_kkoksub">홍대 저녁 모임 · 서둘러 주세요!</string>
-    <stirng name="onboarding3_late">지현님이 20분 미루자고 해요</stirng>
+    <string name="onboarding3_late">지현님이 20분 미루자고 해요</string>
     <string name="onboarding3_latesub">5분 안에 응답하지 않으면 자동으로 거절돼요</string>
     <string name="onboarding3_noti">약속 1시간 전이에요</string>
-    <stirng name="onboarding3_notisub">홍대 저녁 모임 19:00 · 출발 준비를 해 주세요</stirng>
+    <string name="onboarding3_notisub">홍대 저녁 모임 19:00 · 출발 준비를 해 주세요</string>
     <string name="notibutton">알림 받기</string>
     <string name="later_button">나중에 할게요</string>
 
