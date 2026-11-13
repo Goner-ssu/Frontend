@@ -21,7 +21,7 @@
             android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".LoginActivity"
-            android:exported="true"
+            android:exported="false"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -31,7 +31,7 @@
         </activity>
         <activity
             android:name=".OnboardingActivity"
-            android:exported="false"
+            android:exported="true"
             android:windowSoftInputMode="adjustResize" />
     </application>
 
