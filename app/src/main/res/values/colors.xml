@@ -13,4 +13,5 @@
     <color name="text_color">#222222</color>
     <color name="text_color_1">#8A6E60</color>
     <color name="text_color_2">#5A4639</color>
+    <color name="bg_field">#FFEFE3</color>
 </resources>
