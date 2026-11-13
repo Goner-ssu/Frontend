@@ -6,7 +6,6 @@
 package com.goner.app;
 
 import android.content.Intent;
-import android.os.BugreportManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
