@@ -70,6 +70,7 @@
                 android:layout_marginTop="10dp"
                 android:background="@drawable/bg_field">
                 <EditText
+                    android:id="@+id/nickname_edit_text"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@null"
@@ -82,10 +83,12 @@
                     android:textColor="@color/text_color_1"
                     android:textSize="16sp" />
                 <TextView
+                    android:id="@+id/nickname_count"
+                    tools:text="0/10"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="end|center_vertical"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginEnd="0dp"
                     android:hint="@string/onboarding1_nickcount"
                     android:textColor="@color/text_color_1"
                     android:textSize="13sp" />
