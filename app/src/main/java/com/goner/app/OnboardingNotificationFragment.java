@@ -13,6 +13,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.Manifest;
 import android.os.Build;
+import android.widget.Toast;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import com.goner.app.databinding.FragmentOnboardingNotificationBinding;
 
@@ -29,21 +32,56 @@ public class OnboardingNotificationFragment extends Fragment {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
                 PermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
             } else {
-                ((OnboardingActivity) requireActivity()).next();
+                completeOnboarding(true);
             }
         });
 
-        binding.laterButton.setOnClickListener(v ->
-                ((OnboardingActivity) requireActivity()).next());
-
+        binding.laterButton.setOnClickListener(v -> completeOnboarding(false));
         return binding.getRoot();
     }
 
 
     private final ActivityResultLauncher<String> PermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-                ((OnboardingActivity) requireActivity()).next();
+                completeOnboarding(isGranted);
             });
+
+
+    private void completeOnboarding(boolean notificationEnabled) {
+        String json;
+        try {
+            json = new JSONObject().put("notificationEnabled", notificationEnabled).toString();
+        } catch (JSONException e) {
+            return;
+        }
+
+        binding.notificationButton.setEnabled(false); // 중복 클릭 방지
+        binding.laterButton.setEnabled(false);
+
+        ApiClient.request("POST", ApiClient.COMPLETE_ONBOARDING_URL, json, new ApiClient.Callback() {
+            @Override
+            public void onResult(int statusCode, String body) {
+                if (binding == null) return;
+                if (statusCode == 200) {
+                    ((OnboardingActivity) requireActivity()).next(); // 마지막 단계라 온보딩 종료
+                } else {
+                    onSaveFailed();
+                }
+            }
+
+            @Override
+            public void onError(Exception e) {
+                if (binding == null) return;
+                onSaveFailed();
+            }
+        });
+    }
+
+    private void onSaveFailed() {
+        binding.notificationButton.setEnabled(true);
+        binding.laterButton.setEnabled(true);
+        Toast.makeText(requireContext(), R.string.onboarding3_saveerror, Toast.LENGTH_SHORT).show();
+    }
 
 
 
