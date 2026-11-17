@@ -33,7 +33,7 @@
         </activity>
         <activity
             android:name=".OnboardingActivity"
-            android:exported="true"
+            android:exported="false"
             android:windowSoftInputMode="adjustResize" />
     </application>
 

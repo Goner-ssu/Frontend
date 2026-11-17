@@ -1,8 +1,3 @@
-// onboarding xml 작성
-// fragment xml 해결
-// progress drawable 파일 생성
-//
-
 package com.goner.app;
 
 import android.content.Intent;
