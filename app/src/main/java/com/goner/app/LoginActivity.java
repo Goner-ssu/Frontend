@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import androidx.activity.EdgeToEdge;
 import androidx.activity.result.ActivityResult;
@@ -126,9 +128,46 @@ public class LoginActivity extends AppCompatActivity {
                             user.getPhotoUrl() == null ? null : user.getPhotoUrl().toString());
                     userRef.set(userData);
                 }
-                goToMainActivity();
+                routeByOnboarding();
             }
         });
+    }
+
+    private void routeByOnboarding() {
+        ApiClient.request("GET", ApiClient.GET_ME_URL, null, new ApiClient.Callback() {
+            @Override
+            public void onResult(int statusCode, String body) {
+                if (statusCode != 200) {
+                    onRouteFailed();
+                    return;
+                }
+                try {
+                    boolean completed = new JSONObject(body).getBoolean("onboardingCompleted");
+                    if (completed) {
+                        goToMainActivity();
+                    } else {
+                        goToOnboardingActivity();
+                    }
+                } catch (JSONException e) {
+                    onRouteFailed();
+                }
+            }
+            @Override
+            public void onError(Exception e) {
+                onRouteFailed();
+            }
+        });
+    }
+
+    private void onRouteFailed() {
+        setLoading(false);
+        Toast.makeText(LoginActivity.this, R.string.login_route_error, Toast.LENGTH_SHORT).show();
+    }
+
+    private void goToOnboardingActivity() {
+        Intent intent = new Intent(LoginActivity.this, OnboardingActivity.class);
+        startActivity(intent);
+        finish();
     }
 
 

@@ -19,6 +19,7 @@ public class ApiClient {
     public static final String CHECK_FRIEND_CODE_URL = "http://localhost:8081";
     public static final String SAVE_PROFILE_URL = "http://localhost:8082";
     public static final String COMPLETE_ONBOARDING_URL = "http://localhost:8083";
+    public static final String GET_ME_URL = "http://localhost:8084";
 
     public interface Callback {
         void onResult(int statusCode, String body);
