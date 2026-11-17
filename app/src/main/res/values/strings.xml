@@ -46,4 +46,51 @@
 
     <string name="login_route_error">서버에 연결할 수 없어요. 잠시 후 다시 시도해 주세요</string>
 
+
+    <string name="cancelbutton">취소</string>
+
+    <string name="mypage1_title">프로필 수정</string>
+    <string name="mypage1_friendcodeex">한번 수정 후에는 최소 6개월 후에 수정할 수 있어요</string>
+    <string name="mypage1_login">로그인 계정</string>
+    <string name="mypage1_savebutton">저장하기</string>
+    <string name="mypage1_photoexc">사진 변경</string>
+
+    <string name="mypage2_logout">로그아웃할까요?</string>
+    <string name="mypage2_logoutex">다시 로그인하면 친구와 약속 기록을\n그대로 볼 수 있어요</string>
+    <string name="mypage2_logoutbutton">로그아웃</string>
+
+    <string name="mypage3_title">회원탈퇴</string>
+    <string name="mypage3_subtitle">정말 떠나시나요?</string>
+    <string name="mypage3_explain">탈퇴하면 아래 정보가 모두 삭제되고 되돌릴 수 없어요</string>
+    <string name="mypage3_11">프로필과 친구 코드 (@--------)</string>
+    <string name="mypage3_22">친구 --명과 받은·보낸 요청</string>
+    <string name="mypage3_33">약속 기록 ---개와 랭킹</string>
+    <string name="mypage3_44">벌칙 기록</string>
+    <string name="mypage3_toast">참여 중인 예정 약속 ---개에서 자동으로 나가게 돼요</string>
+    <string name="mypage3_reason">떠나는 이유 (선택)</string>
+    <string name="mypage3_reason1">자주 쓰지 않아요</string>
+    <string name="mypage3_reason2">친구들이 안 써요</string>
+    <string name="mypage3_reason3">위치 공유가 부담돼요</string>
+    <string name="mypage3_reason4">기타</string>
+    <string name="mypage3_check">위 내용을 모두 확인했어요</string>
+
+    <string name="mypage34_button">탈퇴하기</string>
+
+    <string name="mypage4_title">정말 탈퇴할까요?</string>
+    <string name="mypage4_explain">Google 계정 연결이 해제되고 모든 기록이 삭제돼요\n같은 계정으로 다시 가입하면 새로 시작해요</string>
+
+    <string name="mypage5_title">위치정보 이용약관</string>
+    <string name="mypage5_date">시행일 2026년 10월 1일</string>
+    <string name="mypage5_1title">제1조 (목적)</string>
+    <string name="mypage5_1exp">이 약관은 goner가 제공하는 위치기반서비스 이용과 관련한 회사와 이용자의 권리·의무를 정합니다</string>
+    <string name="mypage5_2title">제2조 (수집하는 위치정보)</string>
+    <string name="mypage5_2exp">약속 참여 중에 한해 단말기의 GPS 위치를 수집하며, 사용자가 출발을 누른 때부터 도착 또는 약속 종료 시까지만 수집합니다</string>
+    <string name="mypage5_3title">제3조 (이용 목적)</string>
+    <string name="mypage5_3exp">참여자 간 실시간 위치 표시, 도착 여부 확인, 지각 판정에만 이용합니다</string>
+    <string name="mypage5_4title">제4조 (보유 및 파기)</string>
+    <string name="mypage5_4exp">약속이 끝나면 위치 좌표는 즉시 파기하고, 도착 시각과 순위만 기록으로 보관합니다</string>
+    <string name="mypage5_5title">제5조 (동의 철회)</string>
+    <string name="mypage5_5exp">이용자는 언제든지 기기 설정의 위치 권한을 꺼서 동의를 철회할 수 있습니다</string>
+
+
 </resources>
