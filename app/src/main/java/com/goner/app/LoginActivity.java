@@ -95,6 +95,9 @@ public class LoginActivity extends AppCompatActivity {
                 launcher.launch(googleSignInClient.getSignInIntent());
             }
         });
+
+//        ConfirmDialog.show(this, R.string.mypage2_logout, R.string.mypage2_logoutex,R.string.mypage2_logoutbutton, v->{});
+//        ConfirmDialog.show(this, R.string.mypage4_title, R.string.mypage4_explain,R.string.mypage34_button,v->{});
     }
 
     private void firebaseAuthWithGoogle(String idToken) {
