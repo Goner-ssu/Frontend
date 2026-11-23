@@ -3,6 +3,7 @@ package com.goner.app;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -41,7 +42,7 @@ public class WithdrawActivity extends AppCompatActivity {
 
         binding.withdrawButton.setOnClickListener(v -> {
             ConfirmDialog.show(this, R.string.mypage4_title, R.string.mypage4_explain, R.string.mypage34_button, view -> {
-                // 탈퇴
+                deleteAccount();
             });
         });
 
@@ -55,5 +56,29 @@ public class WithdrawActivity extends AppCompatActivity {
         }
         binding.warningText.setText(String.format(getString(R.string.mypage3_toast), count));
         binding.warning.setVisibility(View.VISIBLE);
-        }
     }
+
+    private void deleteAccount() {
+        binding.withdrawButton.setEnabled(false);
+
+        ApiClient.request("POST", ApiClient.DELETE_ACCOUNT_URL, null, new ApiClient.Callback() {
+            @Override
+            public void onResult(int statusCode, String body) {
+                if(statusCode == 200) {
+                    AccountActions.logout(WithdrawActivity.this);
+                } else { fail(); }
+            }
+
+            @Override
+            public void onError(Exception e) {
+                fail();
+            }
+        });
+    }
+
+    private void fail() {
+        if (binding == null) return;
+        binding.withdrawButton.setEnabled(true);
+        Toast.makeText(this, R.string.mypage3_failed, Toast.LENGTH_SHORT);
+    }
+}

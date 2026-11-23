@@ -74,6 +74,7 @@
     <string name="mypage3_reason3">위치 공유가 부담돼요</string>
     <string name="mypage3_reason4">기타</string>
     <string name="mypage3_check">위 내용을 모두 확인했어요</string>
+    <string name="mypage3_failed">탈퇴 실패</string>
 
     <string name="mypage34_button">탈퇴하기</string>
 
