@@ -42,9 +42,13 @@ public class ProfileEditActivity extends AppCompatActivity {
 
         binding.nicknameEditText.addTextChangedListener(new TextWatcher() {
             @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) { }
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            }
+
             @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) { }
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+            }
+
             @Override
             public void afterTextChanged(Editable s) {
                 updateNicknameCount();
@@ -68,12 +72,15 @@ public class ProfileEditActivity extends AppCompatActivity {
                 binding.friendCheck.setVisibility(View.GONE);
             }
         });
+
+        loadProfile();
     }
 
     private void updateNicknameCount() {
         int count = binding.nicknameEditText.getText().length();
         binding.nicknameCount.setText(getString(R.string.onboarding1_nickcount, count));
     }
+
     private void checkFriendCode() {
         String code = binding.friendCodeEdit.getText().toString();
         if (code.isEmpty()) return;
@@ -119,12 +126,39 @@ public class ProfileEditActivity extends AppCompatActivity {
                     }
                 });
     }
+
     private void showCheckResult(@StringRes int textRes, boolean ok) {
         binding.friendCheck.setVisibility(View.VISIBLE);
         binding.friendCheckText.setText(textRes);
         binding.friendCheckText.setTextColor(ContextCompat.getColor(this,
                 ok ? R.color.orange6 : R.color.orange6));
         binding.friendCheckIcon.setVisibility(ok ? View.VISIBLE : View.GONE);
+    }
+
+    private void loadProfile() {
+        ApiClient.request("GET", ApiClient.GET_ME_URL, null, new ApiClient.Callback() {
+            @Override
+            public void onResult(int statusCode, String body) {
+                Log.d("API", "status=" + statusCode + " body=" + body);
+                if (binding == null) return;
+                if (statusCode != 200) return;
+                try {
+                    JSONObject json = new JSONObject(body);
+                    binding.nicknameEditText.setText(json.getString("nickname"));
+                    binding.friendCodeEdit.setText(json.getString("friendCode"));
+                    binding.friendCheck.setVisibility(View.GONE);
+                } catch (JSONException e) {
+                    Log.e("API", "파싱 실패", e);
+
+                }
+            }
+
+            @Override
+            public void onError(Exception e) {
+                Log.e("API", "요청 실패", e);
+            }
+        });
+
     }
 
 }
