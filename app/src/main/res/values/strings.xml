@@ -54,6 +54,7 @@
     <string name="mypage1_login">로그인 계정</string>
     <string name="mypage1_savebutton">저장하기</string>
     <string name="mypage1_photoexc">사진 변경</string>
+    <string name="mypage1_saved">프로필이 저장되었어요</string>
 
     <string name="mypage2_logout">로그아웃할까요?</string>
     <string name="mypage2_logoutex">다시 로그인하면 친구와 약속 기록을\n그대로 볼 수 있어요</string>

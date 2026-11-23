@@ -5,6 +5,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.annotation.StringRes;
@@ -74,6 +75,8 @@ public class ProfileEditActivity extends AppCompatActivity {
         });
 
         loadProfile();
+
+        binding.nextButton.setOnClickListener(v->saveProfile());
     }
 
     private void updateNicknameCount() {
@@ -161,4 +164,48 @@ public class ProfileEditActivity extends AppCompatActivity {
 
     }
 
-}
+    private void saveProfile() {
+        String nickname = binding.nicknameEditText.getText().toString().trim();
+        String code = binding.friendCodeEdit.getText().toString();
+        if (nickname.isEmpty() || code.isEmpty()) return;
+
+        if(!code.matches("^[a-z0-9]{4,16}$")) {
+            showCheckResult(R.string.onboarding1_invalid,false);
+            return;
+        }
+
+        String json;
+        try {
+            json = new JSONObject()
+                    .put("nickname", nickname)
+                    .put("friendCode", code)
+                    .toString();
+        } catch (JSONException e) { return; }
+
+        binding.nextButton.setEnabled(false);
+        ApiClient.request("POST", ApiClient.SAVE_PROFILE_URL, json, new ApiClient.Callback() {
+            @Override
+            public void onResult(int statusCode, String body) {
+                Log.d("API", "status=" + statusCode + " body=" + body);
+                if (binding == null) return;
+                binding.nextButton.setEnabled(true);
+
+                if (statusCode == 200) {
+                    Toast.makeText(ProfileEditActivity.this, R.string.mypage1_saved, Toast.LENGTH_SHORT).show();
+                } else if (statusCode == 409) {
+                    showCheckResult(R.string.onboarding1_taken, false);
+                } else {
+                    showCheckResult(R.string.onboarding1_error, false);
+                }
+            }
+            @Override
+            public void onError(Exception e) {
+                Log.e("API", "요청 실패", e);
+                if (binding == null) return;
+                binding.nextButton.setEnabled(true);
+                showCheckResult(R.string.onboarding1_error, false);
+            }
+                });
+            }
+
+    }
