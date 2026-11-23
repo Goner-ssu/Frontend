@@ -27,7 +27,7 @@
     <string name="home_empty_create">약속 만들기</string>
     <string name="home_empty_add_friend">친구 먼저 추가하기</string>
     <string name="home_load_failed">약속을 불러오지 못했어요</string>
-    <string name="home_toast_created">약속을 만들었어요 · 친구가 수락하면 알려드릴게요</string>
+    <string name="home_toast_edited">약속을 수정했어요</string>
     <string name="menu_edit">수정하기</string>
     <string name="menu_delete">삭제하기</string>
     <string name="delete_promise_title">약속을 삭제할까요?</string>
@@ -66,6 +66,7 @@
     <string name="summary_penalty_target">지각한 사람 모두</string>
     <string name="summary_notice">친구들이 모두 수락하면 약속이 확정돼요</string>
     <string name="summary_create">약속 만들기</string>
+    <string name="summary_save_edit">저장하기</string>
     <string name="create_loading">로딩중..</string>
     <string name="create_failed">약속을 만들지 못했어요. 다시 시도해 주세요</string>
     <string name="create_need_login">로그인 후에 약속을 만들 수 있어요</string>

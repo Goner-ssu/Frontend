@@ -1,7 +1,6 @@
 package com.goner.app.notification;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -26,24 +25,19 @@ import com.google.firebase.auth.FirebaseAuth;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Locale;
 import java.util.Set;
 
 // 알림 화면. 친구 요청 + 약속 초대를 모아서 보여줌
-// 삭제/읽음은 DB에 알림 문서가 없어서 이 폰 SharedPreferences 에 key(종류+id)로 저장
+// 삭제/읽음은 DB에 알림 문서가 없어서 이 폰에 key(종류+id)로 저장 (NotificationSeen, 홈 벨 점도 같이 씀)
 public class NotificationActivity extends AppCompatActivity {
 
     private static final String REQUEST_DELETE = "delete_notifications";
-    private static final String PREFS = "notifications";
-    private static final String KEY_HIDDEN = "hidden"; // 삭제한 알림
-    private static final String KEY_SEEN = "seen";     // 한 번 본 알림 (안 읽음 점 끄기)
 
     private final NotificationRepo notificationRepo = new NotificationRepo();
     private final FriendRepo friendRepo = new FriendRepo();
     private NotificationAdapter adapter;
-    private SharedPreferences prefs;
     private RecyclerView recycler;
     private View progress, emptyLayout, selectBar, deleteBar;
     private TextView buttonEdit, textSelectedCount;
@@ -55,7 +49,6 @@ public class NotificationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notification);
-        prefs = getSharedPreferences(PREFS, MODE_PRIVATE);
 
         recycler = findViewById(R.id.recycler_notifications);
         progress = findViewById(R.id.progress_notifications);
@@ -157,15 +150,15 @@ public class NotificationActivity extends AppCompatActivity {
     }
 
     private List<NotificationItem> makeItems(List<FriendRequest> requests, List<Appointment> invites) {
-        Set<String> hidden = prefs.getStringSet(KEY_HIDDEN, new HashSet<>());
-        Set<String> seen = new HashSet<>(prefs.getStringSet(KEY_SEEN, new HashSet<>()));
+        Set<String> hidden = NotificationSeen.hidden(this);
+        Set<String> seen = NotificationSeen.seen(this);
         SimpleDateFormat format = new SimpleDateFormat("M월 d일 (E) HH:mm", Locale.KOREA);
         List<NotificationItem> list = new ArrayList<>();
 
         for (FriendRequest r : requests) {
             NotificationItem item = new NotificationItem();
             item.type = NotificationItem.TYPE_FRIEND;
-            item.key = "friend:" + r.getId();
+            item.key = NotificationSeen.friendKey(r);
             item.uid = r.getFromUid();
             item.name = r.getFromNickname() == null ? "" : r.getFromNickname();
             item.photoUrl = r.getFromPhotoUrl();
@@ -177,7 +170,7 @@ public class NotificationActivity extends AppCompatActivity {
         for (Appointment a : invites) {
             NotificationItem item = new NotificationItem();
             item.type = NotificationItem.TYPE_INVITE;
-            item.key = "invite:" + a.getId();
+            item.key = NotificationSeen.inviteKey(a);
             item.uid = a.getHostUid();
             item.name = a.getHostNickname() == null ? "" : a.getHostNickname();
             String when = a.getAppointmentTime() == null ? "" : format.format(a.getAppointmentTime().toDate());
@@ -196,7 +189,7 @@ public class NotificationActivity extends AppCompatActivity {
             item.unread = !seen.contains(item.key);
             seen.add(item.key);
         }
-        prefs.edit().putStringSet(KEY_SEEN, seen).apply();
+        NotificationSeen.saveSeen(this, seen);
         return list;
     }
 
@@ -229,9 +222,8 @@ public class NotificationActivity extends AppCompatActivity {
 
     // 선택한 알림 key 를 hidden 에 넣고 목록에서 뺌
     private void deleteSelected() {
-        Set<String> hidden = new HashSet<>(prefs.getStringSet(KEY_HIDDEN, new HashSet<>()));
-        hidden.addAll(adapter.getSelectedKeys());
-        prefs.edit().putStringSet(KEY_HIDDEN, hidden).apply();
+        NotificationSeen.addHidden(this, adapter.getSelectedKeys());
+        Set<String> hidden = NotificationSeen.hidden(this);
 
         List<NotificationItem> left = new ArrayList<>();
         for (NotificationItem item : adapter.getItems()) {

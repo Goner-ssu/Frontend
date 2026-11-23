@@ -29,7 +29,7 @@
         android:layout_marginBottom="@dimen/toast_margin_bottom"
         android:background="@drawable/bg_toast"
         android:gravity="center"
-        tools:text="@string/home_toast_created"
+        tools:text="@string/home_toast_edited"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@id/bottom_nav"
         app:layout_constraintEnd_toEndOf="parent"

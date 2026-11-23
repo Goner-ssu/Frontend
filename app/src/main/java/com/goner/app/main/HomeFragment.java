@@ -13,15 +13,19 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.goner.app.R;
 import com.goner.app.common.ConfirmDialog;
 import com.goner.app.data.model.Appointment;
+import com.goner.app.data.model.FriendRequest;
 import com.goner.app.data.repo.AppointmentRepo;
+import com.goner.app.data.repo.FriendRepo;
+import com.goner.app.data.repo.NotificationRepo;
 import com.goner.app.friend.AddFriendActivity;
 import com.goner.app.friend.FriendActivity;
 import com.goner.app.notification.NotificationActivity;
+import com.goner.app.notification.NotificationSeen;
 import com.goner.app.promise.CreatePromiseActivity;
+import com.google.android.gms.tasks.Tasks;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.ListenerRegistration;
 
 import java.util.ArrayList;
@@ -34,7 +38,8 @@ public class HomeFragment extends Fragment {
     private static final String KEY_DELETE_ID = "delete_id";
 
     private final AppointmentRepo appointmentRepo = new AppointmentRepo();
-    private FirebaseFirestore db;
+    private final FriendRepo friendRepo = new FriendRepo();
+    private final NotificationRepo notificationRepo = new NotificationRepo();
     private String uid;
     private PromiseAdapter adapter;
     private RecyclerView recycler;
@@ -42,7 +47,6 @@ public class HomeFragment extends Fragment {
     private View progress;
     private View unreadDot;
     private ListenerRegistration promiseListener;
-    private ListenerRegistration notificationListener;
     private String deleteId; // 삭제 확인창 띄운 약속
     private List<Appointment> promises = new ArrayList<>(); // 지금 보이는 약속
 
@@ -52,7 +56,6 @@ public class HomeFragment extends Fragment {
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        db = FirebaseFirestore.getInstance();
         uid = FirebaseAuth.getInstance().getUid();
         if (savedInstanceState != null) deleteId = savedInstanceState.getString(KEY_DELETE_ID);
 
@@ -79,7 +82,6 @@ public class HomeFragment extends Fragment {
             return;
         }
         listenPromises();
-        listenUnread();
     }
 
     // 내가 들어간 진행 중 약속 실시간으로 받아옴. 생기거나 없어지면 빈 상태 ↔ 목록 자동으로 바뀜
@@ -103,11 +105,19 @@ public class HomeFragment extends Fragment {
         });
     }
 
-    // 초대 참여하고 돌아오면 참여자 문서만 바뀌어서 위 리스너가 안 불림 → 참여자 다시 읽어서 칩 갱신
+    // 다른 화면 갔다 오면: 참여자만 바뀐 경우 위 리스너가 안 불려서 참여자 다시 읽음 + 알림 화면 봤으면 벨 점 끄기
     @Override
     public void onResume() {
         super.onResume();
         loadParticipants(promises);
+        checkUnread();
+    }
+
+    // 하단 탭으로 홈이 다시 보일 때
+    @Override
+    public void onHiddenChanged(boolean hidden) {
+        super.onHiddenChanged(hidden);
+        if (!hidden) checkUnread();
     }
 
     // 불러오기 끝나면 로딩 숨기고 목록 / 빈 상태 중 하나만 보임
@@ -126,14 +136,18 @@ public class HomeFragment extends Fragment {
         }
     }
 
-    // 안 읽은 알림 있으면 벨에 점 표시 (TODO 알림 repo 생기면 그쪽으로 옮기기)
-    private void listenUnread() {
-        notificationListener = db.collection("users").document(uid).collection("notifications")
-                .whereEqualTo("read", false)
-                .limit(1)
-                .addSnapshotListener((value, error) -> {
-                    if (error != null || value == null) return;
-                    unreadDot.setVisibility(value.isEmpty() ? View.GONE : View.VISIBLE);
+    // 안 읽은 알림 있으면 벨에 점. 알림 화면과 같은 기준 (받은 친구 요청 + 약속 초대 중 아직 안 본 것)
+    private void checkUnread() {
+        if (uid == null) return;
+        Tasks.whenAllSuccess(friendRepo.listReceived(uid), notificationRepo.listInvites(uid))
+                .addOnSuccessListener(results -> {
+                    if (!isAdded()) return;
+                    @SuppressWarnings("unchecked")
+                    List<FriendRequest> requests = (List<FriendRequest>) results.get(0);
+                    @SuppressWarnings("unchecked")
+                    List<Appointment> invites = (List<Appointment>) results.get(1);
+                    boolean unread = NotificationSeen.hasUnread(requireContext(), requests, invites);
+                    unreadDot.setVisibility(unread ? View.VISIBLE : View.GONE);
                 });
     }
 
@@ -166,7 +180,9 @@ public class HomeFragment extends Fragment {
         View view = getLayoutInflater().inflate(R.layout.sheet_promise_menu, null);
         view.findViewById(R.id.menu_edit).setOnClickListener(v -> {
             sheet.dismiss();
-            // TODO 약속 수정 화면 만들면 appointment.getId() 넘겨서 연결
+            Intent intent = new Intent(requireContext(), CreatePromiseActivity.class);
+            intent.putExtra(CreatePromiseActivity.EXTRA_APPOINTMENT_ID, appointment.getId());
+            startActivity(intent);
         });
         view.findViewById(R.id.menu_delete).setOnClickListener(v -> {
             sheet.dismiss();
@@ -200,7 +216,6 @@ public class HomeFragment extends Fragment {
     public void onDestroyView() {
         super.onDestroyView();
         if (promiseListener != null) promiseListener.remove();
-        if (notificationListener != null) notificationListener.remove();
         adapter = null;
     }
 }

@@ -71,6 +71,11 @@ public class PromiseSummaryFragment extends Fragment {
                 noPenalty ? null : getString(R.string.summary_penalty_target),
                 CreatePromiseActivity.STEP_PENALTY);
 
+        // 수정일 때: 참여자 변경은 아직 저장 못 해서 친구 칸 "수정" 숨김, 버튼은 "저장하기"
+        if (draft.appointmentId != null) {
+            view.findViewById(R.id.row_friends).findViewById(R.id.button_edit).setVisibility(View.INVISIBLE);
+            ((TextView) view.findViewById(R.id.button_create)).setText(R.string.summary_save_edit);
+        }
         view.findViewById(R.id.button_create).setOnClickListener(v -> save());
     }
 
@@ -119,7 +124,7 @@ public class PromiseSummaryFragment extends Fragment {
                     // 수정이면 홈으로 가서 토스트
                     Intent intent = new Intent(requireContext(), MainActivity.class);
                     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_SINGLE_TOP);
-                    intent.putExtra(MainActivity.EXTRA_TOAST, getString(R.string.home_toast_created));
+                    intent.putExtra(MainActivity.EXTRA_TOAST, getString(R.string.home_toast_edited));
                     startActivity(intent);
                     requireActivity().finish();
                 })
