@@ -151,7 +151,8 @@
                 android:paddingStart="14dp"
                 android:paddingTop="12dp"
                 android:paddingEnd="14dp"
-                android:paddingBottom="12dp">
+                android:paddingBottom="12dp"
+                android:visibility="gone">
 
                 <ImageView
                     android:layout_width="18dp"
@@ -160,6 +161,7 @@
                     android:src="@drawable/ic_withdrawalert" />
 
                 <TextView
+                    android:id="@+id/warning_text"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="@string/mypage3_toast"
@@ -273,7 +275,9 @@
             android:layout_height="56dp"
             android:layout_marginStart="8dp"
             android:layout_weight="2"
-            android:text="@string/mypage34_button" />
+            android:text="@string/mypage34_button"
+            android:enabled="false"
+            android:alpha="0.4"/>
     </LinearLayout>
 
 

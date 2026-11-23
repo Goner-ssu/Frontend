@@ -2,6 +2,7 @@ package com.goner.app;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
+import android.view.View;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -31,5 +32,28 @@ public class WithdrawActivity extends AppCompatActivity {
 
         binding.topBar.titleText.setText(R.string.mypage3_title);
         binding.topBar.backButton.setOnClickListener(v -> finish());
+
+        binding.cancelButton.setOnClickListener(v -> finish());
+        binding.agreeCheck.setOnCheckedChangeListener((buttonView,isChecked) -> {
+            binding.withdrawButton.setEnabled(isChecked);
+            binding.withdrawButton.setAlpha(isChecked ? 1.0f : 0.4f);
+        });
+
+        binding.withdrawButton.setOnClickListener(v -> {
+            ConfirmDialog.show(this, R.string.mypage4_title, R.string.mypage4_explain, R.string.mypage34_button, view -> {
+                // 탈퇴
+            });
+        });
+
+        showUpcomingNotice(1);
     }
-}
+
+    private void showUpcomingNotice(int count) {
+        if(count<=0) {
+            binding.warning.setVisibility(View.GONE);
+            return;
+        }
+        binding.warningText.setText(String.format(getString(R.string.mypage3_toast), count));
+        binding.warning.setVisibility(View.VISIBLE);
+        }
+    }
