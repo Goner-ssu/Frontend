@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/bg_screen"
+    tools:context=".promise.CreateNameFragment">
+
+    <TextView
+        android:id="@+id/text_title"
+        style="@style/Text.StepTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/create_padding"
+        android:layout_marginTop="@dimen/create_title_margin_top"
+        android:text="@string/create_name_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edit_title"
+        style="@style/Text.BigInput"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/create_input_height"
+        android:layout_marginStart="@dimen/create_padding"
+        android:layout_marginTop="@dimen/create_input_margin_top"
+        android:layout_marginEnd="@dimen/create_padding"
+        android:background="@drawable/bg_big_input"
+        android:hint="@string/create_name_hint"
+        android:imeOptions="actionDone"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:maxLines="1"
+        android:paddingStart="@dimen/create_input_padding"
+        android:paddingEnd="@dimen/create_input_padding"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_title" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_next"
+        style="@style/Button.Step"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/create_button_margin_horizontal"
+        android:layout_marginEnd="@dimen/create_button_margin_horizontal"
+        android:layout_marginBottom="@dimen/create_button_margin_bottom"
+        android:enabled="false"
+        android:text="@string/common_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

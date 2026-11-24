@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma 253:2090 선택 취소(ⓧ) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="16dp"
+    android:height="16dp"
+    android:viewportWidth="16"
+    android:viewportHeight="16">
+    <path
+        android:fillColor="@color/white"
+        android:pathData="M15.5151,8C15.5151,12.1505 12.1505,15.5151 8,15.5151C3.8495,15.5151 0.484863,12.1505 0.484863,8C0.484863,3.8495 3.8495,0.484863 8,0.484863C12.1505,0.484863 15.5151,3.8495 15.5151,8Z" />
+    <path
+        android:pathData="M10.2545,5.74546L5.74546,10.2545M5.74546,5.74546L10.2545,10.2545M15.5151,8C15.5151,12.1505 12.1505,15.5151 8,15.5151C3.8495,15.5151 0.484863,12.1505 0.484863,8C0.484863,3.8495 3.8495,0.484863 8,0.484863C12.1505,0.484863 15.5151,3.8495 15.5151,8Z"
+        android:strokeWidth="0.96948"
+        android:strokeColor="@color/text_tab_off"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

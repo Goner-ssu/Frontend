@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 알림 빈 상태 벨 (Figma 253:2699) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="40"
+    android:viewportHeight="40">
+    <path
+        android:pathData="M22.8333,34.9999C22.5344,35.4823 22.1172,35.8803 21.6214,36.1564C21.1256,36.4324 20.5675,36.5773 20,36.5773C19.4325,36.5773 18.8744,36.4324 18.3786,36.1564C17.8828,35.8803 17.4656,35.4823 17.1667,34.9999M30,13.3333C30,10.6811 28.9464,8.13755 27.0711,6.26218C25.1957,4.38682 22.6522,3.33325 20,3.33325C17.3478,3.33325 14.8043,4.38682 12.9289,6.26218C11.0536,8.13755 10,10.6811 10,13.3333C10,24.9999 5,28.3333 5,28.3333H35C35,28.3333 30,24.9999 30,13.3333Z"
+        android:strokeWidth="3"
+        android:strokeColor="@color/icon_bell"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

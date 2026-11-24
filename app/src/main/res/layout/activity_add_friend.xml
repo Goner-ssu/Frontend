@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 친구 추가 (Figma 253:2209 기본 / 253:2226 결과 / 253:2240 요청 후 / 376:240 없음 / 376:266 이미 친구 / 376:283 내 코드) -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_screen"
+    android:orientation="vertical"
+    tools:context=".friend.AddFriendActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/friend_header_height"
+        android:layout_marginTop="@dimen/add_header_margin_top">
+
+        <ImageButton
+            android:id="@+id/button_back"
+            android:layout_width="@dimen/touch_target"
+            android:layout_height="@dimen/touch_target"
+            android:layout_gravity="start|center_vertical"
+            android:layout_marginStart="@dimen/noti_back_margin_start"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/common_back"
+            android:src="@drawable/ic_back_large" />
+
+        <TextView
+            style="@style/Text.Title28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/menu_add_friend" />
+    </FrameLayout>
+
+    <!-- 검색창 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/input_height"
+        android:layout_marginStart="@dimen/screen_padding"
+        android:layout_marginTop="@dimen/add_search_margin_top"
+        android:layout_marginEnd="@dimen/screen_padding"
+        android:background="@drawable/bg_search_bar">
+
+        <EditText
+            android:id="@+id/edit_code"
+            style="@style/Text.Body16Main"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@null"
+            android:hint="@string/add_search_hint"
+            android:imeOptions="actionSearch"
+            android:importantForAutofill="no"
+            android:inputType="textNoSuggestions|textVisiblePassword"
+            android:maxLines="1"
+            android:paddingStart="@dimen/add_search_padding_start"
+            android:paddingEnd="@dimen/add_search_padding_end"
+            android:textColorHint="@color/text_hint" />
+
+        <TextView
+            android:id="@+id/button_search"
+            style="@style/Text.FriendCodeButton14"
+            android:layout_width="@dimen/add_search_button_width"
+            android:layout_height="@dimen/add_search_button_height"
+            android:layout_gravity="end|center_vertical"
+            android:layout_marginEnd="@dimen/add_search_button_margin"
+            android:background="@drawable/bg_chip_host"
+            android:text="@string/add_search"
+            android:textColor="@color/white" />
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <!-- 기본: 내 코드 공유 -->
+        <ScrollView
+            android:id="@+id/layout_default"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingStart="@dimen/screen_padding"
+                android:paddingEnd="@dimen/screen_padding"
+                android:paddingBottom="@dimen/screen_padding">
+
+                <TextView
+                    style="@style/Text.FriendCount16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/add_section_margin_top"
+                    android:text="@string/add_share_title" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/friend_list_margin_top"
+                    android:background="@drawable/bg_card_promise"
+                    android:elevation="@dimen/friend_card_elevation"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:outlineSpotShadowColor="@color/shadow_orange"
+                    android:paddingStart="@dimen/friend_card_padding_horizontal"
+                    android:paddingTop="@dimen/screen_padding"
+                    android:paddingEnd="@dimen/friend_card_padding_horizontal"
+                    android:paddingBottom="@dimen/add_card_padding_bottom">
+
+                    <ImageView
+                        android:id="@+id/image_qr"
+                        android:layout_width="@dimen/add_qr_size"
+                        android:layout_height="@dimen/add_qr_size"
+                        android:background="@drawable/bg_qr_box"
+                        android:contentDescription="@string/add_qr_desc"
+                        android:padding="@dimen/add_qr_padding" />
+
+                    <TextView
+                        android:id="@+id/text_my_code"
+                        style="@style/Text.Title20"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/screen_padding"
+                        tools:text="han1234" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/home_padding"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/button_copy"
+                            style="@style/Text.FriendCodeButton14"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/add_code_button_height"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_pill_outline"
+                            android:text="@string/friend_copy"
+                            android:textColor="@color/primary" />
+
+                        <TextView
+                            android:id="@+id/button_share"
+                            style="@style/Text.FriendCodeButton14"
+                            android:layout_width="0dp"
+                            android:layout_height="@dimen/add_code_button_height"
+                            android:layout_marginStart="@dimen/friend_code_button_gap"
+                            android:layout_weight="1"
+                            android:background="@drawable/bg_chip_host"
+                            android:text="@string/friend_share"
+                            android:textColor="@color/white" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/button_qr_scan"
+                    style="@style/Text.Title20"
+                    android:layout_width="@dimen/add_qr_scan_width"
+                    android:layout_height="@dimen/add_qr_scan_height"
+                    android:layout_marginTop="@dimen/add_qr_scan_margin_top"
+                    android:background="@drawable/bg_qr_scan_button"
+                    android:foreground="?attr/selectableItemBackground"
+                    android:gravity="center"
+                    android:text="@string/add_qr_scan"
+                    android:textColor="@color/black" />
+            </LinearLayout>
+        </ScrollView>
+
+        <!-- 검색 결과 (찾음 / 요청됨 / 이미 친구 / 내 코드) -->
+        <LinearLayout
+            android:id="@+id/layout_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/screen_padding"
+            android:paddingEnd="@dimen/screen_padding"
+            android:visibility="gone"
+            tools:visibility="visible">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_section_margin_top"
+                android:background="@drawable/bg_search_result"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="@dimen/add_result_padding">
+
+                <com.goner.app.common.AvatarView
+                    android:id="@+id/avatar_result"
+                    android:layout_width="@dimen/noti_profile_size"
+                    android:layout_height="@dimen/noti_profile_size" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/friend_item_text_gap"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/text_result_name"
+                        style="@style/Text.FriendCount16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        tools:text="박효철" />
+
+                    <TextView
+                        android:id="@+id/text_result_code"
+                        style="@style/Text.Label13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        tools:text="\@hyo1234" />
+                </LinearLayout>
+
+                <!-- 친구 요청 / 요청됨 / 수락 -->
+                <TextView
+                    android:id="@+id/button_request"
+                    style="@style/Text.FriendCodeButton14"
+                    android:layout_width="@dimen/add_request_button_width"
+                    android:layout_height="@dimen/add_search_button_height"
+                    android:background="@drawable/bg_chip_host"
+                    android:textColor="@color/white"
+                    tools:text="@string/add_request" />
+
+                <!-- 이미 친구예요 / 내 코드예요 -->
+                <TextView
+                    android:id="@+id/chip_result"
+                    style="@style/Text.FriendPill13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_pill_line"
+                    android:textColor="@color/text_body"
+                    android:visibility="gone"
+                    tools:text="@string/add_already_friend" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/text_result_hint"
+                style="@style/Text.Label13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_hint_margin_top"
+                tools:text="@string/add_exact_hint" />
+        </LinearLayout>
+
+        <!-- 결과 없음 (Figma 376:240) -->
+        <LinearLayout
+            android:id="@+id/layout_not_found"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingStart="@dimen/screen_padding"
+            android:paddingEnd="@dimen/screen_padding"
+            android:visibility="gone">
+
+            <FrameLayout
+                android:layout_width="@dimen/noti_empty_icon_bg"
+                android:layout_height="@dimen/noti_empty_icon_bg"
+                android:layout_marginTop="@dimen/add_not_found_margin_top"
+                android:background="@drawable/bg_empty_icon">
+
+                <ImageView
+                    android:layout_width="@dimen/noti_empty_icon"
+                    android:layout_height="@dimen/noti_empty_icon"
+                    android:layout_gravity="center"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_search_large" />
+            </FrameLayout>
+
+            <TextView
+                style="@style/Text.DialogTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_not_found_gap"
+                android:text="@string/add_not_found_title" />
+
+            <TextView
+                style="@style/Text.ConsentDesc13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/add_not_found_gap"
+                android:gravity="center"
+                android:text="@string/add_not_found_desc"
+                app:lineHeight="@dimen/text_13_line_height" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/button_invite"
+                style="@style/Button.Outline"
+                android:layout_width="@dimen/add_invite_button_width"
+                android:layout_height="@dimen/dialog_button_height"
+                android:layout_marginTop="@dimen/add_invite_button_margin_top"
+                android:text="@string/friend_send_invite" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_search"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/add_not_found_margin_top"
+            android:visibility="gone" />
+    </FrameLayout>
+</LinearLayout>

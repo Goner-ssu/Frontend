@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 월/연도 목록 한 줄 -->
+<TextView xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/Text.CalendarHeader"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/dropdown_item_height"
+    android:background="?attr/selectableItemBackground"
+    android:gravity="center" />

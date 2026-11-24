@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 홈 + 버튼 누르면 뜨는 메뉴 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/sheet_height"
+    android:orientation="vertical">
+
+    <View
+        android:layout_width="@dimen/sheet_handle_width"
+        android:layout_height="@dimen/sheet_handle_height"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/sheet_handle_margin_top"
+        android:background="@drawable/bg_sheet_handle" />
+
+    <LinearLayout
+        android:id="@+id/menu_add_promise"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sheet_menu_row_height"
+        android:layout_marginTop="@dimen/add_menu_first_margin_top"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/add_menu_padding_start">
+
+        <ImageView
+            android:layout_width="@dimen/add_menu_icon_width"
+            android:layout_height="@dimen/add_menu_icon_height"
+            android:importantForAccessibility="no"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_menu_add_promise" />
+
+        <TextView
+            style="@style/Text.MenuItem22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/add_menu_text_gap"
+            android:text="@string/menu_add_promise" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sheet_divider_height"
+        android:layout_marginStart="@dimen/sheet_divider_margin_start"
+        android:layout_marginEnd="@dimen/sheet_divider_margin_end"
+        android:background="@color/divider" />
+
+    <LinearLayout
+        android:id="@+id/menu_add_friend"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/sheet_menu_row_height"
+        android:layout_marginTop="@dimen/add_menu_second_margin_top"
+        android:background="?attr/selectableItemBackground"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingStart="@dimen/add_menu_padding_start">
+
+        <ImageView
+            android:layout_width="@dimen/add_menu_icon_width"
+            android:layout_height="@dimen/add_menu_icon_height"
+            android:importantForAccessibility="no"
+            android:scaleType="fitStart"
+            android:src="@drawable/ic_menu_add_friend" />
+
+        <TextView
+            style="@style/Text.MenuItem22"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/add_menu_text_gap"
+            android:text="@string/menu_add_friend" />
+    </LinearLayout>
+</LinearLayout>

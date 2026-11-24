@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 스플래시 (Figma 253:2711) -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_splash"
+    tools:context=".auth.SplashActivity">
+
+    <!-- 마크 + goner + 문구 묶음. Figma 처럼 화면 가운데보다 살짝 위 -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginBottom="@dimen/splash_offset_up"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="@dimen/splash_mark_width"
+            android:layout_height="@dimen/splash_mark_height"
+            android:importantForAccessibility="no"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_mark" />
+
+        <TextView
+            android:id="@+id/text_logo"
+            style="@style/Text.Logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/splash_logo_overlap"
+            android:letterSpacing="0.02"
+            android:text="@string/splash_logo"
+            android:textSize="@dimen/logo_splash" />
+
+        <TextView
+            android:id="@+id/text_tagline"
+            style="@style/Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/splash_tagline_overlap"
+            android:text="@string/splash_tagline"
+            android:textColor="@color/text_tab_off"
+            android:textSize="@dimen/text_15" />
+    </LinearLayout>
+</FrameLayout>

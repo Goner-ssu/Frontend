@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Figma 253:1953 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="17dp"
+    android:height="17dp"
+    android:viewportWidth="17"
+    android:viewportHeight="17">
+    <path
+        android:pathData="M4.25,6.375L8.5,10.625L12.75,6.375"
+        android:strokeWidth="1.73427"
+        android:strokeColor="@color/icon_bell"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

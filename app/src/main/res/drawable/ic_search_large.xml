@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 검색 결과 없음 (Figma 376:257) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="40dp"
+    android:height="40dp"
+    android:viewportWidth="40"
+    android:viewportHeight="40">
+    <path
+        android:pathData="M31.6667,18.3333C31.6667,25.6971 25.6971,31.6667 18.3333,31.6667C10.9695,31.6667 5,25.6971 5,18.3333C5,10.9695 10.9695,5 18.3333,5C25.6971,5 31.6667,10.9695 31.6667,18.3333Z"
+        android:strokeWidth="3.33333"
+        android:strokeColor="@color/primary"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M35,35L27.8335,27.8333"
+        android:strokeWidth="3.33333"
+        android:strokeColor="@color/primary"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

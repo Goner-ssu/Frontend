@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:background="@color/bg_screen"
+    tools:context=".promise.PromiseTimeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/button_next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/time_content_padding_bottom">
+
+            <TextView
+                style="@style/Text.StepTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/create_padding"
+                android:layout_marginTop="@dimen/create_title_margin_top"
+                android:text="@string/create_time_title" />
+
+            <!-- 달 이동: < 10월 2026 > -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/calendar_header_height"
+                android:layout_marginStart="@dimen/calendar_margin_horizontal"
+                android:layout_marginTop="@dimen/calendar_margin_top"
+                android:layout_marginEnd="@dimen/calendar_margin_horizontal"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <ImageButton
+                    android:id="@+id/button_prev_month"
+                    android:layout_width="@dimen/calendar_header_height"
+                    android:layout_height="@dimen/calendar_header_height"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/calendar_prev"
+                    android:src="@drawable/ic_chevron_left" />
+
+                <!-- 누르면 월 목록 펼쳐짐 -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/text_month"
+                        style="@style/Text.CalendarHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="?attr/selectableItemBackground"
+                        android:drawablePadding="@dimen/dropdown_icon_gap"
+                        android:gravity="center"
+                        app:drawableEndCompat="@drawable/ic_chevron_down"
+                        tools:text="10월" />
+                </FrameLayout>
+
+                <!-- 누르면 연도 목록 펼쳐짐 -->
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1">
+
+                    <TextView
+                        android:id="@+id/text_year"
+                        style="@style/Text.CalendarHeader"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="?attr/selectableItemBackground"
+                        android:drawablePadding="@dimen/dropdown_icon_gap"
+                        android:gravity="center"
+                        app:drawableEndCompat="@drawable/ic_chevron_down"
+                        tools:text="2026" />
+                </FrameLayout>
+
+                <ImageButton
+                    android:id="@+id/button_next_month"
+                    android:layout_width="@dimen/calendar_header_height"
+                    android:layout_height="@dimen/calendar_header_height"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/calendar_next"
+                    android:src="@drawable/ic_chevron_right" />
+            </LinearLayout>
+
+            <com.goner.app.promise.MonthCalendarView
+                android:id="@+id/calendar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/calendar_margin_horizontal"
+                android:layout_marginTop="@dimen/calendar_grid_margin_top"
+                android:layout_marginEnd="@dimen/calendar_margin_horizontal" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/sheet_divider_height"
+                android:layout_marginStart="@dimen/wheel_margin_horizontal"
+                android:layout_marginTop="@dimen/calendar_divider_margin_top"
+                android:layout_marginEnd="@dimen/wheel_margin_horizontal"
+                android:background="@color/divider" />
+
+            <!-- 시 / 분 / AM·PM 휠 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/wheel_height"
+                android:layout_marginStart="@dimen/wheel_margin_horizontal"
+                android:layout_marginTop="@dimen/wheel_margin_top"
+                android:layout_marginEnd="@dimen/wheel_margin_horizontal"
+                android:layout_marginBottom="@dimen/wheel_elevation"
+                android:background="@drawable/bg_wheel"
+                android:elevation="@dimen/wheel_elevation"
+                android:orientation="horizontal"
+                android:paddingStart="@dimen/wheel_padding_horizontal"
+                android:paddingEnd="@dimen/wheel_padding_horizontal">
+
+                <com.goner.app.promise.WheelPicker
+                    android:id="@+id/wheel_hour"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <com.goner.app.promise.WheelPicker
+                    android:id="@+id/wheel_minute"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <com.goner.app.promise.WheelPicker
+                    android:id="@+id/wheel_ampm"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_next"
+        style="@style/Button.Step"
+        android:layout_width="0dp"
+        android:layout_marginStart="@dimen/create_button_margin_horizontal"
+        android:layout_marginEnd="@dimen/create_button_margin_horizontal"
+        android:layout_marginBottom="@dimen/create_button_margin_bottom"
+        android:enabled="false"
+        android:text="@string/common_next"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 친구 코드 검색창 (Figma 253:2211) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/bg_soft" />
+    <corners android:radius="@dimen/friend_search_radius" />
+</shape>

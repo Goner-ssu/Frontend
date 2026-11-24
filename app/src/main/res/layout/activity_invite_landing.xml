@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 초대 링크 진입 (Figma 253:2256 회원 / 376:404 이미 친구 / 376:391 비회원) -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_screen"
+    tools:context=".friend.InviteLandingActivity">
+
+    <ProgressBar
+        android:id="@+id/progress_landing"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center" />
+
+    <!-- 회원: 친구 되기 / 이미 친구 (같은 모양, 글자만 바뀜) -->
+    <LinearLayout
+        android:id="@+id/layout_member"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingEnd="@dimen/screen_padding"
+        android:visibility="gone"
+        tools:visibility="visible">
+
+        <com.goner.app.common.AvatarView
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/landing_avatar"
+            android:layout_height="@dimen/landing_avatar"
+            android:layout_marginTop="@dimen/landing_avatar_margin_top" />
+
+        <TextView
+            android:id="@+id/text_title"
+            style="@style/Text.LandingTitle22"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/landing_title_gap"
+            android:gravity="center"
+            tools:text="김한성님이 초대했어요" />
+
+        <TextView
+            android:id="@+id/text_desc"
+            style="@style/Text.DialogMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/landing_text_gap"
+            android:gravity="center"
+            tools:text="@string/landing_desc" />
+
+        <TextView
+            android:id="@+id/text_code"
+            style="@style/Text.Label13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/landing_text_gap"
+            android:gravity="center"
+            tools:text="\@han1234" />
+
+        <!-- 이미 친구일 때만 -->
+        <TextView
+            android:id="@+id/chip_friend"
+            style="@style/Text.Chip12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/landing_chip_margin_top"
+            android:background="@drawable/bg_pill_soft"
+            android:paddingStart="@dimen/request_pill_padding_horizontal"
+            android:paddingTop="@dimen/chip_padding_vertical"
+            android:paddingEnd="@dimen/request_pill_padding_horizontal"
+            android:paddingBottom="@dimen/chip_padding_vertical"
+            android:text="@string/landing_chip_friend"
+            android:textColor="@color/primary"
+            android:visibility="gone" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <!-- 친구 되기 / 친구 목록 보기 -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_main"
+            style="@style/Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/landing_button_height"
+            app:cornerRadius="@dimen/landing_button_radius"
+            tools:text="@string/landing_accept" />
+
+        <!-- 나중에 할게요 / 홈으로 -->
+        <TextView
+            android:id="@+id/button_sub"
+            style="@style/Text.DialogMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/landing_link_margin_top"
+            android:layout_marginBottom="@dimen/landing_bottom_margin"
+            android:background="?attr/selectableItemBackground"
+            tools:text="@string/landing_later" />
+    </LinearLayout>
+
+    <!-- 비회원: 로그인 화면 위에 초대 카드 (Figma 376:391) -->
+    <LinearLayout
+        android:id="@+id/layout_guest"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingEnd="@dimen/screen_padding"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/layout_guest_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/landing_banner_margin_top"
+            android:background="@drawable/bg_invite_detail_card"
+            android:elevation="@dimen/friend_card_elevation"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:outlineSpotShadowColor="@color/shadow_orange"
+            android:paddingStart="@dimen/landing_banner_padding_horizontal"
+            android:paddingTop="@dimen/landing_banner_padding_vertical"
+            android:paddingEnd="@dimen/landing_banner_padding_horizontal"
+            android:paddingBottom="@dimen/landing_banner_padding_vertical">
+
+            <com.goner.app.common.AvatarView
+                android:id="@+id/avatar_guest"
+                android:layout_width="@dimen/invite_avatar"
+                android:layout_height="@dimen/invite_avatar" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/invite_card_gap"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_guest_title"
+                    style="@style/Text.FriendName15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="김한성님이 goner에 초대했어요" />
+
+                <TextView
+                    style="@style/Text.ConsentDesc13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/invite_text_gap"
+                    android:text="@string/landing_guest_desc" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="@dimen/landing_logo_width"
+            android:layout_height="@dimen/landing_logo_height"
+            android:layout_marginTop="@dimen/landing_brand_margin_top"
+            android:importantForAccessibility="no"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo_mark" />
+
+        <TextView
+            style="@style/Text.Logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/landing_logo_gap"
+            android:text="@string/splash_logo"
+            android:textSize="@dimen/logo_login" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/button_google"
+            style="@style/Text.LandingGoogle17"
+            android:layout_width="@dimen/landing_google_width"
+            android:layout_height="@dimen/google_button_height"
+            android:background="@drawable/bg_landing_google"
+            android:elevation="@dimen/friend_card_elevation"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:outlineSpotShadowColor="@color/shadow_orange"
+            android:text="@string/landing_google" />
+
+        <TextView
+            style="@style/Text.SummaryLabel12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/landing_hint_margin_top"
+            android:layout_marginBottom="@dimen/landing_guest_bottom_margin"
+            android:text="@string/landing_guest_hint" />
+    </LinearLayout>
+</FrameLayout>

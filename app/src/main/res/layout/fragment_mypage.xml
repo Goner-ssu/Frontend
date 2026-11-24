@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 마이페이지 메인 (Figma 253:3272) -->
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_mypage"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_screen"
+    android:clipToPadding="false"
+    android:paddingBottom="@dimen/mypage_bottom_padding">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/screen_padding"
+        android:paddingEnd="@dimen/screen_padding">
+
+        <TextView
+            style="@style/Text.Title28"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/mypage_title_margin_top"
+            android:text="@string/mypage_title" />
+
+        <!-- 프로필 카드 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mypage_profile_height"
+            android:layout_marginTop="@dimen/mypage_card_margin_top"
+            android:background="@drawable/bg_card_promise"
+            android:elevation="@dimen/friend_card_elevation"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:outlineSpotShadowColor="@color/shadow_orange"
+            android:paddingStart="@dimen/friend_card_padding_horizontal"
+            android:paddingEnd="@dimen/mypage_profile_padding_end">
+
+            <com.goner.app.common.AvatarView
+                android:id="@+id/avatar_me"
+                android:layout_width="@dimen/mypage_avatar"
+                android:layout_height="@dimen/mypage_avatar" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/mypage_profile_text_gap"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/text_nickname"
+                    style="@style/Text.MyPageName18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    tools:text="김한성" />
+
+                <TextView
+                    android:id="@+id/text_friend_code"
+                    style="@style/Text.Label13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="\@han1234" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/button_edit_profile"
+                style="@style/Text.MyPageEdit12"
+                android:layout_width="@dimen/mypage_edit_width"
+                android:layout_height="@dimen/mypage_edit_height"
+                android:background="@drawable/bg_mypage_edit_chip"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center"
+                android:text="@string/mypage_edit_profile" />
+        </LinearLayout>
+
+        <!-- 통계 3칸 -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mypage_stat_height"
+            android:layout_marginTop="@dimen/mypage_stats_margin_top"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@drawable/bg_mypage_stat"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/mypage_stat_padding_top">
+
+                <TextView
+                    android:id="@+id/text_stat_appointments"
+                    style="@style/Text.Title20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mypage_stat_empty" />
+
+                <TextView
+                    style="@style/Text.SummaryLabel12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mypage_stat_appointments" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/mypage_stat_gap"
+                android:layout_weight="1"
+                android:background="@drawable/bg_mypage_stat"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/mypage_stat_padding_top">
+
+                <TextView
+                    android:id="@+id/text_stat_friends"
+                    style="@style/Text.Title20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mypage_stat_empty" />
+
+                <TextView
+                    style="@style/Text.SummaryLabel12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mypage_stat_friends" />
+            </LinearLayout>
+
+            <!-- 누르면 친구 탭 받은 요청 -->
+            <LinearLayout
+                android:id="@+id/button_stat_requests"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginStart="@dimen/mypage_stat_gap"
+                android:layout_weight="1"
+                android:background="@drawable/bg_mypage_stat"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:paddingTop="@dimen/mypage_stat_padding_top">
+
+                <TextView
+                    android:id="@+id/text_stat_requests"
+                    style="@style/Text.Title20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mypage_stat_empty" />
+
+                <TextView
+                    style="@style/Text.SummaryLabel12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mypage_stat_requests" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 친구 -->
+        <TextView
+            style="@style/MyPageSection"
+            android:layout_marginTop="@dimen/mypage_section_margin_top"
+            android:text="@string/mypage_section_friend" />
+
+        <LinearLayout
+            android:id="@+id/group_friend"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_mypage_friend_group"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/row_friend_manage"
+                style="@style/MyPageFriendRow">
+
+                <TextView
+                    style="@style/MyPageRowText"
+                    android:text="@string/mypage_friend_manage" />
+
+                <!-- 받은 요청 있으면 주황 점 + 개수 -->
+                <TextView
+                    android:id="@+id/badge_requests"
+                    style="@style/Text.MyPageBadge11"
+                    android:layout_width="@dimen/mypage_badge"
+                    android:layout_height="@dimen/mypage_badge"
+                    android:layout_marginEnd="@dimen/mypage_row_right_gap"
+                    android:background="@drawable/bg_unread_dot"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    tools:text="2"
+                    tools:visibility="visible" />
+
+                <TextView
+                    android:id="@+id/text_friend_manage_count"
+                    style="@style/Text.Label13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/mypage_row_right_gap"
+                    tools:text="12명" />
+
+                <ImageView
+                    style="@style/MyPageChevron"
+                    app:tint="@color/text_tab_off" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row_share_link"
+                style="@style/MyPageFriendRow"
+                android:layout_marginTop="@dimen/mypage_friend_row_gap">
+
+                <TextView
+                    style="@style/MyPageRowText"
+                    android:text="@string/mypage_share_link" />
+
+                <ImageView
+                    style="@style/MyPageChevron"
+                    app:tint="@color/text_tab_off" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 알람 설정 -->
+        <TextView
+            style="@style/MyPageSection"
+            android:layout_marginTop="@dimen/mypage_menu_gap"
+            android:text="@string/mypage_section_noti" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/mypage_noti_row_height"
+            android:background="@drawable/bg_mypage_noti_card"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="@dimen/mypage_noti_padding_start"
+            android:paddingEnd="@dimen/mypage_row_padding_end">
+
+            <TextView
+                style="@style/MyPageRowText"
+                android:text="@string/mypage_noti_toggle"
+                android:textFontWeight="600" />
+
+            <com.google.android.material.materialswitch.MaterialSwitch
+                android:id="@+id/switch_noti"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/mypage_noti_toggle" />
+        </LinearLayout>
+
+        <!-- 계정 -->
+        <TextView
+            style="@style/MyPageSection"
+            android:layout_marginTop="@dimen/mypage_menu_gap"
+            android:text="@string/mypage_section_account" />
+
+        <LinearLayout
+            android:id="@+id/group_account"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_mypage_menu_group"
+            android:orientation="vertical">
+
+            <LinearLayout
+                style="@style/MyPageMenuRow"
+                android:foreground="@null">
+
+                <TextView
+                    style="@style/MyPageRowText"
+                    android:text="@string/mypage_login_account" />
+
+                <TextView
+                    style="@style/Text.Label13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mypage_login_google" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row_logout"
+                style="@style/MyPageMenuRow.Next">
+
+                <TextView
+                    style="@style/MyPageRowText"
+                    android:text="@string/mypage_logout" />
+
+                <ImageView style="@style/MyPageChevron" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 약관 및 정보 -->
+        <TextView
+            style="@style/MyPageSection"
+            android:layout_marginTop="@dimen/mypage_menu_gap"
+            android:text="@string/mypage_section_terms" />
+
+        <LinearLayout
+            android:id="@+id/group_terms"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_mypage_menu_group"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/row_terms_service"
+                style="@style/MyPageMenuRow">
+
+                <TextView
+                    style="@style/MyPageRowText"
+                    android:text="@string/mypage_terms_service" />
+
+                <ImageView style="@style/MyPageChevron" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row_terms_privacy"
+                style="@style/MyPageMenuRow.Next">
+
+                <TextView
+                    style="@style/MyPageRowText"
+                    android:text="@string/mypage_terms_privacy" />
+
+                <ImageView style="@style/MyPageChevron" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row_terms_location"
+                style="@style/MyPageMenuRow.Next">
+
+                <TextView
+                    style="@style/MyPageRowText"
+                    android:text="@string/mypage_terms_location" />
+
+                <ImageView style="@style/MyPageChevron" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/row_oss"
+                style="@style/MyPageMenuRow.Next">
+
+                <TextView
+                    style="@style/MyPageRowText"
+                    android:text="@string/mypage_oss" />
+
+                <ImageView style="@style/MyPageChevron" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- 지원 -->
+        <TextView
+            style="@style/MyPageSection"
+            android:layout_marginTop="@dimen/mypage_menu_gap"
+            android:text="@string/mypage_section_support" />
+
+        <LinearLayout
+            android:id="@+id/group_support"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_mypage_menu_group"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/row_contact"
+                style="@style/MyPageMenuRow">
+
+                <TextView
+                    style="@style/MyPageRowText"
+                    android:text="@string/mypage_contact" />
+
+                <ImageView style="@style/MyPageChevron" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/MyPageMenuRow.Next"
+                android:foreground="@null">
+
+                <TextView
+                    style="@style/MyPageRowText"
+                    android:text="@string/mypage_app_version" />
+
+                <TextView
+                    android:id="@+id/text_app_version"
+                    style="@style/Text.Label13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="1.0 · 최신 버전" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/button_withdraw"
+            style="@style/Text.Label13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/mypage_menu_gap"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/mypage_row_right_gap"
+            android:text="@string/mypage_withdraw" />
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

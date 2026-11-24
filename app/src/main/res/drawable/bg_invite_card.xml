@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 알림 목록 초대 카드 (Figma 370:98) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/bg_input" />
+    <stroke android:width="@dimen/invite_card_stroke" android:color="@color/orange_100" />
+    <corners android:radius="@dimen/invite_card_radius" />
+</shape>

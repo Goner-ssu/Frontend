@@ -1,6 +1,9 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.services)
+    alias(libs.plugins.oss.licenses)
 }
 
 android {
@@ -17,6 +20,13 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // API 키는 local.properties에서 읽음 (git에 안 올라감)
+        val localProps = Properties()
+        val localFile = rootProject.file("local.properties")
+        if (localFile.exists()) localFile.inputStream().use { localProps.load(it) }
+        val kakaoRestKey = localProps.getProperty("KAKAO_REST_KEY", "")
+        buildConfigField("String", "KAKAO_REST_KEY", "\"$kakaoRestKey\"")
     }
 
     buildTypes {
@@ -26,6 +36,9 @@ android {
                 packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
             }
         }
+    }
+    buildFeatures {
+        buildConfig = true
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -46,4 +59,15 @@ dependencies {
     implementation(libs.firebase.firestore)
     implementation(libs.firebase.database)
     implementation(libs.firebase.messaging)
+    implementation(libs.glide)
+    implementation(libs.retrofit)
+    implementation(libs.retrofit.gson)
+    // QR: 내 코드 QR 만들기(ZXing) + 카메라로 읽기(CameraX + ML Kit)
+    implementation(libs.zxing.core)
+    implementation(libs.camera.camera2)
+    implementation(libs.camera.lifecycle)
+    implementation(libs.camera.view)
+    implementation(libs.mlkit.barcode)
+    // 마이페이지 오픈소스 라이선스 화면
+    implementation(libs.oss.licenses)
 }

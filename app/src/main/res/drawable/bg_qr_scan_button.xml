@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- QR 코드 스캔하기 버튼 (Figma 253:2224) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/qr_scan_button" />
+    <corners android:radius="@dimen/radius_20" />
+</shape>

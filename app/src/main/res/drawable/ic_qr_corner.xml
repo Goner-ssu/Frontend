@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- QR 스캔 가이드 왼쪽 위 모서리 (Figma 376:302). 나머지 셋은 rotation 으로 돌려서 씀 -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="115dp"
+    android:height="115dp"
+    android:viewportWidth="115"
+    android:viewportHeight="115">
+    <path
+        android:fillColor="@color/qr_corner"
+        android:pathData="M0,0H115V20H20V115H0Z" />
+</vector>

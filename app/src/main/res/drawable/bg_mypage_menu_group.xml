@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 마이페이지 메뉴 묶음 (줄 사이 1dp 가 연주황 선으로 보임) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/orange_50" />
+    <corners android:radius="@dimen/radius_button" />
+</shape>

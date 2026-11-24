@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- QR 스캔 (Figma 376:300 스캔 / 376:329 권한 꺼짐) -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/qr_bg"
+    tools:context=".friend.QrScanActivity">
+
+    <androidx.camera.view.PreviewView
+        android:id="@+id/preview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 스캔 화면 위에 덮는 것들 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/layout_scan"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 가운데 네모 (바깥 4칸을 어둡게) -->
+        <View
+            android:id="@+id/scan_box"
+            android:layout_width="@dimen/qr_box_width"
+            android:layout_height="@dimen/qr_box_height"
+            android:layout_marginTop="@dimen/qr_box_offset"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/qr_dim"
+            app:layout_constraintBottom_toTopOf="@id/scan_box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/qr_dim"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/scan_box" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/qr_dim"
+            app:layout_constraintBottom_toBottomOf="@id/scan_box"
+            app:layout_constraintEnd_toStartOf="@id/scan_box"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/scan_box" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@color/qr_dim"
+            app:layout_constraintBottom_toBottomOf="@id/scan_box"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/scan_box"
+            app:layout_constraintTop_toTopOf="@id/scan_box" />
+
+        <!-- 네 모서리 (같은 그림을 돌려서) -->
+        <ImageView
+            android:layout_width="@dimen/qr_corner"
+            android:layout_height="@dimen/qr_corner"
+            android:importantForAccessibility="no"
+            android:src="@drawable/ic_qr_corner"
+            app:layout_constraintStart_toStartOf="@id/scan_box"
+            app:layout_constraintTop_toTopOf="@id/scan_box" />
+
+        <ImageView
+            android:layout_width="@dimen/qr_corner"
+            android:layout_height="@dimen/qr_corner"
+            android:importantForAccessibility="no"
+            android:rotation="90"
+            android:src="@drawable/ic_qr_corner"
+            app:layout_constraintEnd_toEndOf="@id/scan_box"
+            app:layout_constraintTop_toTopOf="@id/scan_box" />
+
+        <ImageView
+            android:layout_width="@dimen/qr_corner"
+            android:layout_height="@dimen/qr_corner"
+            android:importantForAccessibility="no"
+            android:rotation="180"
+            android:src="@drawable/ic_qr_corner"
+            app:layout_constraintBottom_toBottomOf="@id/scan_box"
+            app:layout_constraintEnd_toEndOf="@id/scan_box" />
+
+        <ImageView
+            android:layout_width="@dimen/qr_corner"
+            android:layout_height="@dimen/qr_corner"
+            android:importantForAccessibility="no"
+            android:rotation="270"
+            android:src="@drawable/ic_qr_corner"
+            app:layout_constraintBottom_toBottomOf="@id/scan_box"
+            app:layout_constraintStart_toStartOf="@id/scan_box" />
+
+        <!-- 상단: 뒤로 + 제목 -->
+        <FrameLayout
+            android:id="@+id/layout_qr_header"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/friend_header_height"
+            android:layout_marginTop="@dimen/qr_header_margin_top"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageButton
+                android:id="@+id/button_back"
+                android:layout_width="@dimen/touch_target"
+                android:layout_height="@dimen/touch_target"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="@dimen/noti_back_margin_start"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:contentDescription="@string/common_back"
+                android:src="@drawable/ic_back_large"
+                app:tint="@color/white" />
+
+            <TextView
+                style="@style/Text.Title20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="@string/qr_title"
+                android:textColor="@color/white" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/text_qr_guide"
+            style="@style/Text.QrGuide16"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qr_guide_margin_top"
+            android:gravity="center"
+            android:text="@string/qr_guide"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/layout_qr_header" />
+
+        <TextView
+            style="@style/Text.QrHint12"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qr_hint_margin_top"
+            android:gravity="center"
+            android:text="@string/qr_hint"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/text_qr_guide" />
+
+        <!-- 하단: 플래시 / 코드로 검색 -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/qr_chips_margin_bottom"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <LinearLayout
+                android:id="@+id/button_flash"
+                style="@style/QrChip"
+                android:layout_marginEnd="@dimen/qr_chip_gap">
+
+                <ImageView
+                    android:id="@+id/image_flash"
+                    android:layout_width="@dimen/qr_chip_icon"
+                    android:layout_height="@dimen/qr_chip_icon"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_flash" />
+
+                <TextView
+                    style="@style/Text.QrChip13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/qr_chip_text_gap"
+                    android:text="@string/qr_flash" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/button_search_code"
+                style="@style/QrChip">
+
+                <ImageView
+                    android:layout_width="@dimen/qr_chip_icon"
+                    android:layout_height="@dimen/qr_chip_icon"
+                    android:importantForAccessibility="no"
+                    android:src="@drawable/ic_search_small" />
+
+                <TextView
+                    style="@style/Text.QrChip13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/qr_chip_text_gap"
+                    android:text="@string/qr_search_by_code" />
+            </LinearLayout>
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- 카메라 권한 꺼짐 (Figma 376:329) -->
+    <LinearLayout
+        android:id="@+id/layout_permission"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_screen"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <include
+            android:id="@+id/top_bar"
+            layout="@layout/view_top_bar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/top_bar_height"
+            android:layout_marginTop="@dimen/invite_header_margin_top" />
+
+        <FrameLayout
+            android:layout_width="@dimen/created_check_bg"
+            android:layout_height="@dimen/created_check_bg"
+            android:layout_marginTop="@dimen/qr_permission_margin_top"
+            android:background="@drawable/bg_empty_icon">
+
+            <ImageView
+                android:layout_width="@dimen/empty_icon_size"
+                android:layout_height="@dimen/empty_icon_size"
+                android:layout_gravity="center"
+                android:importantForAccessibility="no"
+                android:src="@drawable/ic_camera_large" />
+        </FrameLayout>
+
+        <TextView
+            style="@style/Text.ConsentTitle20"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qr_permission_gap_large"
+            android:text="@string/qr_permission_title" />
+
+        <TextView
+            style="@style/Text.Body14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qr_permission_gap"
+            android:gravity="center"
+            android:text="@string/qr_permission_desc"
+            app:lineHeight="@dimen/text_14_line_height" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/button_settings"
+            style="@style/Button.Primary"
+            android:layout_width="@dimen/qr_settings_button_width"
+            android:layout_height="@dimen/empty_button_height"
+            android:layout_marginTop="@dimen/qr_permission_gap_large"
+            android:text="@string/qr_open_settings" />
+
+        <TextView
+            android:id="@+id/button_search_direct"
+            style="@style/Text.Link14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/qr_permission_gap"
+            android:background="?attr/selectableItemBackground"
+            android:padding="@dimen/qr_permission_gap"
+            android:text="@string/qr_search_direct" />
+    </LinearLayout>
+</FrameLayout>

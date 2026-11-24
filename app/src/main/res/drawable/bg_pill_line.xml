@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 이미 친구예요 / 내 코드예요 칩 (흰 바탕 + 연주황 테두리) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/white" />
+    <stroke android:width="@dimen/invite_card_stroke" android:color="@color/orange_100" />
+    <corners android:radius="@dimen/created_chip_radius" />
+</shape>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 알림 종류 뱃지: 친구 (Figma 253:2445) -->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="12dp"
+    android:height="12dp"
+    android:viewportWidth="12"
+    android:viewportHeight="12">
+    <path
+        android:pathData="M6.5,4C6.5,5.10457 5.60457,6 4.5,6C3.39543,6 2.5,5.10457 2.5,4C2.5,2.89543 3.39543,2 4.5,2C5.60457,2 6.5,2.89543 6.5,4Z"
+        android:strokeWidth="1.2"
+        android:strokeColor="@color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+    <path
+        android:pathData="M1,10.5C1,9.57174 1.36875,8.6815 2.02513,8.02513C2.6815,7.36875 3.57174,7 4.5,7C5.42826,7 6.3185,7.36875 6.97487,8.02513C7.63125,8.6815 8,9.57174 8,10.5M9.5,4V5.5M9.5,5.5V7M9.5,5.5H8M9.5,5.5H11"
+        android:strokeWidth="1.2"
+        android:strokeColor="@color/white"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round" />
+</vector>

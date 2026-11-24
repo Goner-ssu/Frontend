@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 로딩 화면 배경의 흐릿한 주황 원 (피그마 blur 대신 가운데서 퍼지는 그라데이션) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android" android:shape="oval">
+    <gradient
+        android:type="radial"
+        android:gradientRadius="50%p"
+        android:startColor="@color/loading_glow_1"
+        android:endColor="@color/transparent" />
+</shape>

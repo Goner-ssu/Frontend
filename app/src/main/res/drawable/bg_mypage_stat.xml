@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 마이페이지 통계 한 칸 (Figma 253:3280) -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="@color/bg_soft" />
+    <corners android:radius="@dimen/mypage_stat_radius" />
+</shape>

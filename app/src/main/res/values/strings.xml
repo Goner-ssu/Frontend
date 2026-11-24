@@ -1,3 +1,274 @@
 <resources>
     <string name="app_name">Goner</string>
+
+    <!-- 스플래시 -->
+    <string name="splash_logo">goner</string>
+    <string name="splash_tagline">약속, 늦지 않게</string>
+
+    <!-- 공통 -->
+    <string name="common_back">뒤로 가기</string>
+    <string name="common_cancel">취소</string>
+    <string name="common_confirm">확인</string>
+    <string name="common_next">다음</string>
+
+    <!-- 하단 탭 -->
+    <string name="tab_record">기록 보기</string>
+    <string name="tab_home">홈</string>
+    <string name="tab_mypage">마이페이지</string>
+
+    <!-- 홈 -->
+    <string name="home_notification">알림</string>
+    <string name="home_add">추가</string>
+    <string name="home_more">더보기</string>
+    <string name="home_promise_info">%1$s · %2$s</string>
+    <string name="home_pending">수락 대기 %1$d/%2$d</string>
+    <string name="home_empty_title">아직 약속이 없어요</string>
+    <string name="home_empty_desc">친구와 첫 약속을 만들어 보세요\n가장 늦게 온 사람이 벌칙을 받아요</string>
+    <string name="home_empty_create">약속 만들기</string>
+    <string name="home_empty_add_friend">친구 먼저 추가하기</string>
+    <string name="home_load_failed">약속을 불러오지 못했어요</string>
+    <string name="home_toast_edited">약속을 수정했어요</string>
+    <string name="menu_edit">수정하기</string>
+    <string name="menu_delete">삭제하기</string>
+    <string name="delete_promise_title">약속을 삭제할까요?</string>
+    <string name="delete_promise_message">삭제하면 친구들에게서도 사라져요</string>
+    <string name="delete">삭제</string>
+    <string name="delete_failed">삭제하지 못했어요</string>
+    <string name="menu_add_promise">약속 추가</string>
+    <string name="menu_add_friend">친구 추가</string>
+
+    <!-- 약속 만들기 -->
+    <string name="create_name_title">약속 이름</string>
+    <string name="create_name_hint">약속 이름을 입력하세요</string>
+    <string name="create_time_title">약속 시간</string>
+    <string name="calendar_month">%1$d월</string>
+    <string name="calendar_prev">이전 달</string>
+    <string name="calendar_next">다음 달</string>
+    <string name="calendar_year">%1$d년</string>
+    <string name="create_place_title">약속 장소</string>
+    <string name="create_place_desc">아래 지도를 움직여 약속 장소를 입력해주세요</string>
+    <string name="create_place_search_hint">장소 이름으로 검색</string>
+    <string name="create_place_info">%1$s · %2$s</string>
+    <string name="create_place_no_result">검색 결과가 없어요</string>
+    <string name="create_place_radar_placeholder">한성이형 여기다 레이더 넣어줘요~</string>
+    <string name="create_place_test_fill">[테스트] 강남역으로 채우기</string>
+    <string name="create_friends_test_fill">[테스트] 친구 4명 넣기</string>
+
+    <!-- 약속 요약 / 저장 -->
+    <string name="create_summary_title">이대로 만들까요?</string>
+    <string name="summary_label_title">약속 이름</string>
+    <string name="summary_label_time">시간</string>
+    <string name="summary_label_place">장소</string>
+    <string name="summary_label_friends">친구</string>
+    <string name="summary_label_penalty">벌칙</string>
+    <string name="summary_edit">수정</string>
+    <string name="summary_friends_count">%1$d명 초대 · 나 포함 %2$d명</string>
+    <string name="summary_penalty_target">지각한 사람 모두</string>
+    <string name="summary_notice">친구들이 모두 수락하면 약속이 확정돼요</string>
+    <string name="summary_create">약속 만들기</string>
+    <string name="summary_save_edit">저장하기</string>
+    <string name="create_loading">로딩중..</string>
+    <string name="create_failed">약속을 만들지 못했어요. 다시 시도해 주세요</string>
+    <string name="create_need_login">로그인 후에 약속을 만들 수 있어요</string>
+
+    <!-- 약속 생성 완료 (Figma 372:203) -->
+    <string name="created_title">약속을 만들었어요!</string>
+    <string name="created_desc">%1$s님에게 초대를 보냈어요\n모두 수락하면 약속이 확정돼요</string>
+    <string name="created_me">나</string>
+    <string name="created_host">방장</string>
+    <string name="created_waiting">대기</string>
+    <string name="created_share">초대 링크 공유</string>
+    <string name="created_home">홈으로</string>
+    <string name="create_friends_title">친구 추가</string>
+    <string name="create_friends_search_hint">친구 이름이나 코드로 찾기</string>
+    <string name="create_friends_notice">선택한 친구에게 초대가 가요</string>
+    <string name="create_friends_code">\@%1$s</string>
+    <string name="create_friends_empty">아직 친구가 없어요</string>
+    <string name="create_friends_remove">%1$s 선택 취소</string>
+    <string name="create_penalty_title">벌칙 추가</string>
+    <string name="penalty_meal">밥 사기</string>
+    <string name="penalty_coffee">커피 사기</string>
+    <string name="penalty_custom">직접 입력</string>
+    <string name="penalty_none">벌칙 없음</string>
+    <string name="penalty_custom_hint">벌칙을 입력하세요 (20자까지)</string>
+
+    <!-- 알림 (Figma 253:2399) -->
+    <string name="noti_title">알림</string>
+    <string name="noti_edit">편집</string>
+    <string name="noti_done">완료</string>
+    <string name="noti_today">오늘</string>
+    <string name="noti_this_week">이번 주</string>
+    <string name="noti_older">이전</string>
+    <string name="noti_friend_request">%1$s님이 친구 요청을 보냈어요</string>
+    <string name="noti_invite">%1$s님이 약속에 초대했어요</string>
+    <string name="noti_invite_info">%1$s · %2$s</string>
+    <string name="noti_accept">수락</string>
+    <string name="noti_reject">거절</string>
+    <string name="noti_accepted">친구가 됐어요</string>
+    <string name="noti_action_failed">처리하지 못했어요. 다시 시도해 주세요</string>
+    <string name="noti_just_now">방금 전</string>
+    <string name="noti_minutes_ago">%1$d분 전</string>
+    <string name="noti_hours_ago">%1$d시간 전</string>
+    <string name="noti_yesterday">어제</string>
+    <string name="noti_date">%1$d월 %2$d일</string>
+    <string name="noti_days_ago">%1$d일 전</string>
+    <string name="noti_select_all">전체 선택</string>
+    <string name="noti_selected_count">%1$d개 선택됨</string>
+    <string name="noti_delete_selected">선택한 알림 %1$d개 삭제</string>
+    <string name="noti_delete_title">알림을 삭제할까요?</string>
+    <string name="noti_delete_message">삭제한 알림은 되돌릴 수 없어요</string>
+    <string name="noti_empty_title">새로운 알림이 없어요</string>
+    <string name="noti_empty_desc">콕 찌르기, 약속, 친구 소식이\n오면 여기에 보여요</string>
+    <string name="noti_load_failed">알림을 불러오지 못했어요</string>
+
+    <!-- 약속 초대 받기 (Figma 370:90 ~ 370:381) -->
+    <string name="invite_join">참여하기</string>
+    <string name="invite_reject">거절</string>
+    <string name="invite_detail">자세히 보기</string>
+    <string name="invite_notice_short">응답하기 전에는 내 위치가 공유되지 않아요</string>
+    <string name="invite_title">약속 초대</string>
+    <string name="invite_host">%1$s님이 초대했어요</string>
+    <string name="invite_penalty">벌칙 · %1$s</string>
+    <string name="invite_penalty_target">가장 늦게 도착한 1명</string>
+    <string name="invite_members">참여자 %1$d명</string>
+    <string name="invite_members_status">참여 %1$d · 대기 %2$d</string>
+    <string name="invite_chip_joined">참여</string>
+    <string name="invite_location_notice">출발을 누른 순간부터 도착할 때까지만 내 위치가 참여자에게 공유돼요</string>
+    <string name="invite_load_failed">약속을 불러오지 못했어요</string>
+    <string name="invite_failed">처리하지 못했어요. 다시 시도해 주세요</string>
+    <string name="invite_joined_toast">%1$s에 참여했어요 · 위치는 출발 시 공유돼요</string>
+    <string name="invite_reject_title">초대를 거절할까요?</string>
+    <string name="invite_reject_message">%1$s님에게 거절 알림이 가요.\n나중에 다시 초대받을 수 있어요.</string>
+    <string name="invite_reject_confirm">거절하기</string>
+    <string name="consent_title">위치 공유에 동의해 주세요</string>
+    <string name="consent_desc">약속에 참여하려면 아래 내용에 동의가 필요해요</string>
+    <string name="consent_start">출발을 누를 때 시작</string>
+    <string name="consent_end">도착하거나 약속이 끝나면 자동 종료</string>
+    <string name="consent_members">이 약속 참여자 %1$d명에게만 보여요</string>
+    <string name="consent_check">위 내용을 확인했어요</string>
+    <string name="consent_join">동의하고 참여하기</string>
+    <string name="home_chip_joined">참여 확정</string>
+
+    <!-- 친구 탭 (Figma 253:2142 / 253:2193) -->
+    <string name="friend_title">친구</string>
+    <string name="friend_requests_title">친구 요청</string>
+    <string name="friend_tab_home">홈</string>
+    <string name="friend_tab_received">받은 요청</string>
+    <string name="friend_tab_sent">보낸 요청</string>
+    <string name="friend_my_code">내 친구 코드</string>
+    <string name="friend_copy">코드 복사</string>
+    <string name="friend_share">코드 공유</string>
+    <string name="friend_copied">코드를 복사했어요</string>
+    <string name="friend_count">친구 %1$d</string>
+    <string name="friend_more">···</string>
+    <string name="friend_empty_title">아직 친구가 없어요</string>
+    <string name="friend_empty_desc">초대 링크를 보내면\n친구가 바로 요청을 받을 수 있어요</string>
+    <string name="friend_send_invite">초대 링크 보내기</string>
+    <string name="friend_delete_title">친구를 삭제할까요?</string>
+    <string name="friend_delete_message">%1$s님이 친구 목록에서 사라져요</string>
+    <string name="friend_need_login">로그인 후에 쓸 수 있어요</string>
+
+    <!-- 친구 요청 (Figma 376:160 / 376:197) -->
+    <string name="request_sent_info">\@%1$s · %2$s 보냄</string>
+    <string name="request_received_info">\@%1$s · %2$s</string>
+    <string name="request_expire_soon">%1$s · 내일 만료</string>
+    <string name="request_cancel">요청 취소</string>
+    <string name="request_keep">유지하기</string>
+    <string name="request_notice">7일 동안 응답이 없으면 요청은 자동으로 취소돼요</string>
+    <string name="request_cancel_title">요청을 취소할까요?</string>
+    <string name="request_cancel_message">%1$s님에게 보낸 친구 요청이 사라져요.\n상대방에게 따로 알림은 가지 않아요.</string>
+    <string name="request_empty_received">받은 친구 요청이 없어요</string>
+    <string name="request_empty_sent">보낸 친구 요청이 없어요</string>
+
+    <!-- 친구 추가 (Figma 253:2209 ~ 376:283) -->
+    <string name="add_search_hint">친구 코드를 입력하세요</string>
+    <string name="add_search">검색</string>
+    <string name="add_share_title">내 코드 공유하기</string>
+    <string name="add_qr_desc">내 친구 코드 QR</string>
+    <string name="add_qr_scan">QR 코드 스캔하기</string>
+    <string name="add_request">친구 요청</string>
+    <string name="add_requested">요청됨</string>
+    <string name="add_sent">요청을 보냈어요</string>
+    <string name="add_exact_hint">정확히 일치하는 코드만 검색돼요</string>
+    <string name="add_cancel_hint">다시 누르면 요청이 취소돼요</string>
+    <string name="add_not_found_title">일치하는 친구 코드가 없어요</string>
+    <string name="add_not_found_desc">코드는 정확히 일치해야 찾을 수 있어요\n오타가 없는지 확인하거나 초대 링크를 보내보세요</string>
+    <string name="add_already_friend">이미 친구예요</string>
+    <string name="add_already_friend_hint">이미 친구 목록에 있어요 · 약속에 바로 초대할 수 있어요</string>
+    <string name="add_me_name">%1$s (나)</string>
+    <string name="add_my_code">내 코드예요</string>
+    <string name="add_my_code_hint">내 코드는 친구에게 공유해 주세요</string>
+    <string name="add_search_failed">검색하지 못했어요. 다시 시도해 주세요</string>
+
+    <!-- QR 스캔 (Figma 376:300 / 376:329 / 376:348) -->
+    <string name="qr_title">QR 코드 스캔</string>
+    <string name="qr_guide">친구의 QR 코드를 네모 안에 맞춰 주세요</string>
+    <string name="qr_hint">친구 탭 &gt; 친구 추가에서 내 QR을 보여줄 수 있어요</string>
+    <string name="qr_flash">플래시</string>
+    <string name="qr_search_by_code">코드로 검색</string>
+    <string name="qr_permission_title">카메라 권한이 필요해요</string>
+    <string name="qr_permission_desc">QR 코드를 스캔하려면 설정에서\n카메라 접근을 허용해 주세요</string>
+    <string name="qr_open_settings">설정에서 허용하기</string>
+    <string name="qr_search_direct">코드로 직접 검색하기</string>
+    <string name="qr_found">친구 코드를 찾았어요</string>
+    <string name="qr_rescan">다시 스캔</string>
+    <string name="qr_send_request">친구 요청 보내기</string>
+
+    <!-- 마이페이지 (Figma 253:3272) -->
+    <string name="mypage_title">마이페이지</string>
+    <string name="mypage_stat_empty">0</string>
+    <string name="mypage_no_mail_app">메일 앱이 없어요</string>
+    <string name="mypage_edit_profile">프로필 수정</string>
+    <string name="mypage_stat_appointments">참여한 약속</string>
+    <string name="mypage_stat_friends">친구</string>
+    <string name="mypage_stat_requests">받은 요청</string>
+    <string name="mypage_section_friend">친구</string>
+    <string name="mypage_friend_manage">친구 관리</string>
+    <string name="mypage_friend_count">%1$d명</string>
+    <string name="mypage_share_link">내 친구 링크 공유</string>
+    <string name="mypage_section_noti">알람 설정</string>
+    <string name="mypage_noti_toggle">알람 ON OFF</string>
+    <string name="mypage_noti_failed">알람 설정을 바꾸지 못했어요</string>
+    <string name="mypage_section_account">계정</string>
+    <string name="mypage_login_account">로그인 계정</string>
+    <string name="mypage_login_google">Google</string>
+    <string name="mypage_logout">로그아웃</string>
+    <string name="mypage_section_terms">약관 및 정보</string>
+    <string name="mypage_terms_service">이용약관</string>
+    <string name="mypage_terms_privacy">개인정보처리방침</string>
+    <string name="mypage_terms_location">위치기반서비스 이용약관</string>
+    <string name="mypage_oss">오픈소스 라이선스</string>
+    <string name="mypage_section_support">지원</string>
+    <string name="mypage_contact">문의하기</string>
+    <string name="mypage_app_version">앱 버전</string>
+    <string name="mypage_version_latest">%1$s · 최신 버전</string>
+    <string name="mypage_withdraw">회원탈퇴</string>
+    <!-- TODO 문의 받을 메일 주소 정해지면 넣기 -->
+    <string name="support_email" translatable="false"></string>
+
+    <!-- 초대 링크 진입 (Figma 253:2256 / 376:391 / 376:404) -->
+    <string name="landing_title">%1$s님이 초대했어요</string>
+    <string name="landing_desc">수락하면 바로 친구가 돼요</string>
+    <string name="landing_accept">친구 되기</string>
+    <string name="landing_later">나중에 할게요</string>
+    <string name="landing_guest_title">%1$s님이 goner에 초대했어요</string>
+    <string name="landing_guest_desc">로그인하면 바로 친구가 돼요</string>
+    <string name="landing_google">Google로 시작하기</string>
+    <string name="landing_guest_hint">처음이라면 프로필을 만든 뒤 초대 화면으로 돌아와요</string>
+    <string name="landing_already_title">이미 %1$s님과 친구예요</string>
+    <string name="landing_already_desc">친구 목록에서 바로 약속에 초대할 수 있어요</string>
+    <string name="landing_friend_list">친구 목록 보기</string>
+    <string name="landing_home">홈으로</string>
+    <string name="landing_chip_friend">친구</string>
+    <string name="invite_not_invited">초대받은 사람만 볼 수 있어요</string>
+
+    <string-array name="calendar_weekdays">
+        <item>Su</item>
+        <item>Mo</item>
+        <item>Tu</item>
+        <item>We</item>
+        <item>Th</item>
+        <item>Fr</item>
+        <item>Sa</item>
+    </string-array>
 </resources>

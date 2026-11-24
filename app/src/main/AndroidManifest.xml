@@ -2,6 +2,13 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- QR 스캔 (카메라 없는 기기도 설치는 되게) -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -12,13 +19,57 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Goner">
         <activity
-            android:name=".MainActivity"
-            android:exported="true"
-            android:windowSoftInputMode="adjustResize">
+            android:name=".auth.SplashActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".auth.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".auth.OnboardingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".main.MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".promise.CreatePromiseActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustResize" />
+        <activity
+            android:name=".friend.AddFriendActivity"
+            android:exported="false" />
+        <activity
+            android:name=".notification.NotificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".promise.InviteDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".friend.FriendActivity"
+            android:exported="false" />
+        <activity
+            android:name=".friend.QrScanActivity"
+            android:exported="false" />
+        <!-- 초대 링크 (App Links). assetlinks.json 은 docs/APP_LINKS.md 참고 -->
+        <activity
+            android:name=".friend.InviteLandingActivity"
+            android:exported="true">
+            <intent-filter android:autoVerify="true">
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <data android:scheme="https" />
+                <data android:host="goner-ssu.web.app" />
+                <data android:pathPrefix="/i/" />
+                <data android:pathPrefix="/p/" />
             </intent-filter>
         </activity>
     </application>
